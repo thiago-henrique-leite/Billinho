@@ -1,0 +1,22 @@
+# PostgreSQL 12
+
+development:
+  adapter: postgresql
+  database: billinho_development
+  username: postgres
+  password: postgres
+  min_messages: warning
+
+test:
+  adapter: postgresql
+  database: billinho_test
+  username: postgres
+  password: postgres
+  min_messages: warning
+
+production:
+  adapter: postgresql
+  database: billinho_production
+  username: postgres
+  password: postgres
+  min_messages: warning
