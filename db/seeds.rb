@@ -6,32 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
-# universidade = 0
-# escola = 0
-# creche = 0
+lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
+universidade = 0
+escola = 0
+creche = 0
 
-# 50.times do
-#     var = Random.rand(3) + 1
-#     tipo_inst = var
+50.times do
+    var = Random.rand(3) + 1
+    tipo_inst = var
 
-#     if var == 1
-#         universidade += 1
-#         var =  universidade
-#     elsif var == 2
-#         escola += 1
-#         var = escola
-#     else
-#         creche += 1
-#         var = creche
-#     end
+    if var == 1
+        universidade += 1
+        var =  universidade
+    elsif var == 2
+        escola += 1
+        var = escola
+    else
+        creche += 1
+        var = creche
+    end
 
-#     Institution.create({
-#       nome: "#{lista_instituicoes[tipo_inst]} #{var}",
-#       cnpj: Faker::Number.number(digits: 11),
-#       tipo: "#{lista_instituicoes[tipo_inst]}"
-#     })
-# end
+    Institution.create({
+      nome: "#{lista_instituicoes[tipo_inst]} #{var}",
+      cnpj: Faker::Number.number(digits: 11),
+      tipo: "#{lista_instituicoes[tipo_inst]}"
+    })
+end
 
 meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
 generos = {1 => 'F', 2 => 'M'}

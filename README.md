@@ -1,24 +1,32 @@
-# README
+# BILLINHO 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+(README temporário - projeto em progresso)
 
-Things you may want to cover:
+### Ações da API até aqui
+	-> Listagem de instituições (Todas ou individualmente pelo ID)
+	-> Criação de instituições 
+	-> Listagem de estudantes (Todos ou individualmente pelo ID)
+	-> Criação de estudantes
 
-* Ruby version
+### Validações já implementadas
+#####	Instituições
+	-> Nome não vazio e único
+	-> CNPJ único
 
-* System dependencies
+#####   Estudantes
+	-> Nome não vazio e único
+	-> CPF não vazio e único
 
-* Configuration
+### Validações que ainda não foram implementadas
+#####	Instituições
+	-> CNPJ CPF apenas com caracteres numéricos
+	-> Tipo apenas 'Universidade', 'Escola' ou 'Creche'
 
-* Database creation
+#####   Estudantes
+	-> CPF apenas com caracteres numéricos
+	-> Gênero apenas 'F' ou 'M'
+	-> Meio de pagamanto apenas 'Cartão' ou 'Boleto'
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
