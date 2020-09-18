@@ -19,7 +19,7 @@
 
 ### Validações que ainda não foram implementadas
 #####	Instituições
-	-> CNPJ CPF apenas com caracteres numéricos
+	-> CNPJ apenas com caracteres numéricos
 	-> Tipo apenas 'Universidade', 'Escola' ou 'Creche'
 
 #####   Estudantes
