@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_005201) do
+ActiveRecord::Schema.define(version: 2020_09_18_175528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "enrollments", force: :cascade do |t|
+    t.float "valor_total"
+    t.integer "quant_faturas"
+    t.integer "dia_vencimento", null: false
+    t.text "curso", null: false
+    t.bigint "institution_id", null: false
+    t.bigint "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["institution_id"], name: "index_enrollments_on_institution_id"
+    t.index ["student_id"], name: "index_enrollments_on_student_id"
+  end
 
   create_table "institutions", force: :cascade do |t|
     t.text "nome", null: false
