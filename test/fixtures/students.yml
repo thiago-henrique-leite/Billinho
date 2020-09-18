@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyText
+  cpf: MyText
+  data_nasc: 2020-09-17
+  phone: 1
+  genero: MyText
+  meio_pagamento: MyText
+
+two:
+  nome: MyText
+  cpf: MyText
+  data_nasc: 2020-09-17
+  phone: 1
+  genero: MyText
+  meio_pagamento: MyText
