@@ -10,23 +10,16 @@
 
 ### Validações já implementadas
 #####	Instituições
-	-> Nome não vazio e único
-	-> CNPJ único
+	-> Nome não vazio e único.
+	-> CNPJ único, apenas com caracteres numéricos, porém não obrigatório.
+	-> Tipo apenas 'Universidade', 'Escola' ou 'Creche'.
 
 #####   Estudantes
-	-> Nome não vazio e único
-	-> CPF não vazio e único
-
-### Validações que ainda não foram implementadas
-#####	Instituições
-	-> CNPJ apenas com caracteres numéricos
-	-> Tipo apenas 'Universidade', 'Escola' ou 'Creche'
-
-#####   Estudantes
-	-> CPF apenas com caracteres numéricos
-	-> Gênero apenas 'F' ou 'M'
-	-> Meio de pagamanto apenas 'Cartão' ou 'Boleto'
-
-
+	-> Nome não vazio e único.
+	-> CPF não vazio, único e apenas com caracteres numéricos.
+	-> Gênero apenas 'F' ou 'M'.
+	-> Meio de pagamanto apenas 'Cartão' ou 'Boleto'.
+	-> Data de nascimento não obrigatória.
+	-> Telefone não obrigatório.
 
 
