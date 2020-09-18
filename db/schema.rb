@@ -21,21 +21,21 @@ ActiveRecord::Schema.define(version: 2020_09_18_005201) do
     t.text "tipo", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cnpj"], nome: "index_institutions_on_cnpj", unique: true
-    t.index ["nome"], nome: "index_institutions_on_nome", unique: true
+    t.index ["cnpj"], name: "index_institutions_on_cnpj", unique: true
+    t.index ["nome"], name: "index_institutions_on_name", unique: true
   end
 
   create_table "students", force: :cascade do |t|
-    t.text "nome"
-    t.text "cpf"
+    t.text "nome", null: false
+    t.text "cpf", null: false
     t.date "data_nasc"
     t.integer "phone"
-    t.text "genero"
-    t.text "meio_pagamento"
+    t.text "genero", null: false
+    t.text "meio_pagamento", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cpf"], nome: "index_students_on_cpf", unique: true
-    t.index ["nome"], nome: "index_students_on_nome", unique: true
+    t.index ["cpf"], name: "index_students_on_cpf", unique: true
+    t.index ["nome"], name: "index_students_on_nome", unique: true
   end
 
 end
