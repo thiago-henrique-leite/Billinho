@@ -15,8 +15,6 @@
 	-> Nome não vazio e único.
 	-> CNPJ único, apenas com caracteres numéricos, porém não obrigatório.
 	-> Tipo apenas 'Universidade', 'Escola' ou 'Creche'.
-####### Acrescentadas
-	->Tamanho do CNPJ: 14 caracteres (obrigatoriamente)
 
 #####   Estudantes
 	-> Nome não vazio e único.
@@ -25,6 +23,8 @@
 	-> Meio de pagamanto apenas 'Cartão' ou 'Boleto'.
 	-> Data de nascimento não obrigatória.
 	-> Telefone não obrigatório.
-####### Acrescentadas
+
+#####   Acrescentadas
+	->Tamanho do CNPJ: 14 caracteres (obrigatoriamente)
 	->Tamanho do CPF: 11 caracteres (obrigatoriamente)
 
