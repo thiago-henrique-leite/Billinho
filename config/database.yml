@@ -2,21 +2,21 @@
 
 development:
   adapter: postgresql
-  database: billinho_development
+  database: db_development
   username: postgres
   password: postgres
   min_messages: warning
 
 test:
   adapter: postgresql
-  database: billinho_test
+  database: db_test
   username: postgres
   password: postgres
   min_messages: warning
 
 production:
   adapter: postgresql
-  database: billinho_production
+  database: db_production
   username: postgres
   password: postgres
   min_messages: warning

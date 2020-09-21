@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2020_09_18_175528) do
   enable_extension "plpgsql"
 
   create_table "enrollments", force: :cascade do |t|
-    t.float "valor_total"
+    t.decimal "valor_total"
     t.integer "quant_faturas"
     t.integer "dia_vencimento", null: false
     t.text "curso", null: false
-    t.bigint "institution_id", null: false
-    t.bigint "student_id", null: false
+    t.bigint "institution_id"
+    t.bigint "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["institution_id"], name: "index_enrollments_on_institution_id"

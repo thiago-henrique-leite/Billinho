@@ -2,19 +2,19 @@ module Api
 	module V1
     class EnrollmentsController < ApplicationController  
 
-      # Listar todas as Matrículas
+      # Lista todas as matrículas
 			def index
 				enrollments = Enrollment.order('id ASC');
 				render json: {status: 'SUCCESSO', message:'Matrículas Carregadas.', data:enrollments},status: :ok
       end
 
-      # Listar matrícula passando ID
+      # Lista uma matrícula específica pelo ID
 			def show
         enrollment = Enrollment.find(params[:id])
 				render json: {status: 'SUCCESSO', message:'Matrícula Carregada.', data:enrollment},status: :ok
       end
       
-			# Criar uma nova matrícula
+			# Cria uma nova matrícula
 			def create
 				enrollment = Enrollment.new(enrollment_params)
 				if enrollment.save
@@ -27,7 +27,7 @@ module Api
 			# Verifica se os parâmetros foram aceitos
 			private
 			def enrollment_params
-				params.permit(:valor_total, :quant_faturas, :dia_vencimento, :curso, :institution, :student)
+				params.permit(:valor_total, :quant_faturas, :dia_vencimento, :curso, :institution_id, :student_id)
       end
 		end
 	end

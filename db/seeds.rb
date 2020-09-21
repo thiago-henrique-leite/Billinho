@@ -1,63 +1,62 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
+# Cria instituições de ensino
 
-# 50.times do
-#   unidade = Random.rand(500) + 1
-#   tipo_institution = Random.rand(3) + 1
+lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
+unidade = 0
 
-#   Institution.create({
-#     nome: "#{lista_instituicoes[tipo_institution]} #{unidade}",
-#     cnpj: Faker::Number.number(digits: 14),
-#     tipo: "#{lista_instituicoes[tipo_institution]}"
-#   })
-# end
+50.times do
+  unidade += 1
+  tipo_institution = Random.rand(3) + 1
 
-# meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
+  Institution.create({
+    nome: "#{lista_instituicoes[tipo_institution]} #{unidade}",
+    cnpj: Faker::Number.number(digits: 14),
+    tipo: "#{lista_instituicoes[tipo_institution]}"
+  })
+end
 
-# 25.times  do
-#   pag = Random.rand(2) + 1
+# Cria estudantes
 
-# 	Student.create({
-# 		nome: Faker::Name.male_first_name,
-#     cpf: Faker::Number.number(digits: 11),
-#     data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
-#     phone: Faker::Number.number(digits: 9),
-#     genero: "M",
-#     meio_pagamento: "#{meios_pagamento[pag]}"
-#   })
+meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
 
-#   Student.create({
-# 	  nome: Faker::Name.female_first_name,
-#     cpf: Faker::Number.number(digits: 11),
-#     data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
-#     phone: Faker::Number.number(digits: 9),
-#     genero: "F",
-#     meio_pagamento: "#{meios_pagamento[pag]}"
-#   })
-# end
+25.times  do
+  pagamento = Random.rand(2) + 1
 
-curso_id = 1
-instituicao = 175
-aluno = 105
+	Student.create({
+		nome: Faker::Name.male_first_name,
+    cpf: Faker::Number.number(digits: 11),
+    data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
+    phone: Faker::Number.number(digits: 9),
+    genero: "M",
+    meio_pagamento: "#{meios_pagamento[pagamento]}"
+  })
 
-30.times do
+  Student.create({
+	  nome: Faker::Name.female_first_name,
+    cpf: Faker::Number.number(digits: 11),
+    data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
+    phone: Faker::Number.number(digits: 9),
+    genero: "F",
+    meio_pagamento: "#{meios_pagamento[pagamento]}"
+  })
+end
+
+# Cria matrículas
+
+indice = 0
+
+50.times do
+  indice += 1
+
   Enrollment.create({
     valor_total: Faker::Number.decimal(l_digits: 3, r_digits: 2),
     quant_faturas: Faker::Number.number(digits: 2),
     dia_vencimento: Faker::Number.between(from: 1, to: 31),
-    curso: "Curso #{curso_id}",      
-    institution_id: instituicao,
-    student_id: aluno
+    curso: "Curso #{indice}",      
+    institution_id: "#{indice}",
+    student_id: "#{indice}"
   })
 
-  curso_id += 1
-  instituicao += 1
-  aluno += 1
 end
