@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :institutions
       resources :students 
       resources :enrollments
+      resources :bills
     end
   end
 end

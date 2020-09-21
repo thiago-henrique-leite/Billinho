@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_175528) do
+ActiveRecord::Schema.define(version: 2020_09_21_192017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.decimal "valor_fatura"
+    t.date "data_vencimento"
+    t.bigint "enrollment_id"
+    t.text "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["enrollment_id"], name: "index_bills_on_enrollment_id"
+  end
 
   create_table "enrollments", force: :cascade do |t|
     t.decimal "valor_total"
@@ -24,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_09_18_175528) do
     t.bigint "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["institution_id"], name: "index_enrollments_on_institution_id_id"
-    t.index ["student_id"], name: "index_enrollments_on_student_id_id"
+    t.index ["institution_id"], name: "index_enrollments_on_institution_id"
+    t.index ["student_id"], name: "index_enrollments_on_student_id"
   end
 
   create_table "institutions", force: :cascade do |t|

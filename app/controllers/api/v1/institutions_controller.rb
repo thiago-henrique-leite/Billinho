@@ -8,7 +8,7 @@ module Api
 				render json: {status: 'SUCCESSO', message:'Instituições de Ensino Carregadas.', data:institutions},status: :ok
       end
       
-      # Lista uma instituição específica pelo ID
+      # Lista uma instituição específica pelo seu ID
 			def show
         institution = Institution.find(params[:id])
 				render json: {status: 'SUCCESSO', message:'Instituição de Ensino Carregada.', data:institution},status: :ok

@@ -8,7 +8,7 @@ module Api
 				render json: {status: 'SUCCESSO', message:'Lista de estudantes carregada.', data:students},status: :ok
       end
       
-      # Lista estudante específico pelo ID
+      # Lista estudante específico pelo seu ID
 			def show
         student = Student.find(params[:id])
 				render json: {status: 'SUCCESSO', message:'Dados do estudante carregados.', data:student},status: :ok
