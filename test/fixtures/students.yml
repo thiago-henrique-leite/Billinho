@@ -4,7 +4,7 @@ one:
   nome: MyText
   cpf: MyText
   data_nasc: 2020-09-17
-  phone: 1
+  telefone: 1
   genero: MyText
   meio_pagamento: MyText
 
@@ -12,6 +12,6 @@ two:
   nome: MyText
   cpf: MyText
   data_nasc: 2020-09-17
-  phone: 1
+  telefone: 1
   genero: MyText
   meio_pagamento: MyText

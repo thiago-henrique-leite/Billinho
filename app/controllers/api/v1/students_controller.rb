@@ -27,7 +27,7 @@ module Api
 			# Verifica se os parâmetros foram aceitos
 			private
 			def student_params
-				params.permit(:nome, :cpf, :data_nasc, :phone, :genero, :meio_pagamento)
+				params.permit(:nome, :cpf, :data_nasc, :telefone, :genero, :meio_pagamento)
       end
 		end
 	end

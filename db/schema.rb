@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_175528) do
     t.text "nome"
     t.text "cpf"
     t.date "data_nasc"
-    t.integer "phone"
+    t.integer "telefone"
     t.text "genero"
     t.text "meio_pagamento"
     t.datetime "created_at", precision: 6, null: false

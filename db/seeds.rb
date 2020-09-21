@@ -26,7 +26,7 @@ meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
 		nome: Faker::Name.male_first_name,
     cpf: Faker::Number.number(digits: 11),
     data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
-    phone: Faker::Number.number(digits: 9),
+    telefone: Faker::Number.number(digits: 9),
     genero: "M",
     meio_pagamento: "#{meios_pagamento[pagamento]}"
   })
@@ -35,15 +35,13 @@ meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
 	  nome: Faker::Name.female_first_name,
     cpf: Faker::Number.number(digits: 11),
     data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
-    phone: Faker::Number.number(digits: 9),
+    telefone: Faker::Number.number(digits: 9),
     genero: "F",
     meio_pagamento: "#{meios_pagamento[pagamento]}"
   })
 end
 
 # Cria matrículas
-
-indice = 0
 
 50.times do |indice|
   Enrollment.create({
