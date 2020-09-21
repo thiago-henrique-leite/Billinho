@@ -18,33 +18,33 @@ ActiveRecord::Schema.define(version: 2020_09_18_175528) do
   create_table "enrollments", force: :cascade do |t|
     t.decimal "valor_total"
     t.integer "quant_faturas"
-    t.integer "dia_vencimento", null: false
-    t.text "curso", null: false
+    t.integer "dia_vencimento"
+    t.text "curso"
     t.bigint "institution_id"
     t.bigint "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["institution_id"], name: "index_enrollments_on_institution_id"
-    t.index ["student_id"], name: "index_enrollments_on_student_id"
+    t.index ["institution_id"], name: "index_enrollments_on_institution_id_id"
+    t.index ["student_id"], name: "index_enrollments_on_student_id_id"
   end
 
   create_table "institutions", force: :cascade do |t|
-    t.text "nome", null: false
+    t.text "nome"
     t.text "cnpj"
-    t.text "tipo", null: false
+    t.text "tipo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cnpj"], name: "index_institutions_on_cnpj", unique: true
-    t.index ["nome"], name: "index_institutions_on_name", unique: true
+    t.index ["nome"], name: "index_institutions_on_nome", unique: true
   end
 
   create_table "students", force: :cascade do |t|
-    t.text "nome", null: false
-    t.text "cpf", null: false
+    t.text "nome"
+    t.text "cpf"
     t.date "data_nasc"
     t.integer "phone"
-    t.text "genero", null: false
-    t.text "meio_pagamento", null: false
+    t.text "genero"
+    t.text "meio_pagamento"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cpf"], name: "index_students_on_cpf", unique: true

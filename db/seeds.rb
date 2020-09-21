@@ -4,14 +4,12 @@
 # Cria instituições de ensino
 
 lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
-unidade = 0
 
-50.times do
-  unidade += 1
+50.times do |indice|
   tipo_institution = Random.rand(3) + 1
 
   Institution.create({
-    nome: "#{lista_instituicoes[tipo_institution]} #{unidade}",
+    nome: "#{lista_instituicoes[tipo_institution]} #{indice}",
     cnpj: Faker::Number.number(digits: 14),
     tipo: "#{lista_instituicoes[tipo_institution]}"
   })
@@ -47,9 +45,7 @@ end
 
 indice = 0
 
-50.times do
-  indice += 1
-
+50.times do |indice|
   Enrollment.create({
     valor_total: Faker::Number.decimal(l_digits: 3, r_digits: 2),
     quant_faturas: Faker::Number.number(digits: 2),
