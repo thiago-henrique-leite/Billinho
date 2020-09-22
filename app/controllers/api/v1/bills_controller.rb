@@ -14,9 +14,9 @@ module Api
       end
 
       # Verifica se os parâmetros foram aceitos
-			private
-			def institution_params
-				params.permit(:enrollment_id, :student_id, :id)
+      private
+      def institution_params
+        params.permit(:enrollment_id, :student_id, :id)
       end
     end
   end

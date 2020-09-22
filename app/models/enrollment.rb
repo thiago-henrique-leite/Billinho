@@ -10,7 +10,6 @@ class Enrollment < ApplicationRecord
 	validates :quant_faturas, numericality: { greater_than: 0, message: "Quantidade de faturas inválida ou não informada."} 
 	validates :dia_vencimento, numericality: { greater_than: 0, less_than: 32, message: "Dia inválido ou não informado." }
   validates :curso, presence: { message: "Curso não informado."}
-  #validates :data_nasc
 
   after_create :cria_faturas # Após a criação da matrícula, chama o método de criação das faturas 
 
@@ -43,11 +42,11 @@ class Enrollment < ApplicationRecord
       end
     end
 
-    # Array que recebe as datas das faturas
-    @datas_faturas = []
+    # Calcula o valor de cada fatura
+    @valor = self.valor_total / self.quant_faturas
+    @valor = @valor.round(2)
 
-    # Preenche o array com as datas
-    self.quant_faturas.times do 
+    self.quant_faturas.times do |index|
       @sinal = 0
 
       # Verifica se o ano já acabou
@@ -71,8 +70,13 @@ class Enrollment < ApplicationRecord
       @dia = ("%.2d" % @dia)
       @mes = ("%.2d" % @mes)
 
-      # Coloca a data no array
-      @datas_faturas << "#{@ano}-#{@mes}-#{@dia}"
+      # Cria a fatura
+      Bill.create ({
+        valor_fatura: "#{@valor}",
+        data_vencimento: "#{@ano}-#{@mes}-#{@dia}",
+        enrollment_id: self.id,
+        status: "Aberta"
+      })
       
       @dia = @dia.to_i
       @mes = @mes.to_i
@@ -83,19 +87,7 @@ class Enrollment < ApplicationRecord
       else
         @dia = self.dia_vencimento # Retorna o dia do vencimento como sendo o dia de cobrança
       end
-    end
-
-    # Após ter todas as datas de vencimento, cria as faturas
-    self.quant_faturas.times do |index|
-      @valor = self.valor_total / self.quant_faturas
-
-      Bill.create ({
-        valor_fatura: "#{@valor}",
-        data_vencimento: "#{@datas_faturas[index]}",
-        enrollment_id: self.id,
-        status: "Aberta"
-      })
-    end
+    end    
   end
 end
 

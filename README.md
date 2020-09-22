@@ -12,7 +12,8 @@
 	-> Listagem de faturas (Todas ou individualmente pelo ID da fatura)
 	-> Criação de faturas (Feita automaticamente ao criar uma matrícula)
 
-	-> Preenchimento automático de algumas instituições, estudantes, matrículas, e consequentemente, faturas no banco de dados 
+	-> Preenchimento automático de algumas instituições, estudantes, matrículas, e 
+	consequentemente, faturas no banco de dados 
 
 ### Validações já implementadas
 #####	Instituições
@@ -25,8 +26,9 @@
 	-> CPF não vazio, único e apenas com caracteres numéricos.
 	-> Gênero apenas 'F' ou 'M'.
 	-> Meio de pagamanto apenas 'Cartão' ou 'Boleto'.
-	-> Data de nascimento não obrigatória.
+	-> Data de nascimento não obrigatória e só guarda no banco se estiver no formato YYYY-MM-DD.
 	-> Telefone não obrigatório.
+	-> Validar o formato das datas na hora de efetuar uma matrícula.
 
 #####	Matrículas
 	-> Valor total do curso não vazio e maior do que zero.
@@ -45,12 +47,14 @@
 #####   Acrescentadas
 	-> Tamanho do CNPJ: 14 caracteres (obrigatoriamente)
 	-> Tamanho do CPF: 11 caracteres (obrigatoriamente)
-	-> Em relação as faturas, se o mês vigente não possuir o dia de vencimento especificado pelo aluno, a data de vencimento da fatura passa para o dia 1 do mês seguinte.
+	-> Em relação as faturas, se o mês vigente não possuir o dia de vencimento especificado 
+	pelo aluno, a data de vencimento da fatura passa para o dia 1 do mês seguinte.
 
-	(Exemplo) O dia de vencimento das faturas é 31, como setembro tem apenas 30 dias, a fatura vence dia 1 de outubro, a próxima, referente ao mês de outubro, segue normalmente, retornando o vencimento para o dia 31.
+	(Exemplo) O dia de vencimento das faturas é 31, como setembro tem apenas 30 dias, a fatura 
+	vence dia 1 de outubro, a próxima, referente ao mês de outubro, segue normalmente, retornando 
+	o vencimento para o dia 31.
 
 #####	O que falta:
-	-> Validar o formato das datas na hora de efetuar uma matrícula.
 	-> Listar as faturas pelo id do aluno
 	-> Listar as faturas pelo id do aluno e id da fatura
 

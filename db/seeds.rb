@@ -1,43 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# Povoando o Banco de Dados
 
 # Cria instituições de ensino
 
 lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
 
 50.times do |indice|
-  tipo_institution = Random.rand(3) + 1
+  sorteio = Random.rand(3) + 1
 
   Institution.create({
-    nome: "#{lista_instituicoes[tipo_institution]} #{indice}",
+    nome: "#{lista_instituicoes[sorteio]} #{indice+1}",
     cnpj: Faker::Number.number(digits: 14),
-    tipo: "#{lista_instituicoes[tipo_institution]}"
+    tipo: "#{lista_instituicoes[sorteio]}"
   })
 end
 
 # Cria estudantes
 
 meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
+generos = {1 => 'M', 2 => 'F'}
 
-25.times  do
-  pagamento = Random.rand(2) + 1
+50.times  do |indice|
+  sorteio = Random.rand(2) + 1
 
 	Student.create({
-		nome: Faker::Name.male_first_name,
+		nome: "Estudante #{indice+1}",
     cpf: Faker::Number.number(digits: 11),
-    data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
+    data_nasc: Faker::Date.between(from: '1995-01-01', to: '2002-01-01'),
     telefone: Faker::Number.number(digits: 9),
-    genero: "M",
-    meio_pagamento: "#{meios_pagamento[pagamento]}"
-  })
-
-  Student.create({
-	  nome: Faker::Name.female_first_name,
-    cpf: Faker::Number.number(digits: 11),
-    data_nasc: Faker::Date.between(from: '1970-01-01', to: '2002-01-01'),
-    telefone: Faker::Number.number(digits: 9),
-    genero: "F",
-    meio_pagamento: "#{meios_pagamento[pagamento]}"
+    genero: "#{generos[sorteio]}",
+    meio_pagamento: "#{meios_pagamento[sorteio]}"
   })
 end
 
@@ -46,11 +37,10 @@ end
 50.times do |indice|
   Enrollment.create({
     valor_total: Faker::Number.decimal(l_digits: 3, r_digits: 2),
-    quant_faturas: Faker::Number.number(digits: 2),
+    quant_faturas: Faker::Number.number(digits: 1),
     dia_vencimento: Faker::Number.between(from: 1, to: 31),
     curso: "Curso #{indice}",      
-    institution_id: "#{indice}",
-    student_id: "#{indice}"
+    institution_id: "#{indice+1}",
+    student_id: "#{indice+1}"
   })
-
 end
