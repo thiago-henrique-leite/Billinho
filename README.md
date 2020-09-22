@@ -3,14 +3,16 @@
 (README temporário - projeto em progresso)
 
 ### Ações da API até aqui
-	-> Listagem de instituições (Todas ou individualmente pelo ID)
+	-> Listagem de instituições (Todas ou individualmente pelo ID da instituição)
 	-> Criação de instituições 
-	-> Listagem de estudantes (Todos ou individualmente pelo ID)
+	-> Listagem de estudantes (Todos ou individualmente pelo ID do estudante)
 	-> Criação de estudantes
-	-> Listagem de matrículas (Todas ou individualmente pelo ID)
+	-> Listagem de matrículas (Todas ou individualmente pelo ID da matrícula)
 	-> Criação de matrículas
+	-> Listagem de faturas (Todas ou individualmente pelo ID da fatura)
+	-> Criação de faturas (Feita automaticamente ao criar uma matrícula)
 
-	-> Preenchimento automático de algumas instituições, estudantes e matrículas no banco de dados 
+	-> Preenchimento automático de algumas instituições, estudantes, matrículas, e consequentemente, faturas no banco de dados 
 
 ### Validações já implementadas
 #####	Instituições
@@ -34,7 +36,21 @@
 	-> ID da instituição não vazio.
 	-> ID do estudante não vazio.
 
+#####	Faturas
+	-> Valor da fatura não vazio.
+	-> Data de vencimento das faturas não vazio.
+	-> ID da matrícula não vazio.
+	-> Status da fatura apenas 'Aberta', 'Atrasada' ou 'Paga', sendo default 'Aberta'.
+
 #####   Acrescentadas
-	->Tamanho do CNPJ: 14 caracteres (obrigatoriamente)
-	->Tamanho do CPF: 11 caracteres (obrigatoriamente)
+	-> Tamanho do CNPJ: 14 caracteres (obrigatoriamente)
+	-> Tamanho do CPF: 11 caracteres (obrigatoriamente)
+	-> Em relação as faturas, se o mês vigente não possuir o dia de vencimento especificado pelo aluno, a data de vencimento da fatura passa para o dia 1 do mês seguinte.
+
+	(Exemplo) O dia de vencimento das faturas é 31, como setembro tem apenas 30 dias, a fatura vence dia 1 de outubro, a próxima, referente ao mês de outubro, segue normalmente, retornando o vencimento para o dia 31.
+
+#####	O que falta:
+	-> Validar o formato das datas na hora de efetuar uma matrícula.
+	-> Listar as faturas pelo id do aluno
+	-> Listar as faturas pelo id do aluno e id da fatura
 

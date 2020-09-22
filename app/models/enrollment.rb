@@ -10,14 +10,93 @@ class Enrollment < ApplicationRecord
 	validates :quant_faturas, numericality: { greater_than: 0, message: "Quantidade de faturas inválida ou não informada."} 
 	validates :dia_vencimento, numericality: { greater_than: 0, less_than: 32, message: "Dia inválido ou não informado." }
   validates :curso, presence: { message: "Curso não informado."}
-  #validates :data_nasc, date: true
+  #validates :data_nasc
+
+  after_create :cria_faturas # Após a criação da matrícula, chama o método de criação das faturas 
+
+  # Método que cria as faturas
+
+  private
+  def cria_faturas
+    # Recebe a data atual, dia, mês e ano
+    @t = Time.now
+
+    @dia = @t.strftime("%d").to_i
+    @mes = @t.strftime("%m").to_i
+    @ano = @t.strftime("%Y").to_i
+
+    # Verifica se a cobrança começará no mês vigente ou no próximo
+    if self.dia_vencimento <= @dia
+      @mes += 1
+    end
+
+    @dia = self.dia_vencimento
+
+    # Método que retorna a quantidade de dias do mês
+    def max(mes)
+      if mes == 2
+        return 28
+      elsif mes == 4 || mes == 6 || mes == 9 || mes == 11
+        return 30
+      else
+        return 31
+      end
+    end
+
+    # Array que recebe as datas das faturas
+    @datas_faturas = []
+
+    # Preenche o array com as datas
+    self.quant_faturas.times do 
+      @sinal = 0
+
+      # Verifica se o ano já acabou
+      if @mes > 12
+        @ano += 1
+        @mes = 1
+      end
+
+      # Se o dia de vencimento é maior que 28, é necessário um tratamento diferente para cada mês
+      # Em meses que não possuírem o dia de vencimento, a fatura passa para o dia 1 do próximo mês
+      if @dia > 28
+        @max_dias_mes = max(@mes)
+        if @dia > @max_dias_mes
+          @dia = 1
+          @mes += 1
+          @sinal = 1  # Esta variável sinaliza que o mês já foi incrementado, portanto não precisará ser incrementado posteriormente
+        end
+      end
+
+      # Coloca os zeros a esquerda de números menores que 10
+      @dia = ("%.2d" % @dia)
+      @mes = ("%.2d" % @mes)
+
+      # Coloca a data no array
+      @datas_faturas << "#{@ano}-#{@mes}-#{@dia}"
+      
+      @dia = @dia.to_i
+      @mes = @mes.to_i
+
+      # Atualiza o mês, caso já não tenha sido atualizado
+      if @sinal == 0
+        @mes += 1
+      else
+        @dia = self.dia_vencimento # Retorna o dia do vencimento como sendo o dia de cobrança
+      end
+    end
+
+    # Após ter todas as datas de vencimento, cria as faturas
+    self.quant_faturas.times do |index|
+      @valor = self.valor_total / self.quant_faturas
+
+      Bill.create ({
+        valor_fatura: "#{@valor}",
+        data_vencimento: "#{@datas_faturas[index]}",
+        enrollment_id: self.id,
+        status: "Aberta"
+      })
+    end
+  end
 end
 
-#   before_action
-#   Bill.create({
-#     valor_fatura: :valor_total / :quant_faturas,
-#     data_vencimento: ,
-#     enrollment_id: ,
-#     status: 
-#     }
 
