@@ -34,19 +34,24 @@ module Api
 			
 			# Atualiza os dados de uma matrícula
 			# PUT api/v1/enrollments/:id
-			# def update
-			# 	enrollment = Enrollment.find(params[:id])
-			# 	if enrollment.update_attributes(enrollment_params)
-			# 		render json: {status: 'SUCCESSO', message:'Matrícula Atualizada.', data:enrollment},status: :ok
-			# 	else
-			# 		render json: {status: 'ERRO', message:'Matrícula não atualizada.', data:enrollment.errors},status: :unprocessable_entity
-			# 	end
-			# end
+			def update
+				enrollment = Enrollment.find(params[:id])
+
+				if enrollment.update_attributes(update_params)
+					render json: {status: 'SUCCESSO', message:'Matrícula Atualizada.', data:enrollment},status: :ok
+				else
+					render json: {status: 'ERRO', message:'Matrícula não atualizada.', data:enrollment.errors},status: :unprocessable_entity
+				end
+			end
       
 			# Verifica se os parâmetros foram aceitos
 			private
 			def enrollment_params
 				params.permit(:valor_total, :quant_faturas, :dia_vencimento, :curso, :institution_id, :student_id)
+			end
+
+			def update_params
+				params.permit(:curso, :institution_id, :student_id)
 			end
 		end
 	end

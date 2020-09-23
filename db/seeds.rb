@@ -4,7 +4,7 @@
 
 lista_instituicoes = {1 => 'Universidade', 2 => 'Escola', 3 => 'Creche'}
 
-50.times do |indice|
+500.times do |indice|
   sorteio = Random.rand(3) + 1
 
   Institution.create({
@@ -19,7 +19,7 @@ end
 meios_pagamento = {1 => 'Boleto', 2 => 'Cartão'}
 generos = {1 => 'M', 2 => 'F'}
 
-50.times  do |indice|
+500.times  do |indice|
   sorteio = Random.rand(2) + 1
 
 	Student.create({
@@ -34,13 +34,13 @@ end
 
 # Cria matrículas
 
-50.times do |indice|
+500.times do |indice|
   Enrollment.create({
     valor_total: Faker::Number.decimal(l_digits: 3, r_digits: 2),
-    quant_faturas: Faker::Number.number(digits: 1),
+    quant_faturas: Faker::Number.between(from: 1, to: 5),
     dia_vencimento: Faker::Number.between(from: 1, to: 31),
     curso: "Curso #{indice}",      
-    institution_id: "#{indice+1}",
-    student_id: "#{indice+1}"
+    institution_id: "#{indice+158}",
+    student_id: "#{indice+155}"
   })
 end
