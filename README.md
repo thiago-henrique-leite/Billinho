@@ -1,4 +1,4 @@
-<h1 align="center"> *BILLINHO* </h1>
+# *BILLINHO*
 
 (README temporário - projeto em progresso)
 
