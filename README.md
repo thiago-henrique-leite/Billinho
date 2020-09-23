@@ -1,6 +1,11 @@
-# *BILLINHO*
+# *BILLINHO* ![Badge](file:///home/thiago/Downloads/349d1c8e-f724-4154-b4a1-10ced99e06e5-1573224363163.png)
 
 (README temporário - projeto em progresso)
+
+##### Descrição 
+<p align="justify"> O Billinho é um projeto da Quero Educação, empresa líder no 
+ramo de marketing educacional. Ele tem por objetivo simular uma API de gerenciamento
+das mensalidades pagas pelos alunos á instituição de ensino que ele estuda. </p>
 
 ### Ações da API até aqui
 	-> Listagem de instituições (Todas ou individualmente pelo ID da instituição).
