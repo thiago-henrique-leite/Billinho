@@ -3,7 +3,7 @@ module Api
     class InstitutionsController < ApplicationController  
 
 			# Lista todas as instituições
-			# GET api/v1/institutions
+			# GET api/v1/institutions 
 			def index
 				institutions = Institution.order('id ASC');
 				render json: {status: 'SUCCESSO', message:'Instituições de Ensino Carregadas.', data:institutions},status: :ok

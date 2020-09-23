@@ -13,8 +13,10 @@ class Student < ApplicationRecord
   # Valida a data de nascimento do aluno
   private
   def data_valida?
-    if data_nasc.present?
-      errors.add(:data_nasc, "Formato incorreto.") unless data_nasc.is_a?(Date)
+    if self.data_nasc
+      unless data_nasc.is_a?(Date)
+        errors.add(:data_nasc, "Formato incorreto.")
+      end
     end
   end
 end
