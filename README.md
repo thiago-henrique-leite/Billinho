@@ -11,6 +11,8 @@
 	-> Criação de matrículas
 	-> Listagem de faturas (Todas ou individualmente pelo ID da fatura)
 	-> Criação de faturas (Feita automaticamente ao criar uma matrícula)
+	-> Atualização dos dados da instituição
+	-> Atualização dos dados do estudante
 
 	-> Preenchimento automático de algumas instituições, estudantes, matrículas, e 
 	consequentemente, faturas no banco de dados 
@@ -55,6 +57,6 @@
 	o vencimento para o dia 31.
 
 #####	O que falta:
-	-> Listar as faturas pelo id do aluno
-	-> Listar as faturas pelo id do aluno e id da fatura
+	-> Listar as faturas pelo id da matrícula
+	-> Listar as faturas pelo id da matrícula e id da fatura
 
