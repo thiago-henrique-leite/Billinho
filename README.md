@@ -12,7 +12,7 @@
   <img align="left" alt="Thiago's Facebook" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.7.0/icons/facebook.svg" />
 </a>
 
-<a href="https://www.queroedu.com">
+<a href="https://sobre.quero.com/">
   <img align="left" alt="Thiago's Facebook" width="26px" src="https://sobre.quero.com/wp-content/themes/quero-b2b-institutional/dist/img/logos/quero/quero_institucional_azul_mobo.svg" />
 </a>
 
