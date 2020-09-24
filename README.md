@@ -23,12 +23,10 @@
   Ele tem por objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos 
   á instituição de ensino que ele estuda.
 
-</br>
 
 ### 2. Status do Projeto
   :construction: Em construção... :construction:
 
-</br>
 
 ### 3. Entidades da API
   Essas são as entidades básicas do projeto.
