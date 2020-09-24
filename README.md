@@ -1,120 +1,182 @@
-# ***BILLINHO*** <img src="https://sobre.quero.com/wp-content/themes/quero-b2b-institutional/dist/img/logos/quero/quero_institucional_azul_mobo.svg" height = "36" width = "36"> <img src="https://img.itch.zone/aW1nLzMxNTMyMTEucG5n/original/GsOFLx.png" height = "50" width = "50">
+# ***BILLINHO*** <img src="https://img.itch.zone/aW1nLzMxNTMyMTEucG5n/original/GsOFLx.png" height = "50" width = "50">
 
-### Descrição :pencil:
-> O Billinho é um projeto da Quero Educação, empresa líder no ramo de marketing educacional. 
+</br>
+
+<a href="https://www.linkedin.com/in/thiagoleitesilva/">
+  <img align="left" alt="Thiago's LinkdeIN" width="22px" src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Linkedin.svg" />
+</a>
+<a href="https://www.instagram.com/thiagoh.leite/">
+  <img align="left" alt="Thiago's Instagram" width="22px" src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Instagram.svg" />
+</a>
+<a href="https://www.facebook.com/thiagohenrique.leitesilva">
+  <img align="left" alt="Thiago's Facebook" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.7.0/icons/facebook.svg" />
+</a>
+
+<a href="https://www.queroedu.com">
+  <img align="left" alt="Thiago's Facebook" width="26px" src="https://sobre.quero.com/wp-content/themes/quero-b2b-institutional/dist/img/logos/quero/quero_institucional_azul_mobo.svg" />
+</a>
+
+</br>
+
+### 1. Descrição :pencil:
+  O Billinho é um projeto da Quero Educação, empresa líder no ramo de marketing educacional. 
   Ele tem por objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos 
   á instituição de ensino que ele estuda.
 
-### Status do Projeto
-> :construction: Em construção... :construction:
+</br>
 
-### Entidades da API
-> Essas são as entidades básicas do projeto.
+### 2. Status do Projeto
+  :construction: Em construção... :construction:
 
-> ***Instituição de Ensino***
+</br>
 
->   Campo  |   Tipo   |           Restrições
->----------|----------|----------------------------------
->   Nome   |   Texto  | Não vazio e único
->   CNPJ   |   Texto  | 14 caracteres numéricos e único
->   Tipo   |   Texto  | Universidade, Escola ou Creche
+### 3. Entidades da API
+  Essas são as entidades básicas do projeto.
+ 
+  ***3.1 Instituição de Ensino***
 
-> ***Aluno***
+  Campo  |   Tipo   |           Restrições
+  -------|----------|----------------------------------
+  Nome   |   Texto  | Não vazio e único
+  CNPJ   |   Texto  | 14 caracteres numéricos e único
+  Tipo   |   Texto  | Universidade, Escola ou Creche
+
+  ***3.2 Aluno***
 
 
->Campo               |   Tipo   |                Restrições
->--------------------|----------|---------------------------------------------
->Nome                |   Texto  | Não vazio e único
->CPF                 |   Texto  | 11 caracteres numéricos, único e não vazio 
->Data de Nascimento  |   Data   | Formato yyyy-mm-dd (Facultativo)
->Telefone            |  Inteiro | 
->Gênero              |   Texto  | M ou F
->Meio de pagamento   |   Texto  | Boleto ou Cartão
+  Campo               |   Tipo   |                Restrições
+  --------------------|----------|---------------------------------------------
+  Nome                |   Texto  | Não vazio e único
+  CPF                 |   Texto  | 11 caracteres numéricos, único e não vazio 
+  Data de Nascimento  |   Data   | Formato yyyy-mm-dd (Facultativo)
+  Telefone            |  Inteiro | 
+  Gênero              |   Texto  | M ou F
+  Meio de pagamento   |   Texto  | Boleto ou Cartão
 
-> ***Matrícula***
+  ***3.3 Matrícula***
 
->Campo                        |   Tipo              |                 Restrições
->-----------------------------|---------------------|-----------------------------------------------
->Valor total do curso         |  Decimal            | Não vazio, > 0
->Quantidade de faturas        |  Inteiro            | Não vazio, >= 1
->Dia de vencimento das faturas|  Inteiro            | Não vazio, >= 1 e <= 31
->Nome do curso                |  Texto              | Não vazio
->Id da instituição            |  Chave estrangeira  | Não vazio
->Id do aluno                  |  Chave estrangeira  | Não vazio
+  Campo                        |   Tipo              |                 Restrições
+  -----------------------------|---------------------|-----------------------------------------------
+  Valor total do curso         |  Decimal            | Não vazio, > 0
+  Quantidade de faturas        |  Inteiro            | Não vazio, >= 1
+  Dia de vencimento das faturas|  Inteiro            | Não vazio, >= 1 e <= 31
+  Nome do curso                |  Texto              | Não vazio
+  Id da instituição            |  Chave estrangeira  | Não vazio
+  Id do aluno                  |  Chave estrangeira  | Não vazio
 
-> ***Faturas***
+   ***3.4 Faturas***
 
->Campo                        |   Tipo              |                 Restrições
->-----------------------------|---------------------|-----------------------------------------------
->Valor da fatura em reais     |  Decimal            | Não vazio
->Data de vencimento           |  Data               | Não vazio
->Id da matrícula              |  Chave estrangeira  | Não vazio
->Status                       |  Texto              | Aberta, Atrasada ou Paga sendo default Aberta
+  Campo                        |   Tipo              |                 Restrições
+  -----------------------------|---------------------|-----------------------------------------------
+  Valor da fatura em reais     |  Decimal            | Não vazio
+  Data de vencimento           |  Data               | Não vazio
+  Id da matrícula              |  Chave estrangeira  | Não vazio
+  Status                       |  Texto              | Aberta, Atrasada ou Paga sendo default Aberta
 
-### Ações da API
+</br>
 
-###### Instituições
->  -	[x] Listagem.
->  -	[x] Criação.
->  -	[x] Atualização.
->  -  [ ] Exclusão. 
+### 4. Ações da API
 
-###### Estudantes
->  -	[x] Listagem.
->  -	[x] Criação.
->  -	[x] Atualização.
->  -  [ ] Exclusão. 
+  ***4.1 Instituições***
+  -	[x] Listagem.
+  -	[x] Criação.
+  -	[x] Atualização.
+  - [ ] Exclusão. 
 
-###### Matrículas
->  -	[x] Listagem.
->  -	[x] Criação.
->  -  [ ] Atualização.
->  -  [ ] Exclusão. 
+  ***4.2 Estudantes***
+  -	[x] Listagem.
+  -	[x] Criação.
+  -	[x] Atualização.
+  - [ ] Exclusão. 
 
-###### Faturas
->  -	[x] Listagem.
->  -	[x] Criação.
->  -	[x] Atualização.
->  -  [ ] Exclusão. 
+  ***4.3 Matrículas***
+  -	[x] Listagem.
+  -	[x] Criação.
+  - [ ] Atualização.
+  - [ ] Exclusão. 
 
-### Pré Requisitos da Aplicação :warning:
-> - Ruby 2.7.1
-> - Rails 6.0.3.3
-> - PostgreSQL 12
+  ***4.4 Faturas***
+  -	[x] Listagem.
+  -	[x] Criação.
+  -	[x] Atualização.
+  - [ ] Exclusão.
 
-### Como rodar a aplicação :rocket:
-##### Clone este repositório
-> $ git clone git@github.com:thiago-henrique-leite/Billinho.git
+</br> 
 
-##### Acesse a pasta do projeto no terminal/cmd
-> $ cd etc/Billinho
+### 5. O que foi usado para fazer a aplicação
 
-##### Baixe as dependências do projeto
-> $ bundle install
 
-##### Crie o banco de dados 
-> $ rails db:create
-> $ rails db:migrate
+<table>
+  <tbody>
+    <tr valign="top">
+      <td width="21%" align="center">
+        <span><b>Ruby 2.7.1</b></span><br><br><br>
+        <img height="58px" src="https://www.vectorlogo.zone/logos/ruby-lang/ruby-lang-ar21.svg">
+      </td>
+      <td width="21%" align="center">
+        <span><b>PostgreSQL 12</b></span><br><br><br>
+        <img height="58px" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg">
+      </td>
+      <td width="21%" align="center">
+        <span><b>Git</b></span><br><br><br>
+        <img height="58px"  src="https://cdn.svgporn.com/logos/git-icon.svg">
+      </td>
+      <td width="21%" align="center">
+        <span><b>VSCode</b></span><br><br><br>
+        <img height="58px" src="https://cdn.svgporn.com/logos/visual-studio-code.svg">
+      </td>
+      <td width="21%" align="center">
+        <span><b>Rails 6.0.3.3</b></span><br><br><br>
+        <img height="60px" src="https://pbs.twimg.com/profile_images/691206086955790336/CDMbA57p.png">
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-##### Preencha o banco com os valores padrões
-> $ rails db:seed
+</br>
 
-##### Rode a aplicação
-> $ rails s
+### 6. Como rodar a aplicação :rocket:
+>>  ***6.1 Clone este repositório*** 
+>>>      - $ git clone git@github.com:thiago-henrique-leite/Billinho.git
 
-##### O servidor inciará na porta:3000 - acesse <http://localhost:3000> 
+>>  ***6.2 Acesse a pasta do projeto no terminal***
+>>>      - $ cd etc/Billinho
 
-##### Utilize o Postman para uma melhor visualização da aplicação
+>>  ***6.3 Baixe as dependências do projeto***
+>>>      - $ bundle install
 
-### Informações adicionais
-> Todos as rotas da API recebam e respondam com dados no formato JSON
+>>  ***6.7 Crie o banco de dados***
+>>>      - $ rails db:create
+>>>      - $ rails db:migrate
 
-### Projeto em Execução
+>>  ***6.8 Preencha o banco com os valores padrões***
+>>>      - $ rails db:seed
 
-#### Instituições
+>>  ***6.9 Rode a aplicação***
+>>>      - $ rails s 
 
-##### Visualizando todas as instituições: GET api/v1/institutions
-> Retorno:
+>>  O servidor inciará na porta:3000 - acesse <http://localhost:3000> </br>
+
+>>  Utilize o Postman para uma melhor visualização da aplicação.
+
+</br>
+
+### 7. Informações adicionais
+  - Todos as rotas da API recebem e respondem com dados no formato JSON </br>
+
+  > JavaScript Object Notation, ou JSON, como é conhecido, é basicamente um formato leve de troca de informações/dados entre sistemas. </br>
+
+  > O JSON além de ser um formato leve para troca de dados é também muito simples de ler. 
+
+</br>
+
+### 8. Projeto em Execução
+
+#### 8.1 Instituições
+
+  ***8.1.1 Visualizando todas as instituições: GET api/v1/institutions***
+
+>   Retorno:
 
 ```json
 "status": "SUCCESSO",
@@ -140,10 +202,11 @@
 ```
 
 
- ##### Visualizando instituição específica: GET api/v1/institutions/1
- > Parâmetros: id da instituição 
+  ***8.1.2 Visualizando instituição específica: GET api/v1/institutions/1***
 
- > Retorno: 
+>   Parâmetros: id da instituição 
+
+>   Retorno: 
 
 ```json
 "status": "SUCCESSO",
@@ -159,8 +222,11 @@
         }
 ```
 
- ##### Criando instituição: POST api/v1/institutions
- > Requisição
+  ***8.1.3 Criando instituição: POST api/v1/institutions***
+
+>   Parâmetros: Nome e tipo
+
+>   Requisição
 
 ```json
 {
@@ -169,7 +235,7 @@
         "tipo": "Universidade"
 }
 ```
-> Retorno:
+>   Retorno:
 
 ```json
 {
@@ -186,19 +252,20 @@
 }
 ```
 
- ##### Atualizando instituição: PUT api/v1/institutions/3
- > Parâmetros: id da instituição
+  ***8.1.4 Atualizando instituição: PUT api/v1/institutions/3***
 
-> Na requisição colocar apenas o campo que quer atualizar.
+>   Parâmetros: id da instituição
 
-> Requisição:
+>   Na requisição colocar apenas o campo que quer atualizar.
+
+>   Requisição:
 
 ```json
 {
         "cnpj": "18899965478530"
 }
 ```
-> Retorno
+>   Retorno
 
 ```json
 {
@@ -214,10 +281,11 @@
     }
 }
 ```
+#### 8.2 Estudantes
 
- ##### Visualizando todos os estudantes: GET api/v1/students
+  ***8.2.1 Visualizando todos os estudantes: GET api/v1/students***
 
- > Retorno:
+>   Retorno:
 
 ```json
 {
@@ -248,10 +316,11 @@
          },
 ```
 
- ##### Visualizando estudante específica: GET api/v1/students/1
- > Parâmetros: id do estudante
+  ***8.2.2 Visualizando estudante específico: GET api/v1/students/1***
 
- > Retorno: 
+>   Parâmetros: id do estudante
+
+>   Retorno: 
 
 ```json
 {
@@ -270,8 +339,12 @@
     }
 }
 ```
-##### Criando estudante: POST api/v1/students
-> Requisição
+
+  ***8.2.3 Criando estudante: POST api/v1/students***
+
+>   Parâmetros: Nome, cpf, gênero e meio de pagamento das faturas 
+
+>   Requisição
 
 ```json
 {
@@ -284,7 +357,7 @@
 }
 ```
 
-> Retorno: 
+>  Retorno: 
 
 ```json
 {
@@ -304,12 +377,13 @@
 }
 ```
 
-##### Atualizando estudante: PUT api/v1/students/3
- > Parâmetros: id do estudante
+  ***8.2.4 Atualizando estudante: PUT api/v1/students/3***
 
-> Na requisição colocar apenas o campo que quer atualizar.
+>   Parâmetros: id do estudante
 
-> Requisição:
+>   Na requisição colocar apenas o campo que quer atualizar.
+
+>   Requisição:
 
 ```json
 {
@@ -318,7 +392,7 @@
 }
 ```
 
-> Resposta:
+>   Resposta:
 
 ```json
 {
@@ -337,3 +411,288 @@
     }
 }
 ```
+
+#### 8.3 Matrículas
+
+  ***8.3.1 Visualizando todas as matrículas: GET api/v1/enrollments***
+
+>   Resposta: 
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Todas as matrículas Carregadas.",
+    "data": [
+        {
+            "id": 1,
+            "valor_total": "759.45",
+            "quant_faturas": 30,
+            "dia_vencimento": 7,
+            "curso": "Curso 0",
+            "institution_id": 1,
+            "student_id": 2,
+            "created_at": "2020-09-23T17:36:46.033Z",
+            "updated_at": "2020-09-23T17:36:46.033Z"
+        },
+        {
+            "id": 2,
+            "valor_total": "433.57",
+            "quant_faturas": 60,
+            "dia_vencimento": 29,
+            "curso": "Curso 1",
+            "institution_id": 2,
+            "student_id": 1,
+            "created_at": "2020-09-23T17:36:46.064Z",
+            "updated_at": "2020-09-23T17:36:46.064Z"
+        },
+```
+
+  ***8.3.2 Visualizando matrícula específica: GET api/v1/enrollments/2***
+
+>   Parâmetros: id da matrícula
+
+>   Resposta:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Matrícula Carregada.",
+    "data": {
+        "id": 2,
+        "valor_total": "433.57",
+        "quant_faturas": 60,
+        "dia_vencimento": 29,
+        "curso": "Curso 1",
+        "institution_id": 2,
+        "student_id": 1,
+        "created_at": "2020-09-23T17:36:46.064Z",
+        "updated_at": "2020-09-23T17:36:46.064Z"
+    }
+}
+```
+
+  ***8.3.3 Visualizando todas as matrículas de uma instituição específica: GET api/v1/institutions/3/enrollments***
+
+>   Parâmetros: id da instituição
+
+>   Observação: É possível ainda passar o id de uma matrícula específica na instituição: GET api/v1/institutions/3/enrollments/15
+
+>   Resposta:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Matrículas na instituição carregadas.",
+    "data": [
+        {
+            "id": 4,
+            "valor_total": "874.99",
+            "quant_faturas": 24,
+            "dia_vencimento": 30,
+            "curso": "Curso 42",
+            "institution_id": 3,
+            "student_id": 79,
+            "created_at": "2020-09-23T17:36:46.064Z",
+            "updated_at": "2020-09-23T17:36:46.064Z"
+        },
+        {
+            "id": 15,
+            "valor_total": "1230.0",
+            "quant_faturas": 32,
+            "dia_vencimento": 5,
+            "curso": "Curso 68",
+            "institution_id": 3,
+            "student_id": 156,
+            "created_at": "2020-09-23T17:36:46.064Z",
+            "updated_at": "2020-09-23T17:36:46.064Z"
+        }
+    ]
+}
+```
+
+  ***8.3.4 Criando matrícula: POST api/v1/enrollments***
+
+>   Parâmetros: id da instituição, id do estudante, valor total do curso, quantidade de faturas,
+>   dia do vencimento da fatura e nome do curso.
+
+>   Requisição:
+
+```json
+{
+        "institution_id": 325,
+        "student_id": 200,
+        "valor_total": 256000,
+        "quant_faturas": 60,
+        "dia_vencimento": 15,
+        "curso": "Ciência da Computação"
+}
+```
+
+>   Resposta
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Matrícula Cadastrada.",
+    "data": {
+        "id": 615,
+        "valor_total": "256000.0",
+        "quant_faturas": 60,
+        "dia_vencimento": 15,
+        "curso": "Ciência da Computação",
+        "institution_id": 325,
+        "student_id": 200,
+        "created_at": "2020-09-24T12:23:01.428Z",
+        "updated_at": "2020-09-24T12:23:01.428Z"
+    }
+}
+```
+
+#### 8.4 Faturas
+
+  ***8.4.1 Visualizando todas as faturas: GET api/v1/bills***
+
+>   Resposta: 
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Todas as faturas carregadas.",
+    "data": [
+        {
+            "id": 1,
+            "valor_fatura": "654.54",
+            "data_vencimento": "2020-10-07",
+            "enrollment_id": 21,
+            "status": "Aberta",
+            "created_at": "2020-09-23T17:36:46.052Z",
+            "updated_at": "2020-09-23T17:36:46.052Z"
+        },
+        {
+            "id": 2,
+            "valor_fatura": "777.69",
+            "data_vencimento": "2020-11-07",
+            "enrollment_id": 21,
+            "status": "Paga",
+            "created_at": "2020-09-23T17:36:46.056Z",
+            "updated_at": "2020-09-23T17:36:46.056Z"
+        },
+```
+
+  ***8.4.2 Visualizando fatura específica: GET api/v1/bills/407***
+
+>   Resposta: 
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Fatura Carregada.",
+    "data": {
+        "id": 407,
+        "valor_fatura": "379.73",
+        "data_vencimento": "2020-10-07",
+        "enrollment_id": 115,
+        "status": "Aberta",
+        "created_at": "2020-09-23T17:36:46.052Z",
+        "updated_at": "2020-09-23T17:36:46.052Z"
+    }
+}
+```
+
+  ***8.4.3 Visualizando todas as faturas de uma matrícula específica: GET api/v1/enrollments/3/bills***
+
+>   Parâmetros: id da fatura
+
+>   Observação: É possível ainda passar o id de uma fatura específica da matrícula: GET api/v1/enrollmemts/3/bills/15
+
+>   Resposta: 
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Faturas da determinada matrícula carregada.",
+    "data": [
+        {
+            "id": 407,
+            "valor_fatura": "379.73",
+            "data_vencimento": "2020-10-07",
+            "enrollment_id": 115,
+            "status": "Aberta",
+            "created_at": "2020-09-23T17:36:46.052Z",
+            "updated_at": "2020-09-23T17:36:46.052Z"
+        },
+        {
+            "id": 408,
+            "valor_fatura": "379.73",
+            "data_vencimento": "2020-11-07",
+            "enrollment_id": 115,
+            "status": "Aberta",
+            "created_at": "2020-09-23T17:36:46.056Z",
+            "updated_at": "2020-09-23T17:36:46.056Z"
+        }
+    ]
+}
+```
+
+  ***8.4.4 Criando faturas***
+
+   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria  </br>
+   o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir  </br>
+   o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores      </br>
+   pertencentes à matrícula. Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual </br> 
+   ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual.           </br>
+
+   Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura  </br>
+   deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      </br>
+
+   Hoje sendo 01/10/2020
+
+   Com os seguintes dados da matrícula:
+
+  Valor total do curso | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
+  ---------------------|------------|-------------------|------------------|-------------
+  2000.00              |     5      |        30         |        1         |      1
+
+   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente)
+
+   Obs: Quando o mês não possui o número de dias da data de vencimento da fatura, ela passa a vencer no dia 01 do próximo mês.
+
+   Neste contexto deverão ser criadas 5 faturas, cada uma com o valor de R$ 400,00, com as seguintes datas de vencimento:
+
+   - 30/10/2020
+   - 30/11/2020
+   - 30/12/2020
+   - 30/01/2020
+   - 01/03/2020
+
+  ***8.4.5 Atualizando status da fatura: PUT api/v1/bills/420***
+
+>   Parâmetros: id da fatura e novo status da fatura
+
+>   Requisição:
+
+```json
+{       
+        "status": "Atrasada"
+}
+```
+
+>   Resposta:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Fatura Atualizada.",
+    "data": {
+        "id": 410,
+        "status": "Atrasada",
+        "enrollment_id": 116,
+        "valor_fatura": "108.39",
+        "data_vencimento": "2020-10-29",
+        "created_at": "2020-09-23T17:36:46.072Z",
+        "updated_at": "2020-09-24T12:43:23.244Z"
+    }
+}
+```
+
+
