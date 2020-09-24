@@ -70,6 +70,7 @@
   Data de vencimento           |  Data               | Não vazio
   Id da matrícula              |  Chave estrangeira  | Não vazio
   Status                       |  Texto              | Aberta, Atrasada ou Paga sendo default Aberta
+  Id do estudante              |  Chave estrangeira  | Não vazio
 
 </br>
 
@@ -79,25 +80,25 @@
   -	[x] Listagem.
   -	[x] Criação.
   -	[x] Atualização.
-  - [ ] Exclusão. 
+  - [x] Exclusão. 
 
   ***4.2 Estudantes***
   -	[x] Listagem.
   -	[x] Criação.
   -	[x] Atualização.
-  - [ ] Exclusão. 
+  - [x] Exclusão. 
 
   ***4.3 Matrículas***
   -	[x] Listagem.
   -	[x] Criação.
   - [ ] Atualização.
-  - [ ] Exclusão. 
+  - [x] Exclusão. 
 
   ***4.4 Faturas***
   -	[x] Listagem.
   -	[x] Criação.
   -	[x] Atualização.
-  - [ ] Exclusão.
+  - [x] Exclusão.
 
 </br> 
 
@@ -279,6 +280,29 @@
     }
 }
 ```
+
+  ***8.2.5 Deletando uma instituição: DELETE api/v1/institutions/10***
+
+>   Parâmetros: id da instituição
+>   Obs: A exclusão de uma instituição exclui também todas as matrículas e faturas vinculadas a ela.
+
+>   Retorno:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Instituição deletada",
+    "data": {
+        "id": 4,
+        "nome": "Creche 4",
+        "cnpj": "24450024209805",
+        "tipo": "Creche",
+        "created_at": "2020-09-24T18:25:53.714Z",
+        "updated_at": "2020-09-24T18:25:53.714Z"
+    }
+}
+```
+
 #### 8.2 Estudantes
 
   ***8.2.1 Visualizando todos os estudantes: GET api/v1/students***
@@ -406,6 +430,31 @@
         "meio_pagamento": "Boleto",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
+    }
+}
+```
+
+  ***8.2.5 Deletando um estudante: DELETE api/v1/students/10***
+
+>   Parâmetros: id do estudante
+>   Obs: A exclusão de um estudante exclui também todas as matrículas e faturas vinculadas a ele.
+
+>   Retorno:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Estudante deletado",
+    "data": {
+        "id": 10,
+        "nome": "Estudante 10",
+        "cpf": "55446907512",
+        "data_nasc": "1998-01-19",
+        "telefone": 599955516,
+        "genero": "F",
+        "meio_pagamento": "Cartão",
+        "created_at": "2020-09-24T18:25:55.870Z",
+        "updated_at": "2020-09-24T18:25:55.870Z"
     }
 }
 ```
@@ -546,6 +595,33 @@
 }
 ```
 
+ ***8.3.5 Deletando uma matrícula: DELETE api/v1/enrollments/10***
+
+>   Parâmetros: id da matrícula </br>
+>   Obs: A exclusão de uma matrícula exclui também todas as faturas vinculadas àquela matrícula.
+
+>   Retorno:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Matrícula Deletada.",
+    "data": {
+        "id": 10,
+        "valor_total": "714.85",
+        "quant_faturas": 4,
+        "dia_vencimento": 22,
+        "curso": "Curso 10",
+        "institution_id": 10,
+        "student_id": 10,
+        "created_at": "2020-09-24T18:25:58.308Z",
+        "updated_at": "2020-09-24T18:25:58.308Z"
+    }
+}
+```
+
+
+
 #### 8.4 Faturas
 
   ***8.4.1 Visualizando todas as faturas: GET api/v1/bills***
@@ -563,6 +639,7 @@
             "data_vencimento": "2020-10-07",
             "enrollment_id": 21,
             "status": "Aberta",
+            "student_id": 63,
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
@@ -572,6 +649,7 @@
             "data_vencimento": "2020-11-07",
             "enrollment_id": 21,
             "status": "Paga",
+            "student_id": 63,
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         },
@@ -591,6 +669,7 @@
         "data_vencimento": "2020-10-07",
         "enrollment_id": 115,
         "status": "Aberta",
+        "student_id": 42,
         "created_at": "2020-09-23T17:36:46.052Z",
         "updated_at": "2020-09-23T17:36:46.052Z"
     }
@@ -616,6 +695,7 @@
             "data_vencimento": "2020-10-07",
             "enrollment_id": 115,
             "status": "Aberta",
+            "student_id": 42,
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
@@ -625,6 +705,7 @@
             "data_vencimento": "2020-11-07",
             "enrollment_id": 115,
             "status": "Aberta",
+            "student_id": 85,
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         }
@@ -687,10 +768,31 @@
         "enrollment_id": 116,
         "valor_fatura": "108.39",
         "data_vencimento": "2020-10-29",
+        "student_id": 91,
         "created_at": "2020-09-23T17:36:46.072Z",
         "updated_at": "2020-09-24T12:43:23.244Z"
     }
 }
 ```
+  ***8.4.6 Deletando uma faturas: DELETE api/v1/bills/10***
 
+>   Parâmetros: id da fatura
 
+>   Retorno:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Fatura Deletada.",
+    "data": {
+        "id": 10,
+        "valor_fatura": "242.17",
+        "data_vencimento": "2020-10-30",
+        "enrollment_id": 3,
+        "status": "Aberta",
+        "student_id": 3,
+        "created_at": "2020-09-24T18:25:58.195Z",
+        "updated_at": "2020-09-24T18:25:58.195Z"
+    }
+}
+```

@@ -3,7 +3,7 @@ class Enrollment < ApplicationRecord
   belongs_to :institution
   belongs_to :student
 
-  has_many :bills
+  has_many :bills, dependent: :destroy
 
   # Realiza as validações necessárias
   validates :valor_total, numericality: { greater_than: 0, message: "Valor total não informado ou inválido."}
@@ -75,6 +75,7 @@ class Enrollment < ApplicationRecord
         valor_fatura: "#{@valor}",
         data_vencimento: "#{@ano}-#{@mes}-#{@dia}",
         enrollment_id: self.id,
+        student_id: self.student_id,
         status: "Aberta"
       })
       

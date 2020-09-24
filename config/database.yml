@@ -2,21 +2,21 @@
 
 development:
   adapter: postgresql
-  database: dev_db
+  database: dev
   username: postgres
   password: postgres
   min_messages: warning
 
 test:
   adapter: postgresql
-  database: test_db
+  database: test
   username: postgres
   password: postgres
   min_messages: warning
 
 production:
   adapter: postgresql
-  database: prod_db
+  database: prod
   username: postgres
   password: postgres
   min_messages: warning

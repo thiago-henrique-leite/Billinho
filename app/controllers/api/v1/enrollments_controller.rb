@@ -5,7 +5,10 @@ module Api
 			# Lista todas as matrículas no geral ou todas as matrículas em uma instituição específica
 			# GET api/v1/enrollments ou GET api/v1/institutions/:institution_id/enrollments
 			def index
-				if params[:institution_id]
+				if params[:student_id]
+					enrollments = Enrollment.joins(:student).where("student_id = ?", params[:student_id]).order('id ASC')
+					render json: {status: 'SUCCESSO', message:'Matrículas do estudante carregadas.', data:enrollments},status: :ok
+				elsif params[:institution_id]
 					enrollments = Enrollment.joins(:institution).where("institution_id = ?", params[:institution_id]).order('id ASC')
 					render json: {status: 'SUCCESSO', message:'Matrículas na instituição carregadas.', data:enrollments},status: :ok
 				else
@@ -36,12 +39,19 @@ module Api
 			# PUT api/v1/enrollments/:id
 			def update
 				enrollment = Enrollment.find(params[:id])
-
 				if enrollment.update_attributes(update_params)
 					render json: {status: 'SUCCESSO', message:'Matrícula Atualizada.', data:enrollment},status: :ok
 				else
 					render json: {status: 'ERRO', message:'Matrícula não atualizada.', data:enrollment.errors},status: :unprocessable_entity
 				end
+			end
+			
+			# Deleta o estudante
+			# DELETE api/v1/enrollment/:id
+			def destroy
+				enrollment = Enrollment.find(params[:id])
+				enrollment.destroy
+				render json: {status: 'SUCCESSO', message:'Matrícula Deletada.', data:enrollment},status: :ok
 			end
       
 			# Verifica se os parâmetros foram aceitos
@@ -51,7 +61,7 @@ module Api
 			end
 
 			def update_params
-				params.permit(:curso, :institution_id, :student_id)
+				params.permit(:curso, :institution_id)
 			end
 		end
 	end

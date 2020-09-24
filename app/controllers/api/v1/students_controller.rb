@@ -37,6 +37,14 @@ module Api
 					render json: {status: 'ERRO', message:'Estudante não atualizado.', data:student.errors},status: :unprocessable_entity
 				end
 			end
+
+			# Deleta o estudante
+			# DELETE api/v1/students/:id
+			def destroy
+				student = Student.find(params[:id])
+				student.destroy
+				render json: {status: 'SUCCESSO', message:'Estudante deletado', data:student},status: :ok
+			end
       
 			# Verifica se os parâmetros foram aceitos
 			private

@@ -5,8 +5,8 @@ class CreateEnrollments < ActiveRecord::Migration[6.0]
       t.integer :quant_faturas
       t.integer :dia_vencimento
       t.text :curso
-      t.belongs_to :institution_id
-      t.belongs_to :student_id
+      t.belongs_to :institution
+      t.belongs_to :student
 
       t.timestamps
     end

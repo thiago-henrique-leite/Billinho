@@ -7,8 +7,16 @@ Rails.application.routes.draw do
       resources :institutions do
         resources :enrollments
       end
+
+      resources :students do
+        resources :enrollments
+      end
         
       resources :enrollments do
+        resources :bills
+      end
+
+      resources :students do
         resources :bills
       end
     end

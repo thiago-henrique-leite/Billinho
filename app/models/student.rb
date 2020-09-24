@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
   # Especifica a associação a classe enrollments
-	has_many :enrollments
+  has_many :enrollments, dependent: :destroy
+  has_many :bills, dependent: :destroy
 
 	# Realiza as validações necessárias
 	validates :nome, presence: { message: "Nome do estudante não informado." }

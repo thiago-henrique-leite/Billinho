@@ -1,6 +1,6 @@
 class Institution < ApplicationRecord
   # Especifica a associação a classe enrollments
-  has_many :enrollments
+  has_many :enrollments, dependent: :destroy
     
   # Realiza as validações necessárias
   validates :nome, presence: { message: "Nome da instituição não informado."}

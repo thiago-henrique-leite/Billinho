@@ -6,7 +6,10 @@ module Api
       def index
         if params[:enrollment_id]
           bills = Bill.joins(:enrollment).where("enrollment_id = ?", params[:enrollment_id]).order('id ASC');
-          render json: {status: 'SUCCESSO', message:'Faturas da determinada matrícula carregada.', data:bills},status: :ok
+          render json: {status: 'SUCCESSO', message:'Faturas da determinada matrícula carregadas.', data:bills},status: :ok
+        elsif params[:student_id]
+          bills = Bill.joins(:student).where("student_id = ?", params[:student_id]).order('id ASC');
+          render json: {status: 'SUCCESSO', message:'Faturas do aluno carregadas.', data:bills},status: :ok
         else 
           bills = Bill.order('id ASC')
           render json: {status: 'SUCCESSO', message:'Todas as faturas carregadas.', data:bills},status: :ok
@@ -29,6 +32,14 @@ module Api
 				else
 					render json: {status: 'ERRO', message:'Fatura não atualizada.', data:bill.errors},status: :unprocessable_entity
 				end
+      end
+      
+      # Deleta a fatura
+			# DELETE api/v1/bill/:id
+			def destroy
+				bill = Bill.find(params[:id])
+				bill.destroy
+				render json: {status: 'SUCCESSO', message:'Fatura Deletada.', data:bill},status: :ok
 			end
 
       # Verifica se os parâmetros foram aceitos

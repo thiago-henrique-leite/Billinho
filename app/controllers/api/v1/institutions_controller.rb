@@ -37,6 +37,14 @@ module Api
 					render json: {status: 'ERRO', message:'Instituição não atualizada.', data:institution.errors},status: :unprocessable_entity
 				end
 			end
+
+			# Deleta a instituição
+			# DELETE api/v1/institutions/:id
+			def destroy
+				institution = Institution.find(params[:id])
+				institution.destroy
+				render json: {status: 'SUCCESSO', message:'Instituição deletada', data:institution},status: :ok
+			end
       
 			# Verifica se os parâmetros foram aceitos
 			private
