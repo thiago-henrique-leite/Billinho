@@ -169,8 +169,9 @@
 
 ### 8. Projeto em Execução
 
-> - [[API Completa    ]](readme/Funcionamento.md)
-> - [[8.1 Instituições]](readme/institutions.md)
-> - [[8.2 Estudantes  ]](readme/students.md)
-> - [[8.3 Matrículas  ]](readme/enrollments.md)
-> - [[8.4 Faturas     ]](readme/bills.md)
+> - [***8.1 Instituições***](readme/institutions.md)
+> - [***8.2 Estudantes***](readme/students.md)
+> - [***8.3 Matrículas***](readme/enrollments.md)
+> - [***8.4 Faturas***](readme/bills.md)
+
+> - [***API Completa***](readme/Funcionamento.md)
