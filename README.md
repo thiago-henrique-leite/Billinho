@@ -169,8 +169,8 @@
 
 ### 8. Projeto em Execução
 
-[[API Completa    ]](/REAMDE's/Funcionamento)
-[[8.1 Instituições]](/README's/institutions)
-[[8.2 Estudantes  ]](/README's/students)
-[[8.3 Matrículas  ]](/README's/enrollments)
-[[8.4 Faturas     ]](/README's/bills)
+[[API Completa    ]](/REAMDE's/Funcionamento) -
+ [[8.1 Instituições]](/README's/institutions) -
+ [[8.2 Estudantes  ]](/README's/students) -
+ [[8.3 Matrículas  ]](/README's/enrollments) -
+ [[8.4 Faturas     ]](/README's/bills)
