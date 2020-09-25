@@ -744,14 +744,7 @@
 
   ***8.4.4 Criando faturas***
 
->   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria 
->   o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir  
->   o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores      
->   pertencentes à matrícula. Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual 
->   ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual.           
-
->   Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura  
->   deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
+>   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual. Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
 
 >   Hoje sendo 01/10/2020
 
