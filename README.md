@@ -16,7 +16,7 @@
 
 </br>
 
-### 1. Descrição :pencil:
+### 1. Descrição
   O Billinho é um projeto da Quero Educação, empresa líder no ramo de marketing educacional. 
   Ele tem por objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos 
   á instituição de ensino que ele estuda.
