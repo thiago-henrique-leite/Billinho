@@ -132,7 +132,7 @@
         <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/postman.svg">
       </td>
       <td width="25%" align="center">
-        <span><b>Stack Over Flow</b></span><br><br><br>
+        <span><b>Stack Overflow</b></span><br><br><br>
         <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/stackoverflow.svg">
       </td>
       <td width="25%" align="center">
