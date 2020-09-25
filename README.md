@@ -23,10 +23,18 @@
   Ele tem por objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos 
   á instituição de ensino que ele estuda.
 
+<a name="ancora"></a>
 
-### 2. Status do Projeto
-  :construction: Em construção... :construction:
+### 2. Menu
+  - [Entidades da API](#ancora1)
+  - [O que foi usado para fazer a aplicação](#ancora2)
+  - [Como rodar a aplicação](#ancora3)
+  - [Informações Adicionais](#ancora4)
+  - [Projeto em Execução](#ancora5)
 
+
+
+<a id="ancora1"></a>
 
 ### 3. Entidades da API
   Essas são as entidades básicas do projeto.
@@ -74,6 +82,8 @@
 
 </br>
 
+<a id="ancora2"></a>
+
 ### 4. Ações da API
 
   ***4.1 Instituições***
@@ -101,6 +111,8 @@
   - [x] Exclusão.
 
 </br> 
+
+<a id="ancora3"></a>
 
 ### 5. O que foi usado para fazer a aplicação
 
@@ -147,6 +159,8 @@
 
 </br>
 
+<a id="ancora3"></a>
+
 ### 6. Como rodar a aplicação :fire:
 >>  ***6.1 Clone este repositório*** 
 >>>      - $ git clone git@github.com:thiago-henrique-leite/Billinho.git
@@ -173,12 +187,16 @@
 
 </br>
 
-### 7. Informações adicionais
+<a id="ancora4"></a>
+
+### 7. Informações Adicionais
 > + Todos as rotas da API recebem e respondem com dados no formato JSON </br>
 >   - JavaScript Object Notation, ou JSON, como é conhecido, é basicamente um formato leve de troca de informações/dados entre sistemas. </br>
 >   - O JSON além de ser um formato leve para troca de dados é também muito simples de ler. 
 
 </br>
+
+<a id="ancora5"></a>
 
 ### 8. Projeto em Execução :rocket:
 
