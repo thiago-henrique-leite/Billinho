@@ -744,34 +744,34 @@
 
   ***8.4.4 Criando faturas***
 
-   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria  </br>
-   o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir  </br>
-   o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores      </br>
-   pertencentes à matrícula. Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual </br> 
-   ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual.           </br>
+>   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria 
+>   o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir  
+>   o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores      
+>   pertencentes à matrícula. Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual 
+>   ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual.           
 
-   Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura  </br>
-   deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      </br>
+>   Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura  
+>   deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
 
-   Hoje sendo 01/10/2020
+>   Hoje sendo 01/10/2020
 
-   Com os seguintes dados da matrícula:
+>   Com os seguintes dados da matrícula:
 
   Valor total do curso | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
   ---------------------|------------|-------------------|------------------|-------------
   2000.00              |     5      |        30         |        1         |      1
 
-   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente)
+>   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente)
 
-   Obs: Quando o mês não possui o número de dias da data de vencimento da fatura, ela passa a vencer no dia 01 do próximo mês.
+>   Obs: Quando o mês não possui o número de dias da data de vencimento da fatura, ela passa a vencer no dia 01 do próximo mês.
 
-   Neste contexto deverão ser criadas 5 faturas, cada uma com o valor de R$ 400,00, com as seguintes datas de vencimento:
+>   Neste contexto deverão ser criadas 5 faturas, cada uma com o valor de R$ 400,00, com as seguintes datas de vencimento:
 
-   - 30/10/2020
-   - 30/11/2020
-   - 30/12/2020
-   - 30/01/2020
-   - 01/03/2020
+>   - 30/10/2020
+>   - 30/11/2020
+>   - 30/12/2020
+>   - 30/01/2020
+>   - 01/03/2020
 
   ***8.4.5 Atualizando status da fatura: PUT api/v1/bills/420***
 
