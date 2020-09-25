@@ -27,11 +27,11 @@
 
 ### 2. Menu
   - [Entidades da API](#ancora1)
-  - [O que foi usado para fazer a aplicação](#ancora2)
-  - [Como rodar a aplicação](#ancora3)
-  - [Informações Adicionais](#ancora4)
-  - [Projeto em Execução](#ancora5)
-
+  - [Ações da API](#ancora2)
+  - [O que foi usado para fazer a aplicação](#ancora3)
+  - [Como rodar a aplicação](#ancora4)
+  - [Informações Adicionais](#ancora5)
+  - [Projeto em Execução](#ancora6)
 
 
 <a id="ancora1"></a>
@@ -159,7 +159,7 @@
 
 </br>
 
-<a id="ancora3"></a>
+<a id="ancora4"></a>
 
 ### 6. Como rodar a aplicação :fire:
 >>  ***6.1 Clone este repositório*** 
@@ -187,7 +187,7 @@
 
 </br>
 
-<a id="ancora4"></a>
+<a id="ancora5"></a>
 
 ### 7. Informações Adicionais
 > + Todos as rotas da API recebem e respondem com dados no formato JSON </br>
@@ -196,7 +196,7 @@
 
 </br>
 
-<a id="ancora5"></a>
+<a id="ancora6"></a>
 
 ### 8. Projeto em Execução :rocket:
 
