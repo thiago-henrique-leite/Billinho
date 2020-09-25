@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :institutions, :students do
         resources :enrollments
       end
-        
+
       resources :enrollments, :students do
         resources :bills
       end
