@@ -106,23 +106,23 @@
 <table>
   <tbody>
     <tr valign="top">
-      <td width="21%" align="center">
+      <td width="22%" align="center">
         <span><b>Ruby 2.7.1</b></span><br><br><br>
         <img height="58px" src="https://www.vectorlogo.zone/logos/ruby-lang/ruby-lang-ar21.svg">
       </td>
-      <td width="21%" align="center">
-        <span><b>PostgreSQL 12</b></span><br><br><br>
+      <td width="22%" align="center">
+        <span><b>PSQL 12</b></span><br><br><br>
         <img height="58px" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-vertical.svg">
       </td>
-      <td width="21%" align="center">
+      <td width="22%" align="center">
         <span><b>Git</b></span><br><br><br>
         <img height="58px"  src="https://cdn.svgporn.com/logos/git-icon.svg">
       </td>
-      <td width="21%" align="center">
+      <td width="22%" align="center">
         <span><b>VSCode</b></span><br><br><br>
         <img height="58px" src="https://cdn.svgporn.com/logos/visual-studio-code.svg">
       </td>
-      <td width="21%" align="center">
+      <td width="22%" align="center">
         <span><b>Rails 6.0.3.3</b></span><br><br><br>
         <img height="60px" src="https://pbs.twimg.com/profile_images/691206086955790336/CDMbA57p.png">
       </td>
