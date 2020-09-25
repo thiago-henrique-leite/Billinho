@@ -130,9 +130,50 @@
   </tbody>
 </table>
 
+<table>
+  <tbody>
+    <tr valign="top">
+      <td width="25%" align="center">
+        <span><b>Ruby 2.7.1</b></span><br><br><br>
+        <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/ruby.svg">
+      </td>
+      <td width="25%" align="center">
+        <span><b>PSQL 12</b></span><br><br><br>
+        <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/postgresql.svg">
+      </td>
+      <td width="25%" align="center">
+        <span><b>Git</b></span><br><br><br>
+        <img height="64px"  src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/git.svg">
+      </td>
+      <td width="25%" align="center">
+        <span><b>VSCode</b></span><br><br><br>
+        <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/visualstudio.svg">
+      </td>
+    </tr>
+    <tr valign="top">
+      <td width="22%" align="center">
+        <span><b>Rails 6.0.3.3</b></span><br><br><br>
+        <img height="60px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/rubyonrails.svg">
+      </td>
+      <td width="25%" align="center">
+        <span><b>Postman</b></span><br><br><br>
+        <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/postman.svg">
+      </td>
+      <td width="25%" align="center">
+        <span><b>Stack Over Flow</b></span><br><br><br>
+        <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/stackoverflow.svg">
+      </td>
+      <td width="25%" align="center">
+        <span><b>Linux</b></span><br><br><br>
+        <img height="64px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.9.0/icons/linux.svg">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 </br>
 
-### 6. Como rodar a aplicação :rocket:
+### 6. Como rodar a aplicação :fire:
 >>  ***6.1 Clone este repositório*** 
 >>>      - $ git clone git@github.com:thiago-henrique-leite/Billinho.git
 
@@ -165,7 +206,7 @@
 
 </br>
 
-### 8. Projeto em Execução
+### 8. Projeto em Execução :rocket:
 
 > + [**API Completa**](readme/Funcionamento.md)
 >   - [**8.1 Instituições**](readme/institutions.md)
