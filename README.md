@@ -159,19 +159,18 @@
 </br>
 
 ### 7. Informações adicionais
-  - Todos as rotas da API recebem e respondem com dados no formato JSON </br>
+  - !Todos as rotas da API recebem e respondem com dados no formato JSON </br>
 
-  > JavaScript Object Notation, ou JSON, como é conhecido, é basicamente um formato leve de troca de informações/dados entre sistemas. </br>
+  > !JavaScript Object Notation, ou JSON, como é conhecido, é basicamente um formato leve de troca de informações/dados entre sistemas. </br>
 
-  > O JSON além de ser um formato leve para troca de dados é também muito simples de ler. 
+  > !O JSON além de ser um formato leve para troca de dados é também muito simples de ler. 
 
 </br>
 
 ### 8. Projeto em Execução
 
-> - [***8.1 Instituições***](readme/institutions.md)
-> - [***8.2 Estudantes***](readme/students.md)
-> - [***8.3 Matrículas***](readme/enrollments.md)
-> - [***8.4 Faturas***](readme/bills.md)
-
-> - [***API Completa***](readme/Funcionamento.md)
+> + [**API Completa***](readme/Funcionamento.md)
+>   - [**8.1 Instituições**](readme/institutions.md)
+>   - [**8.2 Estudantes**](readme/students.md)
+>   - [**8.3 Matrículas**](readme/enrollments.md)
+>   - [**8.4 Faturas**](readme/bills.md)
