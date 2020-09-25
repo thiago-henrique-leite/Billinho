@@ -2,30 +2,27 @@ module Api
 	module V1
     class EnrollmentsController < ApplicationController  
 
-			# Lista todas as matrículas no geral ou todas as matrículas em uma instituição específica
-			# GET api/v1/enrollments ou GET api/v1/institutions/:institution_id/enrollments
+			# Lista as matrículas no geral ou as matrículas de uma instituição ou as matrículas de um estudante
 			def index
 				if params[:student_id]
 					enrollments = Enrollment.joins(:student).where("student_id = ?", params[:student_id]).order('id ASC')
-					render json: {status: 'SUCCESSO', message:'Matrículas do estudante carregadas.', data:enrollments},status: :ok
+					render json: {status: 'SUCCESSO', message:"Matrículas do Estudante #{params[:student_id]} Carregadas.", data:enrollments},status: :ok
 				elsif params[:institution_id]
 					enrollments = Enrollment.joins(:institution).where("institution_id = ?", params[:institution_id]).order('id ASC')
-					render json: {status: 'SUCCESSO', message:'Matrículas na instituição carregadas.', data:enrollments},status: :ok
+					render json: {status: 'SUCCESSO', message:"Matrículas da Instituição #{params[:institution_id]} Carregadas.", data:enrollments},status: :ok
 				else
 					enrollments = Enrollment.order('id ASC');
-					render json: {status: 'SUCCESSO', message:'Todas as matrículas Carregadas.', data:enrollments},status: :ok
+					render json: {status: 'SUCCESSO', message:"Todas as matrículas Carregadas.", data:enrollments},status: :ok
 				end
       end
 
 			# Lista uma matrícula específica pelo ID
-			# GET api/v1/enrollments/:id
 			def show
         enrollment = Enrollment.find(params[:id])
-				render json: {status: 'SUCCESSO', message:'Matrícula Carregada.', data:enrollment},status: :ok
+				render json: {status: 'SUCCESSO', message:"Matrícula #{params[:id]} Carregada.", data:enrollment},status: :ok
       end
       
 			# Cria uma nova matrícula
-			# POST api/v1/enrollments
 			def create
 				enrollment = Enrollment.new(enrollment_params)
 				if enrollment.save
@@ -36,22 +33,20 @@ module Api
 			end
 			
 			# Atualiza os dados de uma matrícula
-			# PUT api/v1/enrollments/:id
 			def update
 				enrollment = Enrollment.find(params[:id])
 				if enrollment.update_attributes(update_params)
-					render json: {status: 'SUCCESSO', message:'Matrícula Atualizada.', data:enrollment},status: :ok
+					render json: {status: 'SUCCESSO', message:"Matrícula #{params[:id]} Atualizada.", data:enrollment},status: :ok
 				else
-					render json: {status: 'ERRO', message:'Matrícula não atualizada.', data:enrollment.errors},status: :unprocessable_entity
+					render json: {status: 'ERRO', message:"Matrícula #{params[:id]} não atualizada.", data:enrollment.errors},status: :unprocessable_entity
 				end
 			end
 			
-			# Deleta o estudante
-			# DELETE api/v1/enrollment/:id
+			# Deleta uma matrícula
 			def destroy
 				enrollment = Enrollment.find(params[:id])
 				enrollment.destroy
-				render json: {status: 'SUCCESSO', message:'Matrícula Deletada.', data:enrollment},status: :ok
+				render json: {status: 'SUCCESSO', message:"Matrícula #{params[:id]} Deletada.", data:enrollment},status: :ok
 			end
       
 			# Verifica se os parâmetros foram aceitos

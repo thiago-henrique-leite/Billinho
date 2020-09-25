@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-  # Especifica a associação a classe enrollments
+  # Especifica a associação a classe enrollments e bills
   has_many :enrollments, dependent: :destroy
   has_many :bills, dependent: :destroy
 

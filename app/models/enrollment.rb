@@ -3,15 +3,16 @@ class Enrollment < ApplicationRecord
   belongs_to :institution
   belongs_to :student
 
+  # Especifica a associação a classe bills
   has_many :bills, dependent: :destroy
 
   # Realiza as validações necessárias
   validates :valor_total, numericality: { greater_than: 0, message: "Valor total não informado ou inválido."}
 	validates :quant_faturas, numericality: { greater_than: 0, message: "Quantidade de faturas inválida ou não informada."} 
-	validates :dia_vencimento, numericality: { greater_than: 0, less_than: 32, message: "Dia inválido ou não informado." }
+  validates :dia_vencimento, numericality: { greater_than: 0, less_than: 32, message: "Dia inválido ou não informado." }
   validates :curso, presence: { message: "Curso não informado."}
 
-  after_create :cria_faturas # Após a criação da matrícula, chama o método de criação das faturas 
+  after_create :cria_faturas
 
   # Método que cria as faturas
 
@@ -78,7 +79,7 @@ class Enrollment < ApplicationRecord
         student_id: self.student_id,
         status: "Aberta"
       })
-      
+        
       @dia = @dia.to_i
       @mes = @mes.to_i
 

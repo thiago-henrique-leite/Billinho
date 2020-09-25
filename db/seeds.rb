@@ -36,8 +36,8 @@ end
 
 50.times do |indice|
   Enrollment.create({
-    valor_total: Faker::Number.decimal(l_digits: 3, r_digits: 2),
-    quant_faturas: Faker::Number.between(from: 1, to: 5),
+    valor_total: Faker::Number.decimal(l_digits: 4, r_digits: 2),
+    quant_faturas: Faker::Number.between(from: 1, to: 10),
     dia_vencimento: Faker::Number.between(from: 1, to: 31),
     curso: "Curso #{indice}",      
     institution_id: "#{indice}",

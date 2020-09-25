@@ -1,7 +1,5 @@
 # ***BILLINHO*** <img src="https://img.itch.zone/aW1nLzMxNTMyMTEucG5n/original/GsOFLx.png" height = "50" width = "50">
 
-</br>
-
 <a href="https://www.linkedin.com/in/thiagoleitesilva/">
   <img align="left" alt="Thiago's LinkdeIN" width="22px" src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Linkedin.svg" />
 </a>
@@ -91,7 +89,7 @@
   ***4.3 Matrículas***
   -	[x] Listagem.
   -	[x] Criação.
-  - [ ] Atualização.
+  - [x] Atualização.
   - [x] Exclusão. 
 
   ***4.4 Faturas***
@@ -209,7 +207,7 @@
 
 ```json
 "status": "SUCCESSO",
-    "message": "Instituição de Ensino Carregada.",
+    "message": "Instituição de Ensino 1 Carregada.",
     "data": [
         {
             "id": 1,
@@ -239,7 +237,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Instituição Cadastrada.",
+    "message": "Universidade 2 Cadastrada.",
     "data": {
         "id": 3,
         "nome": "Universidade 2",
@@ -269,7 +267,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Instituição Cadastrada.",
+    "message": "Instituição 3 Atualizada.",
     "data": {
         "id": 3,
         "nome": "Universidade 2",
@@ -291,7 +289,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Instituição deletada",
+    "message": "Instituição 4 deletada",
     "data": {
         "id": 4,
         "nome": "Creche 4",
@@ -312,7 +310,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Lista de estudantes carregada.",
+    "message": "Lista de Estudantes Carregada.",
     "data": [
         {
             "id": 1,
@@ -347,10 +345,10 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Dados do estudante carregados.",
+    "message": "Estudante 5 carregado.",
     "data": {
-        "id": 1,
-        "nome": "Estudante 1",
+        "id": 5,
+        "nome": "Estudante A",
         "cpf": "98404479771",
         "data_nasc": "2001-04-10",
         "telefone": 116469569,
@@ -371,7 +369,7 @@
 ```json
 {
         "nome": "Aluno 1",
-        "cpf": 12345678910,
+        "cpf": "12345678910",
         "genero": "M",
         "meio_pagamento": "Cartão",
         "data_nasc": "2000-12-07",
@@ -419,7 +417,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Estudante Cadastrado.",
+    "message": "Estudante 3 Atualizado.",
     "data": {
         "id": 3,
         "nome": "Aluno 1",
@@ -444,7 +442,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Estudante deletado",
+    "message": "Estudante 10 deletado",
     "data": {
         "id": 10,
         "nome": "Estudante 10",
@@ -503,7 +501,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Matrícula Carregada.",
+    "message": "Matrícula 2 Carregada.",
     "data": {
         "id": 2,
         "valor_total": "433.57",
@@ -522,14 +520,14 @@
 
 >   Parâmetros: id da instituição
 
->   Observação: É possível ainda passar o id de uma matrícula específica na instituição: GET api/v1/institutions/3/enrollments/15
+>   Observação: É possível ainda visualizar todas as matrículas de um estudante GET api/v1/students/3/enrollments
 
 >   Resposta:
 
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Matrículas na instituição carregadas.",
+    "message": "Matrículas da Instituição 3 Carregadas.",
     "data": [
         {
             "id": 4,
@@ -595,7 +593,39 @@
 }
 ```
 
- ***8.3.5 Deletando uma matrícula: DELETE api/v1/enrollments/10***
+ ***8.3.5 Atualizando matrícula: POST api/v1/enrollments/3***
+
+>   Parâmetros: Nome do curso ou id da instituição.
+
+>   Requisição:
+
+```json
+{
+        "curso": "Arquitetura"
+}
+```
+
+> Retorno:
+
+```json
+{
+    "status": "SUCCESSO",
+    "message": "Matrícula 3 Atualizada.",
+    "data": {
+        "id": 3,
+        "curso": "Arquitetura",
+        "institution_id": 3,
+        "student_id": 3,
+        "valor_total": "1247.95",
+        "quant_faturas": 60,
+        "dia_vencimento": 2,
+        "created_at": "2020-09-25T13:24:01.941Z",
+        "updated_at": "2020-09-25T14:38:05.648Z"
+    }
+}
+```
+
+ ***8.3.6 Deletando uma matrícula: DELETE api/v1/enrollments/10***
 
 >   Parâmetros: id da matrícula </br>
 >   Obs: A exclusão de uma matrícula exclui também todas as faturas vinculadas àquela matrícula.
@@ -605,7 +635,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Matrícula Deletada.",
+    "message": "Matrícula 10 Deletada.",
     "data": {
         "id": 10,
         "valor_total": "714.85",
@@ -619,7 +649,6 @@
     }
 }
 ```
-
 
 
 #### 8.4 Faturas
@@ -662,7 +691,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Fatura Carregada.",
+    "message": "Fatura 407 Carregada.",
     "data": {
         "id": 407,
         "valor_fatura": "379.73",
@@ -680,14 +709,14 @@
 
 >   Parâmetros: id da fatura
 
->   Observação: É possível ainda passar o id de uma fatura específica da matrícula: GET api/v1/enrollmemts/3/bills/15
+>   Observação: É possível ainda visualizar tofas as faturas de um estudante: GET api/v1/students/4/bills
 
 >   Resposta: 
 
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Faturas da determinada matrícula carregada.",
+    "message": "Faturas da Matrícula 115 carregadas.",
     "data": [
         {
             "id": 407,
@@ -761,7 +790,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Fatura Atualizada.",
+    "message": "Fatura 410 Atualizada.",
     "data": {
         "id": 410,
         "status": "Atrasada",
@@ -783,7 +812,7 @@
 ```json
 {
     "status": "SUCCESSO",
-    "message": "Fatura Deletada.",
+    "message": "Fatura 10 Deletada.",
     "data": {
         "id": 10,
         "valor_fatura": "242.17",

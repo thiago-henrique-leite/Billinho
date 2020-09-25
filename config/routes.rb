@@ -4,19 +4,11 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :institutions, :students, :enrollments, :bills
 
-      resources :institutions do
-        resources :enrollments
-      end
-
-      resources :students do
+      resources :institutions, :students do
         resources :enrollments
       end
         
-      resources :enrollments do
-        resources :bills
-      end
-
-      resources :students do
+      resources :enrollments, :students do
         resources :bills
       end
     end
