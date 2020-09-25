@@ -2,7 +2,8 @@ class Enrollment < ApplicationRecord
   # Chama referência de outras classes
   belongs_to :institution
   belongs_to :student
-
+	
+	# Ao excluir uma matrícula, exclui todas as faturas vinculadas a ela
   has_many :bills, dependent: :destroy
 
   # Realiza as validações necessárias
