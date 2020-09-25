@@ -78,25 +78,25 @@
   -	[x] Listagem.
   -	[x] Criação.
   -	[x] Atualização.
-  -     [x] Exclusão. 
+  - [x] Exclusão. 
 
   ***4.2 Estudantes***
   -	[x] Listagem.
   -	[x] Criação.
   -	[x] Atualização.
-  -     [x] Exclusão. 
+  - [x] Exclusão. 
 
   ***4.3 Matrículas***
   -	[x] Listagem.
   -	[x] Criação.
-  -     [x] Atualização.
-  -     [x] Exclusão. 
+  - [x] Atualização.
+  - [x] Exclusão. 
   
   ***4.4 Faturas***
   -	[x] Listagem.
   -	[x] Criação.
   -	[x] Atualização.
-  -     [x] Exclusão.
+  - [x] Exclusão.
 
 </br> 
 
