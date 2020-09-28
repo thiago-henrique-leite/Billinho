@@ -6,7 +6,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Todas as matrículas Carregadas.",
     "data": [
         {
@@ -41,7 +41,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula 2 Carregada.",
     "data": {
         "id": 2,
@@ -67,7 +67,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrículas da Instituição 3 Carregadas.",
     "data": [
         {
@@ -118,7 +118,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula Cadastrada.",
     "data": {
         "id": 615,
@@ -150,7 +150,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula 3 Atualizada.",
     "data": {
         "id": 3,
@@ -175,7 +175,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula 10 Deletada.",
     "data": {
         "id": 10,

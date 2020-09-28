@@ -7,7 +7,7 @@
 >   Retorno:
 
 ```json
-"status": "SUCCESSO",
+"status": "SUCESSO",
     "message": "Instituições de Ensino Carregadas.",
     "data": [
         {
@@ -37,7 +37,7 @@
 >   Retorno: 
 
 ```json
-"status": "SUCCESSO",
+"status": "SUCESSO",
     "message": "Instituição de Ensino 1 Carregada.",
     "data": [
         {
@@ -67,7 +67,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Universidade 2 Cadastrada.",
     "data": {
         "id": 3,
@@ -97,7 +97,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Instituição 3 Atualizada.",
     "data": {
         "id": 3,
@@ -119,7 +119,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Instituição 4 deletada",
     "data": {
         "id": 4,
@@ -140,7 +140,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Lista de Estudantes Carregada.",
     "data": [
         {
@@ -175,7 +175,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Estudante 5 carregado.",
     "data": {
         "id": 5,
@@ -212,7 +212,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Estudante Cadastrado.",
     "data": {
         "id": 3,
@@ -247,7 +247,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Estudante 3 Atualizado.",
     "data": {
         "id": 3,
@@ -272,7 +272,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Estudante 10 deletado",
     "data": {
         "id": 10,
@@ -296,7 +296,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Todas as matrículas Carregadas.",
     "data": [
         {
@@ -331,7 +331,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula 2 Carregada.",
     "data": {
         "id": 2,
@@ -357,7 +357,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrículas da Instituição 3 Carregadas.",
     "data": [
         {
@@ -408,7 +408,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula Cadastrada.",
     "data": {
         "id": 615,
@@ -440,7 +440,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula 3 Atualizada.",
     "data": {
         "id": 3,
@@ -465,7 +465,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Matrícula 10 Deletada.",
     "data": {
         "id": 10,
@@ -490,7 +490,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Todas as faturas carregadas.",
     "data": [
         {
@@ -521,7 +521,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Fatura 407 Carregada.",
     "data": {
         "id": 407,
@@ -546,7 +546,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Faturas da Matrícula 115 carregadas.",
     "data": [
         {
@@ -615,7 +615,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Fatura 410 Atualizada.",
     "data": {
         "id": 410,
@@ -637,7 +637,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Fatura 10 Deletada.",
     "data": {
         "id": 10,

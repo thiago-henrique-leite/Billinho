@@ -6,7 +6,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Todas as faturas carregadas.",
     "data": [
         {
@@ -37,7 +37,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Fatura 407 Carregada.",
     "data": {
         "id": 407,
@@ -62,7 +62,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Faturas da Matrícula 115 carregadas.",
     "data": [
         {
@@ -131,7 +131,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Fatura 410 Atualizada.",
     "data": {
         "id": 410,
@@ -153,7 +153,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Fatura 10 Deletada.",
     "data": {
         "id": 10,

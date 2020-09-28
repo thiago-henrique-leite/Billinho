@@ -5,7 +5,7 @@
 >   Retorno:
 
 ```json
-"status": "SUCCESSO",
+"status": "SUCESSO",
     "message": "Instituições de Ensino Carregadas.",
     "data": [
         {
@@ -35,7 +35,7 @@
 >   Retorno: 
 
 ```json
-"status": "SUCCESSO",
+"status": "SUCESSO",
     "message": "Instituição de Ensino 1 Carregada.",
     "data": [
         {
@@ -65,7 +65,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Universidade 2 Cadastrada.",
     "data": {
         "id": 3,
@@ -95,7 +95,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Instituição 3 Atualizada.",
     "data": {
         "id": 3,
@@ -117,7 +117,7 @@
 
 ```json
 {
-    "status": "SUCCESSO",
+    "status": "SUCESSO",
     "message": "Instituição 4 deletada",
     "data": {
         "id": 4,
