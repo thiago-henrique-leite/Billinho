@@ -1,50 +1,55 @@
 module Api
   module V1
     class StudentsController < ApplicationController
-      # Lista todos os estudantes
+      # List students in general 
       def index
         students = Student.order('id ASC')
-        render json: { status: 'SUCESSO', message: 'Lista de Estudantes Carregada.', data: students }, status: :ok
+        render json: { message: 'All students loaded.', data: students }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Lista estudante específico pelo seu ID
+      # List specific student by student ID
       def show
         student = Student.find(params[:id])
-        render json: { status: 'SUCESSO', message: "Estudante #{params[:id]} carregado.", data: student }, status: :ok
+        render json: { message: "Student #{params[:id]} loaded.", data: student }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Cria um novo estudante
+      # Create a new student
       def create
         student = Student.new(student_params)
         if student.save
-          render json: { status: 'SUCESSO', message: 'Estudante Cadastrado.', data: student }, status: :ok
+          render json: { message: 'Student registered.', data: student }, status: :ok
         else
-          render json: { status: 'ERRO', message: 'Estudante Não Cadastrado.', data: student.errors }, status: :unprocessable_entity
+          render json: { message: 'Student not registered.', data: student.errors }, status: :unprocessable_entity
         end
       end
 
-      # Atualiza os dados de um estudante
+      # Updates a student
       def update
         student = Student.find(params[:id])
-        if student.update_attributes(student_params)
-          render json: { status: 'SUCESSO', message: "Estudante #{params[:id]} Atualizado.", data: student }, status: :ok
-        else
-          render json: { status: 'ERRO', message: "Estudante #{params[:id]} não atualizado.", data: student.errors }, status: :unprocessable_entity
-        end
+        student.update_attributes(student_params)
+        render json: { message: "Student #{params[:id]} updated.", data: student }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Deleta um estudante
+      # Delete an student
       def destroy
         student = Student.find(params[:id])
         student.destroy
-        render json: { status: 'SUCESSO', message: "Estudante #{params[:id]} deletado", data: student }, status: :ok
+        render json: { message: "Student #{params[:id]} deleted.", data: student }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Verifica se os parâmetros foram aceitos
+      # Checks whether parameters have been accepted
       private
 
       def student_params
-        params.permit(:nome, :cpf, :data_nasc, :telefone, :genero, :meio_pagamento)
+        params.permit(:name, :cpf, :birth_date, :phone, :gender, :pay_method)
       end
     end
   end

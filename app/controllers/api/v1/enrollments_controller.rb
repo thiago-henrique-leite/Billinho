@@ -1,62 +1,77 @@
 module Api
   module V1
     class EnrollmentsController < ApplicationController
-      # Lista as matrículas no geral ou as matrículas de uma instituição ou as matrículas de um estudante
+      # List enrollments in general      
       def index
-        if params[:student_id]
-          enrollments = Enrollment.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
-          render json: { status: 'SUCESSO', message: "Matrículas do Estudante #{params[:student_id]} Carregadas.", data: enrollments }, status: :ok
-        elsif params[:institution_id]
-          enrollments = Enrollment.joins(:institution).where('institution_id = ?', params[:institution_id]).order('id ASC')
-          render json: { status: 'SUCESSO', message: "Matrículas da Instituição #{params[:institution_id]} Carregadas.", data: enrollments }, status: :ok
-        else
-          enrollments = Enrollment.order('id ASC')
-          render json: { status: 'SUCESSO', message: 'Todas as matrículas Carregadas.', data: enrollments }, status: :ok
-        end
+        enrollments = Enrollment.order('id ASC')
+        render json: { message: 'All enrollments loaded.', data: enrollments }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Lista uma matrícula específica pelo ID
+      # List enrollments of a student
+      def index_by_students
+        params[:student_id]
+        enrollments = Enrollment.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
+        render json: { message: "Enrollments of student #{params[:student_id]} loaded.", data: enrollments }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      end
+
+      # List enrollments of a institution
+      def index_by_institutions
+        params[:institution_id]
+        enrollments = Enrollment.joins(:institution).where('institution_id = ?', params[:institution_id]).order('id ASC')
+        render json: { message: "Enrollments of institution #{params[:institution_id]} loaded.", data: enrollments }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      end
+
+      # List specific enrollment by enrollment ID
       def show
         enrollment = Enrollment.find(params[:id])
-        render json: { status: 'SUCESSO', message: "Matrícula #{params[:id]} Carregada.", data: enrollment }, status: :ok
+        render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Cria uma nova matrícula
+      # Create a new enrollment
       def create
         enrollment = Enrollment.new(enrollment_params)
         if enrollment.save
-          render json: { status: 'SUCESSO', message: 'Matrícula Cadastrada.', data: enrollment }, status: :ok
+          render json: { message: 'Registered enrollment.', data: enrollment }, status: :ok
         else
-          render json: { status: 'ERRO', message: 'Matrícula Não Cadastrada.', data: enrollment.errors }, status: :unprocessable_entity
+          render json: { status: 'ERRO', message: 'Not registered enrollment.', data: enrollment.errors }, status: :unprocessable_entity
         end
       end
 
-      # Atualiza os dados de uma matrícula
+      # Updates a enrollment
       def update
         enrollment = Enrollment.find(params[:id])
-        if enrollment.update_attributes(update_params)
-          render json: { status: 'SUCESSO', message: "Matrícula #{params[:id]} Atualizada.", data: enrollment }, status: :ok
-        else
-          render json: { status: 'ERRO', message: "Matrícula #{params[:id]} não atualizada.", data: enrollment.errors }, status: :unprocessable_entity
-        end
+        enrollment.update_attributes(update_params)
+        render json: { message: "Enrollment #{params[:id]} updated.", data: enrollment }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Deleta uma matrícula
+      # Delete an enrollment
       def destroy
         enrollment = Enrollment.find(params[:id])
         enrollment.destroy
-        render json: { status: 'SUCESSO', message: "Matrícula #{params[:id]} Deletada.", data: enrollment }, status: :ok
+        render json: { message: "Enrollment #{params[:id]} deleted.", data: enrollment }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Verifica se os parâmetros foram aceitos
+      # Checks whether parameters have been accepted
       private
 
       def enrollment_params
-        params.permit(:valor_total, :quant_faturas, :dia_vencimento, :curso, :institution_id, :student_id)
+        params.permit(:total_value, :ammount_bills, :due_day, :course, :institution_id, :student_id)
       end
 
       def update_params
-        params.permit(:curso, :institution_id)
+        params.permit(:course, :institution_id)
       end
     end
   end

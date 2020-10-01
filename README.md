@@ -41,16 +41,16 @@
  
   ***3.1 Instituição de Ensino***
 
-  Campo  |   Tipo   |           Restrições
+  Campo  |   kind   |           Restrições
   -------|----------|----------------------------------
   Nome   |   Texto  | Não vazio e único
   CNPJ   |   Texto  | 14 caracteres numéricos e único
-  Tipo   |   Texto  | Universidade, Escola ou Creche
+  kind   |   Texto  | Universidade, Escola ou Creche
 
   ***3.2 Aluno***
 
 
-  Campo               |   Tipo   |                Restrições
+  Campo               |   kind   |                Restrições
   --------------------|----------|---------------------------------------------
   Nome                |   Texto  | Não vazio e único
   CPF                 |   Texto  | 11 caracteres numéricos, único e não vazio 
@@ -61,18 +61,18 @@
 
   ***3.3 Matrícula***
 
-  Campo                        |   Tipo              |                 Restrições
+  Campo                        |   kind              |                 Restrições
   -----------------------------|---------------------|-----------------------------------------------
-  Valor total do curso         |  Decimal            | Não vazio, > 0
+  Valor total do course         |  Decimal            | Não vazio, > 0
   Quantidade de faturas        |  Inteiro            | Não vazio, >= 1
   Dia de vencimento das faturas|  Inteiro            | Não vazio, >= 1 e <= 31
-  Nome do curso                |  Texto              | Não vazio
+  Nome do course                |  Texto              | Não vazio
   Id da instituição            |  Chave estrangeira  | Não vazio
   Id do aluno                  |  Chave estrangeira  | Não vazio
 
    ***3.4 Faturas***
 
-  Campo                        |   Tipo              |                 Restrições
+  Campo                        |   kind              |                 Restrições
   -----------------------------|---------------------|-----------------------------------------------
   Valor da fatura em reais     |  Decimal            | Não vazio
   Data de vencimento           |  Data               | Não vazio

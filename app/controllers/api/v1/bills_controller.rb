@@ -1,48 +1,63 @@
 module Api
   module V1
     class BillsController < ApplicationController
-      # Lista as faturas no geral ou as faturas de uma matrícula ou as faturas de um estudante
+      # List bills in general
       def index
-        if params[:enrollment_id]
-          bills = Bill.joins(:enrollment).where('enrollment_id = ?', params[:enrollment_id]).order('id ASC')
-          render json: { status: 'SUCESSO', message: "Faturas da matrícula #{params[:enrollment_id]} carregadas.", data: bills }, status: :ok
-        elsif params[:student_id]
-          bills = Bill.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
-          render json: { status: 'SUCESSO', message: "Faturas do estudante #{params[:student_id]} carregadas.", data: bills }, status: :ok
-        else
-          bills = Bill.order('id ASC')
-          render json: { status: 'SUCESSO', message: 'Todas as faturas carregadas.', data: bills }, status: :ok
-        end
+        bills = Bill.order('id ASC')
+        render json: { message: 'All bills loaded.', data: bills }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Lista fatura específica pelo ID da fatura
+      # List bills of a enrollment
+      def index_by_enrollments
+        params[:enrollment_id]
+        bills = Bill.joins(:enrollment).where('enrollment_id = ?', params[:enrollment_id]).order('id ASC')
+        render json: { message: "Bills of enrollment #{params[:enrollment_id]} loaded.", data: bills }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      end
+
+      # List bills of a student
+      def index_by_students
+        params[:student_id]
+        bills = Bill.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
+        render json: { message: "Bills of student #{params[:student_id]} loaded.", data: bills }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      end
+
+      # List specific bill by bill ID
       def show
         bill = Bill.find(params[:id])
-        render json: { status: 'SUCESSO', message: "Fatura #{params[:id]} Carregada.", data: bill }, status: :ok
+        render json: { message: "Bill #{params[:id]} loaded.", data: bill }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Atualiza o status de uma fatura
+      # Updates the status of an bill
       def update
         bill = Bill.find(params[:id])
-        if bill.update_attributes(bill_params)
-          render json: { status: 'SUCESSO', message: "Fatura #{params[:id]} Atualizada.", data: bill }, status: :ok
-        else
-          render json: { status: 'ERRO', message: "Fatura #{params[:id]} não atualizada.", data: bill.errors }, status: :unprocessable_entity
-        end
+        bill.update_attributes(bill_params)
+        render json: { message: "Bill #{params[:id]} updated.", data: bill }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Deleta uma fatura
+      # Delete an bill
       def destroy
         bill = Bill.find(params[:id])
         bill.destroy
-        render json: { status: 'SUCESSO', message: "Fatura #{params[:id]} Deletada.", data: bill }, status: :ok
+        render json: { message: "Bill #{params[:id]} deleted.", data: bill }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Verifica se os parâmetros foram aceitos
+      # Checks whether parameters have been accepted
       private
 
       def bill_params
-        params.permit(:status)
+        params.permit(:status, :bill_amount, :due_date)
       end
     end
   end

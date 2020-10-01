@@ -44,3 +44,6 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rubocop', '~> 0.91.1', require: false
+gem 'validates_cpf_cnpj'
+gem 'correios-cep'
+gem 'validates-correios-cep'

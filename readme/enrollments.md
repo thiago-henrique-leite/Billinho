@@ -6,15 +6,14 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Todas as matrículas Carregadas.",
+    "message": "All enrollments loaded.",
     "data": [
         {
             "id": 1,
-            "valor_total": "759.45",
-            "quant_faturas": 30,
-            "dia_vencimento": 7,
-            "curso": "Curso 0",
+            "total_value": "759.45",
+            "ammount_bills": 30,
+            "due_day": 7,
+            "course": "course 0",
             "institution_id": 1,
             "student_id": 2,
             "created_at": "2020-09-23T17:36:46.033Z",
@@ -22,10 +21,10 @@
         },
         {
             "id": 2,
-            "valor_total": "433.57",
-            "quant_faturas": 60,
-            "dia_vencimento": 29,
-            "curso": "Curso 1",
+            "total_value": "433.57",
+            "ammount_bills": 60,
+            "due_day": 29,
+            "course": "course 1",
             "institution_id": 2,
             "student_id": 1,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -41,14 +40,13 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Matrícula 2 Carregada.",
+    "message": "Enrollment 2 loaded.",
     "data": {
         "id": 2,
-        "valor_total": "433.57",
-        "quant_faturas": 60,
-        "dia_vencimento": 29,
-        "curso": "Curso 1",
+        "total_value": "433.57",
+        "ammount_bills": 60,
+        "due_day": 29,
+        "course": "course 1",
         "institution_id": 2,
         "student_id": 1,
         "created_at": "2020-09-23T17:36:46.064Z",
@@ -67,15 +65,14 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Matrículas da Instituição 3 Carregadas.",
+    "message": "Enrollments of institution 3 loaded.",
     "data": [
         {
             "id": 4,
-            "valor_total": "874.99",
-            "quant_faturas": 24,
-            "dia_vencimento": 30,
-            "curso": "Curso 42",
+            "total_value": "874.99",
+            "ammount_bills": 24,
+            "due_day": 30,
+            "course": "course 42",
             "institution_id": 3,
             "student_id": 79,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -83,10 +80,10 @@
         },
         {
             "id": 15,
-            "valor_total": "1230.0",
-            "quant_faturas": 32,
-            "dia_vencimento": 5,
-            "curso": "Curso 68",
+            "total_value": "1230.0",
+            "ammount_bills": 32,
+            "due_day": 5,
+            "course": "course 68",
             "institution_id": 3,
             "student_id": 156,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -98,8 +95,8 @@
 
   ***8.3.4 Criando matrícula: POST api/v1/enrollments***
 
->   Parâmetros: id da instituição, id do estudante, valor total do curso, quantidade de faturas,
->   dia do vencimento da fatura e nome do curso.
+>   Parâmetros: id da instituição, id do estudante, valor total do course, quantidade de faturas,
+>   dia do vencimento da fatura e nome do course.
 
 >   Requisição:
 
@@ -107,10 +104,10 @@
 {
         "institution_id": 325,
         "student_id": 200,
-        "valor_total": 256000,
-        "quant_faturas": 60,
-        "dia_vencimento": 15,
-        "curso": "Ciência da Computação"
+        "total_value": 256000,
+        "ammount_bills": 60,
+        "due_day": 15,
+        "course": "Ciência da Computação"
 }
 ```
 
@@ -118,14 +115,13 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Matrícula Cadastrada.",
+    "message": "Enrollment registered.",
     "data": {
         "id": 615,
-        "valor_total": "256000.0",
-        "quant_faturas": 60,
-        "dia_vencimento": 15,
-        "curso": "Ciência da Computação",
+        "total_value": "256000.0",
+        "ammount_bills": 60,
+        "due_day": 15,
+        "course": "Ciência da Computação",
         "institution_id": 325,
         "student_id": 200,
         "created_at": "2020-09-24T12:23:01.428Z",
@@ -136,13 +132,13 @@
 
  ***8.3.5 Atualizando matrícula: POST api/v1/enrollments/3***
 
->   Parâmetros: Nome do curso ou id da instituição.
+>   Parâmetros: Nome do course ou id da instituição.
 
 >   Requisição:
 
 ```json
 {
-        "curso": "Arquitetura"
+        "course": "Arquitetura"
 }
 ```
 
@@ -150,16 +146,15 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Matrícula 3 Atualizada.",
+    "message": "Enrollment 3 updated.",
     "data": {
         "id": 3,
-        "curso": "Arquitetura",
+        "course": "Arquitetura",
         "institution_id": 3,
         "student_id": 3,
-        "valor_total": "1247.95",
-        "quant_faturas": 60,
-        "dia_vencimento": 2,
+        "total_value": "1247.95",
+        "ammount_bills": 60,
+        "due_day": 2,
         "created_at": "2020-09-25T13:24:01.941Z",
         "updated_at": "2020-09-25T14:38:05.648Z"
     }
@@ -175,14 +170,13 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Matrícula 10 Deletada.",
+    "message": "Enrollment 10 deleted.",
     "data": {
         "id": 10,
-        "valor_total": "714.85",
-        "quant_faturas": 4,
-        "dia_vencimento": 22,
-        "curso": "Curso 10",
+        "total_value": "714.85",
+        "ammount_bills": 4,
+        "due_day": 22,
+        "course": "course 10",
         "institution_id": 10,
         "student_id": 10,
         "created_at": "2020-09-24T18:25:58.308Z",

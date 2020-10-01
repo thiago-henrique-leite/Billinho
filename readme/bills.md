@@ -6,13 +6,12 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Todas as faturas carregadas.",
+    "message": "All bills loaded.",
     "data": [
         {
             "id": 1,
-            "valor_fatura": "654.54",
-            "data_vencimento": "2020-10-07",
+            "bill_amount": "654.54",
+            "due_date": "2020-10-07",
             "enrollment_id": 21,
             "status": "Aberta",
             "student_id": 63,
@@ -21,8 +20,8 @@
         },
         {
             "id": 2,
-            "valor_fatura": "777.69",
-            "data_vencimento": "2020-11-07",
+            "bill_amount": "777.69",
+            "due_date": "2020-11-07",
             "enrollment_id": 21,
             "status": "Paga",
             "student_id": 63,
@@ -37,12 +36,11 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Fatura 407 Carregada.",
+    "message": "Bill 407 loaded.",
     "data": {
         "id": 407,
-        "valor_fatura": "379.73",
-        "data_vencimento": "2020-10-07",
+        "bill_amount": "379.73",
+        "due_date": "2020-10-07",
         "enrollment_id": 115,
         "status": "Aberta",
         "student_id": 42,
@@ -62,13 +60,12 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Faturas da Matrícula 115 carregadas.",
+    "message": "Bills of enrollment 115 loaded.",
     "data": [
         {
             "id": 407,
-            "valor_fatura": "379.73",
-            "data_vencimento": "2020-10-07",
+            "bill_amount": "379.73",
+            "due_date": "2020-10-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 42,
@@ -77,8 +74,8 @@
         },
         {
             "id": 408,
-            "valor_fatura": "379.73",
-            "data_vencimento": "2020-11-07",
+            "bill_amount": "379.73",
+            "due_date": "2020-11-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 85,
@@ -91,7 +88,7 @@
 
   ***8.4.4 Criando faturas***
 
->   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. 
+>   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do course em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. 
 
 > Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual. Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
 
@@ -99,7 +96,7 @@
 
 >   Com os seguintes dados da matrícula:
 
-  Valor total do curso | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
+  Valor total do course | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
   ---------------------|------------|-------------------|------------------|-------------
   2000.00              |     5      |        30         |        1         |      1
 
@@ -131,14 +128,13 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Fatura 410 Atualizada.",
+    "message": "Bill 410 updated.",
     "data": {
         "id": 410,
         "status": "Atrasada",
         "enrollment_id": 116,
-        "valor_fatura": "108.39",
-        "data_vencimento": "2020-10-29",
+        "bill_amount": "108.39",
+        "due_date": "2020-10-29",
         "student_id": 91,
         "created_at": "2020-09-23T17:36:46.072Z",
         "updated_at": "2020-09-24T12:43:23.244Z"
@@ -153,12 +149,11 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Fatura 10 Deletada.",
+    "message": "Bill 10 deleted.",
     "data": {
         "id": 10,
-        "valor_fatura": "242.17",
-        "data_vencimento": "2020-10-30",
+        "bill_amount": "242.17",
+        "due_date": "2020-10-30",
         "enrollment_id": 3,
         "status": "Aberta",
         "student_id": 3,

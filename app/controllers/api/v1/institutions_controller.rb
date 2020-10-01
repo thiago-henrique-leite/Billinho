@@ -1,50 +1,55 @@
 module Api
   module V1
     class InstitutionsController < ApplicationController
-      # Lista todas as instituições
+      # List institutions in general 
       def index
         institutions = Institution.order('id ASC')
-        render json: { status: 'SUCESSO', message: 'Instituições de Ensino Carregadas.', data: institutions }, status: :ok
+        render json: { message: 'Educational Institutions loaded.', data: institutions }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Lista uma instituição específica pelo seu ID
+      # List specific institution by institution ID
       def show
         institution = Institution.find(params[:id])
-        render json: { status: 'SUCESSO', message: "Instituição de Ensino #{params[:id]} Carregada.", data: institution }, status: :ok
+        render json: { message: "Educational Institution #{params[:id]} loaded.", data: institution }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Cria uma nova instituição
+      # Create a new institution
       def create
         institution = Institution.new(institution_params)
         if institution.save
-          render json: { status: 'SUCESSO', message: "#{institution_params[:nome]} Cadastrada.", data: institution }, status: :ok
+          render json: { message: "#{institution_params[:name]} registered.", data: institution }, status: :ok
         else
-          render json: { status: 'ERRO', message: 'Instituição Não Cadastrada.', data: institution.errors }, status: :unprocessable_entity
+          render json: { message: 'Educational institution not registered.', data: institution.errors }, status: :unprocessable_entity
         end
       end
 
-      # Atualiza os dados de uma instituição
+      # Updates a institution
       def update
         institution = Institution.find(params[:id])
-        if institution.update_attributes(institution_params)
-          render json: { status: 'SUCESSO', message: "Instituição #{params[:id]} Atualizada.", data: institution }, status: :ok
-        else
-          render json: { status: 'ERRO', message: "Instituição #{params[:id]} não atualizada.", data: institution.errors }, status: :unprocessable_entity
-        end
+        institution.update_attributes(institution_params)
+        render json: { message: "Institution #{params[:id]} updated.", data: institution }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Deleta uma instituição
+      # Delete an institution
       def destroy
         institution = Institution.find(params[:id])
         institution.destroy
-        render json: { status: 'SUCESSO', message: "Instituição #{params[:id]} deletada", data: institution }, status: :ok
+        render json: { message: "Institution #{params[:id]} deleted.", data: institution }, status: :ok
+        rescue ActiveRecord::RecordNotFound
+          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
-      # Verifica se os parâmetros foram aceitos
+      # Checks whether parameters have been accepted
       private
 
       def institution_params
-        params.permit(:nome, :cnpj, :tipo)
+        params.permit(:name, :cnpj, :kind)
       end
     end
   end

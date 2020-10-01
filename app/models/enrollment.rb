@@ -1,92 +1,88 @@
 class Enrollment < ApplicationRecord
-  # Chama referência de outras classes
   belongs_to :institution
   belongs_to :student
 
-  # Especifica a associação a classe bills
   has_many :bills, dependent: :destroy
 
-  # Realiza as validações necessárias
-  validates :valor_total, numericality: { greater_than: 0, message: 'Valor total não informado ou inválido.' }
-  validates :quant_faturas, numericality: { greater_than: 0, message: 'Quantidade de faturas inválida ou não informada.' }
-  validates :dia_vencimento, numericality: { greater_than: 0, less_than: 32, message: 'Dia inválido ou não informado.' }
-  validates :curso, presence: { message: 'Curso não informado.' }
+  # Performs the necessary validations
+  validates :total_value, numericality: { greater_than: 0, mounthsage: 'Invalid or not informed total value.' }
+  validates :ammount_bills, numericality: { greater_than: 0, mounthsage: 'Invalid or unreported bills quantity.' }
+  validates :due_day, numericality: { greater_than: 0, less_than: 32, mounthsage: 'Invalid or uninformed day.' }
+  validates :course, presence: { mounthsage: 'Course not informed.' }
 
-  after_create :cria_faturas
-
-  # Método que cria as faturas
+  after_create :create_bills
 
   private
 
-  def cria_faturas
-    # Recebe a data atual, dia, mês e ano
-    @t = Time.now
+  def create_bills
+    # Get the current date
+    @date = Time.now
 
-    @dia = @t.strftime('%d').to_i
-    @mes = @t.strftime('%m').to_i
-    @ano = @t.strftime('%Y').to_i
+    @day = @date.strftime('%d').to_i
+    @mounth = @date.strftime('%m').to_i
+    @year = @date.strftime('%Y').to_i
 
-    # Verifica se a cobrança começará no mês vigente ou no próximo
-    @mes += 1 if dia_vencimento <= @dia
+    # Checks whether the charge will start in the current or next month
+    @mounth += 1 if due_day <= @day
 
-    @dia = dia_vencimento
+    @day = due_day
 
-    # Método que retorna a quantidade de dias do mês
-    def max(mes)
-      if mes == 2
+    # Returns the number of days in the month
+    def max(mounth)
+      if mounth == 2
         28
-      elsif mes == 4 || mes == 6 || mes == 9 || mes == 11
+      elsif mounth == 4 || mounth == 6 || mounth == 9 || mounth == 11
         30
       else
         31
       end
     end
 
-    # Calcula o valor de cada fatura
-    @valor = valor_total / quant_faturas
-    @valor = @valor.round(2)
+    # Calculates the value of each bill
+    @value = total_value / ammount_bills
+    @value = @value.round(2)
 
-    quant_faturas.times do |_index|
-      @sinal = 0
+    ammount_bills.times do |_index|
+      @signal = 0
 
-      # Verifica se o ano já acabou
-      if @mes > 12
-        @ano += 1
-        @mes = 1
+      # Checks if the year is over
+      if @mounth > 12
+        @year += 1
+        @mounth = 1
       end
 
-      # Se o dia de vencimento é maior que 28, é necessário um tratamento diferente para cada mês
-      # Em meses que não possuírem o dia de vencimento, a fatura passa para o dia 1 do próximo mês
-      if @dia > 28
-        @max_dias_mes = max(@mes)
-        if @dia > @max_dias_mes
-          @dia = 1
-          @mes += 1
-          @sinal = 1 # Esta variável sinaliza que o mês já foi incrementado, portanto não precisará ser incrementado posteriormente
+      # If the due date is greater than 28, different treatment is required for each month
+      # In months that do not have the due date, the invoice moves to the 1st of the next month
+      if @day > 28
+        @max_days_mounth = max(@mounth)
+        if @day > @max_days_mounth
+          @day = 1
+          @mounth += 1
+          @signal = 1 # This variable signals that the month has already been increased, so it will not be increased later
         end
       end
 
-      # Coloca os zeros a esquerda de números menores que 10
-      @dia = format('%.2d', @dia)
-      @mes = format('%.2d', @mes)
+      # Places the zeros to the left of numbers less than 10
+      @day = format('%.2d', @day)
+      @mounth = format('%.2d', @mounth)
 
-      # Cria a fatura
+      # Create a bill
       Bill.create({
-                    valor_fatura: @valor.to_s,
-                    data_vencimento: "#{@ano}-#{@mes}-#{@dia}",
+                    bill_amount: @value.to_s,
+                    due_date: "#{@year}-#{@mounth}-#{@day}",
                     enrollment_id: id,
                     student_id: student_id,
                     status: 'Aberta'
                   })
 
-      @dia = @dia.to_i
-      @mes = @mes.to_i
+      @day = @day.to_i
+      @mounth = @mounth.to_i
 
-      # Atualiza o mês, caso já não tenha sido atualizado
-      if @sinal == 0
-        @mes += 1
+      # Update mounth
+      if @signal == 0
+        @mounth += 1
       else
-        @dia = dia_vencimento # Retorna o dia do vencimento como sendo o dia de cobrança
+        @day = due_day
       end
     end
   end

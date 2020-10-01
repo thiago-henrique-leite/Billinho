@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  valor_total: 1.5
-  quant_faturas: 1
-  dia_vencimento: 1
-  curso: MyText
+  total_value: 1.5
+  ammount_bills: 1
+  due_day: 1
+  course: MyText
   institution_id: 
   student_id: 
 
 two:
-  valor_total: 1.5
-  quant_faturas: 1
-  dia_vencimento: 1
-  curso: MyText
+  total_value: 1.5
+  ammount_bills: 1
+  due_day: 1
+  course: MyText
   institution_id: 
   student_id: 

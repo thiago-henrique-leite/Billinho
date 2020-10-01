@@ -11,23 +11,23 @@
     "data": [
         {
             "id": 1,
-            "nome": "Estudante 1",
+            "name": "Estudante 1",
             "cpf": "98404479771",
-            "data_nasc": "2001-04-10",
-            "telefone": 116469569,
-            "genero": "F",
-            "meio_pagamento": "Cartão",
+            "birth_date": "2001-04-10",
+            "phone": 116469569,
+            "gender": "F",
+            "pay_method": "Cartão",
             "created_at": "2020-09-23T17:36:43.628Z",
             "updated_at": "2020-09-23T17:36:43.628Z"
         },
         {
             "id": 2,
-            "nome": "Estudante 2",
+            "name": "Estudante 2",
             "cpf": "75211848308",
-           "data_nasc": "1995-07-24",
-            "telefone": 874784207,
-            "genero": "M",
-            "meio_pagamento": "Boleto",
+           "birth_date": "1995-07-24",
+            "phone": 874784207,
+            "gender": "M",
+            "pay_method": "Boleto",
             "created_at": "2020-09-23T17:36:43.634Z",
             "updated_at": "2020-09-23T17:36:43.634Z"
          },
@@ -45,12 +45,12 @@
     "message": "Estudante 5 carregado.",
     "data": {
         "id": 5,
-        "nome": "Estudante A",
+        "name": "Estudante A",
         "cpf": "98404479771",
-        "data_nasc": "2001-04-10",
-        "telefone": 116469569,
-        "genero": "F",
-        "meio_pagamento": "Cartão",
+        "birth_date": "2001-04-10",
+        "phone": 116469569,
+        "gender": "F",
+        "pay_method": "Cartão",
         "created_at": "2020-09-23T17:36:44.081Z",
         "updated_at": "2020-09-23T17:36:44.081Z"
     }
@@ -59,18 +59,18 @@
 
   ***8.2.3 Criando estudante: POST api/v1/students***
 
->   Parâmetros: Nome, cpf, gênero e meio de pagamento das faturas 
+>   Parâmetros: name, cpf, gênero e meio de pagamento das faturas 
 
 >   Requisição
 
 ```json
 {
-        "nome": "Aluno 1",
+        "name": "Aluno 1",
         "cpf": "12345678910",
-        "genero": "M",
-        "meio_pagamento": "Cartão",
-        "data_nasc": "2000-12-07",
-        "telefone": 998804342
+        "gender": "M",
+        "pay_method": "Cartão",
+        "birth_date": "2000-12-07",
+        "phone": 998804342
 }
 ```
 
@@ -82,12 +82,12 @@
     "message": "Estudante Cadastrado.",
     "data": {
         "id": 3,
-        "nome": "Aluno 1",
+        "name": "Aluno 1",
         "cpf": "12345678910",
-        "data_nasc": "2000-12-07",
-        "telefone": 998804342,
-        "genero": "M",
-        "meio_pagamento": "Cartão",
+        "birth_date": "2000-12-07",
+        "phone": 998804342,
+        "gender": "M",
+        "pay_method": "Cartão",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -104,8 +104,8 @@
 
 ```json
 {
-        "meio_pagamento": "Boleto",
-        "telefone": 822398342
+        "pay_method": "Boleto",
+        "phone": 822398342
 }
 ```
 
@@ -117,12 +117,12 @@
     "message": "Estudante 3 Atualizado.",
     "data": {
         "id": 3,
-        "nome": "Aluno 1",
+        "name": "Aluno 1",
         "cpf": "12345678910",
-        "data_nasc": "2000-12-07",
-        "telefone": 822398342,
-        "genero": "M",
-        "meio_pagamento": "Boleto",
+        "birth_date": "2000-12-07",
+        "phone": 822398342,
+        "gender": "M",
+        "pay_method": "Boleto",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -142,12 +142,12 @@
     "message": "Estudante 10 deletado",
     "data": {
         "id": 10,
-        "nome": "Estudante 10",
+        "name": "Estudante 10",
         "cpf": "55446907512",
-        "data_nasc": "1998-01-19",
-        "telefone": 599955516,
-        "genero": "F",
-        "meio_pagamento": "Cartão",
+        "birth_date": "1998-01-19",
+        "phone": 599955516,
+        "gender": "F",
+        "pay_method": "Cartão",
         "created_at": "2020-09-24T18:25:55.870Z",
         "updated_at": "2020-09-24T18:25:55.870Z"
     }

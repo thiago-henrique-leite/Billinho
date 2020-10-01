@@ -1,22 +1,19 @@
 class Student < ApplicationRecord
-  # Especifica a associação a classe enrollments e bills
   has_many :enrollments, dependent: :destroy
   has_many :bills, dependent: :destroy
 
-  # Realiza as validações necessárias
-  validates :nome, presence: { message: 'Nome do estudante não informado.' }
-  validates :cpf, numericality: { only_integer: true, message: 'CPF não informado ou caracter inválido.' }
-  validates :cpf, length: { is: 11, message: 'Quantidade de dígitos incorreta.' }
-  validates :genero, inclusion: { in: %w[M F], message: 'Gênero inválido ou não informado.' }
-  validates :meio_pagamento, inclusion: { in: %w[Cartão Boleto], message: 'Meio de pagamento inválido ou não informado' }
+  # Performs the necessary validations
+  validates :name, presence: { message: 'Student name not informed.' }
+  #validates :cpf, :cpf => true 
+  validates :gender, inclusion: { in: %w[M F], message: 'Invalid or not informed gender' }
+  validates :pay_method, inclusion: { in: %w[Cartão Boleto], message: 'Invalid or not informed payment method.' }
   validate :data_valida?
 
-  # Valida a data de nascimento do aluno
   private
-
+  # Validates the student's birth date
   def data_valida?
-    if data_nasc
-      errors.add(:data_nasc, 'Formato incorreto.') unless data_nasc.is_a?(Date)
+    if birth_date
+      errors.add(:birth_date, 'Formato incorreto.') unless birth_date.is_a?(Date)
     end
   end
 end

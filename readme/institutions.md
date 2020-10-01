@@ -10,17 +10,17 @@
     "data": [
         {
             "id": 1,
-            "nome": "Escola 1",
+            "name": "Escola 1",
             "cnpj": "60392739875145",
-            "tipo": "Escola",
+            "kind": "Escola",
             "created_at": "2020-09-23T17:36:41.328Z",
             "updated_at": "2020-09-23T17:36:41.328Z"
         },
         {
             "id": 2,
-            "nome": "Universidade 1",
+            "name": "Universidade 1",
             "cnpj": "95014120212917",
-            "tipo": "Universidade",
+            "kind": "Universidade",
             "created_at": "2020-09-23T17:36:41.333Z",
             "updated_at": "2020-09-23T17:36:41.333Z"
         },
@@ -40,9 +40,9 @@
     "data": [
         {
             "id": 1,
-            "nome": "Escola 1",
+            "name": "Escola 1",
             "cnpj": "60392739875145",
-            "tipo": "Escola",
+            "kind": "Escola",
             "created_at": "2020-09-23T17:36:41.328Z",
             "updated_at": "2020-09-23T17:36:41.328Z"
         }
@@ -50,15 +50,15 @@
 
   ***8.1.3 Criando instituição: POST api/v1/institutions***
 
->   Parâmetros: Nome e tipo
+>   Parâmetros: name e kind
 
 >   Requisição
 
 ```json
 {
-        "nome": "Universidade 2",
+        "name": "Universidade 2",
         "cnpj": "00000000000000",
-        "tipo": "Universidade"
+        "kind": "Universidade"
 }
 ```
 >   Retorno:
@@ -69,9 +69,9 @@
     "message": "Universidade 2 Cadastrada.",
     "data": {
         "id": 3,
-        "nome": "Universidade 2",
+        "name": "Universidade 2",
         "cnpj": "00000000000000",
-        "tipo": "Universidade",
+        "kind": "Universidade",
         "created_at": "2020-09-23T22:00:21.337Z",
         "updated_at": "2020-09-23T22:00:21.337Z"
     }
@@ -99,9 +99,9 @@
     "message": "Instituição 3 Atualizada.",
     "data": {
         "id": 3,
-        "nome": "Universidade 2",
+        "name": "Universidade 2",
         "cnpj": "18899965478530",
-        "tipo": "Universidade",
+        "kind": "Universidade",
         "created_at": "2020-09-23T22:00:21.337Z",
         "updated_at": "2020-09-23T22:00:21.337Z"
     }
@@ -121,9 +121,9 @@
     "message": "Instituição 4 deletada",
     "data": {
         "id": 4,
-        "nome": "Creche 4",
+        "name": "Creche 4",
         "cnpj": "24450024209805",
-        "tipo": "Creche",
+        "kind": "Creche",
         "created_at": "2020-09-24T18:25:53.714Z",
         "updated_at": "2020-09-24T18:25:53.714Z"
     }
