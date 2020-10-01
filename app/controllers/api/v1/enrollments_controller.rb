@@ -1,12 +1,12 @@
 module Api
   module V1
     class EnrollmentsController < ApplicationController
-      # List enrollments in general      
+      # List enrollments in general
       def index
         enrollments = Enrollment.order('id ASC')
         render json: { message: 'All enrollments loaded.', data: enrollments }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List enrollments of a student
@@ -14,8 +14,8 @@ module Api
         params[:student_id]
         enrollments = Enrollment.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
         render json: { message: "Enrollments of student #{params[:student_id]} loaded.", data: enrollments }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List enrollments of a institution
@@ -23,16 +23,16 @@ module Api
         params[:institution_id]
         enrollments = Enrollment.joins(:institution).where('institution_id = ?', params[:institution_id]).order('id ASC')
         render json: { message: "Enrollments of institution #{params[:institution_id]} loaded.", data: enrollments }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List specific enrollment by enrollment ID
       def show
         enrollment = Enrollment.find(params[:id])
         render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Create a new enrollment
@@ -50,8 +50,8 @@ module Api
         enrollment = Enrollment.find(params[:id])
         enrollment.update_attributes(update_params)
         render json: { message: "Enrollment #{params[:id]} updated.", data: enrollment }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Delete an enrollment
@@ -59,8 +59,8 @@ module Api
         enrollment = Enrollment.find(params[:id])
         enrollment.destroy
         render json: { message: "Enrollment #{params[:id]} deleted.", data: enrollment }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Checks whether parameters have been accepted

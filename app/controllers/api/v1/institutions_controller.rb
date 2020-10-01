@@ -1,20 +1,20 @@
 module Api
   module V1
     class InstitutionsController < ApplicationController
-      # List institutions in general 
+      # List institutions in general
       def index
         institutions = Institution.order('id ASC')
         render json: { message: 'Educational Institutions loaded.', data: institutions }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List specific institution by institution ID
       def show
         institution = Institution.find(params[:id])
         render json: { message: "Educational Institution #{params[:id]} loaded.", data: institution }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Create a new institution
@@ -32,8 +32,8 @@ module Api
         institution = Institution.find(params[:id])
         institution.update_attributes(institution_params)
         render json: { message: "Institution #{params[:id]} updated.", data: institution }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Delete an institution
@@ -41,8 +41,8 @@ module Api
         institution = Institution.find(params[:id])
         institution.destroy
         render json: { message: "Institution #{params[:id]} deleted.", data: institution }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Checks whether parameters have been accepted

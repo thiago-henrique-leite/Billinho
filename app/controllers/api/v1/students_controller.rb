@@ -1,20 +1,20 @@
 module Api
   module V1
     class StudentsController < ApplicationController
-      # List students in general 
+      # List students in general
       def index
         students = Student.order('id ASC')
         render json: { message: 'All students loaded.', data: students }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List specific student by student ID
       def show
         student = Student.find(params[:id])
         render json: { message: "Student #{params[:id]} loaded.", data: student }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Create a new student
@@ -32,8 +32,8 @@ module Api
         student = Student.find(params[:id])
         student.update_attributes(student_params)
         render json: { message: "Student #{params[:id]} updated.", data: student }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Delete an student
@@ -41,8 +41,8 @@ module Api
         student = Student.find(params[:id])
         student.destroy
         render json: { message: "Student #{params[:id]} deleted.", data: student }, status: :ok
-        rescue ActiveRecord::RecordNotFound
-          render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotFound
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # Checks whether parameters have been accepted

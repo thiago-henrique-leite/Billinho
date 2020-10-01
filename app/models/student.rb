@@ -4,12 +4,13 @@ class Student < ApplicationRecord
 
   # Performs the necessary validations
   validates :name, presence: { message: 'Student name not informed.' }
-  #validates :cpf, :cpf => true 
+  # validates :cpf, :cpf => true
   validates :gender, inclusion: { in: %w[M F], message: 'Invalid or not informed gender' }
   validates :pay_method, inclusion: { in: %w[Cartão Boleto], message: 'Invalid or not informed payment method.' }
   validate :data_valida?
 
   private
+
   # Validates the student's birth date
   def data_valida?
     if birth_date

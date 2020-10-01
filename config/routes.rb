@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
       get 'institutions/:institution_id/enrollments', to: 'enrollments#index_by_institutions'
       get 'students/:student_id/enrollments', to: 'enrollments#index_by_students'
-      
+
       get 'students/:student_id/bills', to: 'bills#index_by_students'
       get 'enrollments/:enrollment_id/bills', to: 'bills#index_by_enrollments'
     end
