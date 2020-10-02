@@ -19,7 +19,7 @@
 </br>
 </br>
 
- - [Português](/README.md) | [English]
+[Português](/README.md) | English
 
 ### 1. Description
   The Billinho is a project of Quero Educação, a leading educational marketing business. 

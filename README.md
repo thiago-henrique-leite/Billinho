@@ -19,7 +19,7 @@
 </br>
 </br>
 
- - [Translate to English](/README-en.md)
+Português | [English](/README-en.md)
 
 ### 1. Descrição
   O Billinho é um projeto da Quero Educação, empresa líder no ramo de marketing educacional. 
