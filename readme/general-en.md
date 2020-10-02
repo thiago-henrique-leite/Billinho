@@ -1,10 +1,10 @@
-# Funcionamento da API
+# API Operation
 
 #### 8.1 Instituições
 
-  ***8.1.1 Visualizando todas as instituições: GET api/v1/institutions***
+  ***8.1.1 Viewing all institutions: GET api/v1/institutions***
 
->   Retorno:
+>   Response:
 
 ```json
 {
@@ -12,7 +12,7 @@
     "data": [
         {
             "id": 1,
-            "name": "Escola 1",
+            "name": "School 1",
             "cnpj": "60392739875145",
             "kind": "Escola",
             "created_at": "2020-09-23T17:36:41.328Z",
@@ -20,7 +20,7 @@
         },
         {
             "id": 2,
-            "name": "Universidade 1",
+            "name": "University 1",
             "cnpj": "95014120212917",
             "kind": "Universidade",
             "created_at": "2020-09-23T17:36:41.333Z",
@@ -30,11 +30,11 @@
 ```
 
 
-  ***8.1.2 Visualizando instituição específica: GET api/v1/institutions/1***
+  ***8.1.2 Viewing specific institution: GET api/v1/institutions/1***
 
->   Parâmetros: id da instituição 
+>   Parameters: Institution ID
 
->   Retorno: 
+>   Response: 
 
 ```json
 {
@@ -42,7 +42,7 @@
     "data": [
         {
             "id": 1,
-            "name": "Escola 1",
+            "name": "School 1",
             "cnpj": "60392739875145",
             "kind": "Escola",
             "created_at": "2020-09-23T17:36:41.328Z",
@@ -50,27 +50,27 @@
         }
 ```
 
-  ***8.1.3 Criando instituição: POST api/v1/institutions***
+  ***8.1.3 Creating institution: POST api/v1/institutions***
 
->   Parâmetros: name e kind
+>   Parameters: Name and kind
 
->   Requisição
+>   Request:
 
 ```json
 {
-        "name": "Universidade 2",
+        "name": "University 2",
         "cnpj": "00000000000000",
         "kind": "Universidade"
 }
 ```
->   Retorno:
+>   Response:
 
 ```json
 {
-    "message": "Universidade 2 registered.",
+    "message": "University 2 registered.",
     "data": {
         "id": 3,
-        "name": "Universidade 2",
+        "name": "University 2",
         "cnpj": "00000000000000",
         "kind": "Universidade",
         "created_at": "2020-09-23T22:00:21.337Z",
@@ -79,27 +79,27 @@
 }
 ```
 
-  ***8.1.4 Atualizando instituição: PUT api/v1/institutions/3***
+  ***8.1.4 Updating institution: PUT api/v1/institutions/3***
 
->   Parâmetros: id da instituição
+>   Parameters: Institution ID
 
->   Na requisição colocar apenas o campo que quer atualizar.
+>   In the request, put only the field you want to update.
 
->   Requisição:
+>   Request:
 
 ```json
 {
         "cnpj": "18899965478530"
 }
 ```
->   Retorno
+>   Response
 
 ```json
 {
     "message": "Institution 3 updated.",
     "data": {
         "id": 3,
-        "name": "Universidade 2",
+        "name": "University 2",
         "cnpj": "18899965478530",
         "kind": "Universidade",
         "created_at": "2020-09-23T22:00:21.337Z",
@@ -108,12 +108,12 @@
 }
 ```
 
-  ***8.2.5 Deletando uma instituição: DELETE api/v1/institutions/10***
+  ***8.2.5 Deleting a institution: DELETE api/v1/institutions/10***
 
->   Parâmetros: id da instituição
->   Obs: A exclusão de uma instituição exclui também todas as matrículas e faturas vinculadas a ela.
+>   Parameters: Institution ID
+>   Note: The exclusion of an institution also excludes all enrollments and bills linked to it.
 
->   Retorno:
+>   Response:
 
 ```json
 {
@@ -131,9 +131,9 @@
 
 #### 8.2 Estudantes
 
-  ***8.2.1 Visualizando todos os estudantes: GET api/v1/students***
+  ***8.2.1 Viewing all students: GET api/v1/students***
 
->   Retorno:
+>   Response:
 
 ```json
 {
@@ -141,7 +141,7 @@
     "data": [
         {
             "id": 1,
-            "name": "Estudante 1",
+            "name": "Student 1",
             "cpf": "98404479771",
             "birth_date": "2001-04-10",
             "phone": 116469569,
@@ -152,7 +152,7 @@
         },
         {
             "id": 2,
-            "name": "Estudante 2",
+            "name": "Student 2",
             "cpf": "75211848308",
            "birth_date": "1995-07-24",
             "phone": 874784207,
@@ -163,19 +163,18 @@
          },
 ```
 
-  ***8.2.2 Visualizando estudante específico: GET api/v1/students/1***
+  ***8.2.2 Viewing specific student: GET api/v1/students/1***
 
->   Parâmetros: id do estudante
+>   Parameters: Student ID
 
->   Retorno: 
+>   Response: 
 
 ```json
 {
-    {
     "message": "Student 5 loaded.",
     "data": {
         "id": 5,
-        "name": "Estudante A",
+        "name": "Student A",
         "cpf": "98404479771",
         "birth_date": "2001-04-10",
         "phone": 116469569,
@@ -187,15 +186,15 @@
 }
 ```
 
-  ***8.2.3 Criando estudante: POST api/v1/students***
+  ***8.2.3 Creating student: POST api/v1/students***
 
->   Parâmetros: name, cpf, gênero e meio de pagamento das faturas 
+>   Parameters: name, cpf, gender and bill payment method 
 
->   Requisição
+>   Request
 
 ```json
 {
-        "name": "Aluno 1",
+        "name": "John",
         "cpf": "12345678910",
         "gender": "M",
         "pay_method": "Cartão",
@@ -204,15 +203,14 @@
 }
 ```
 
->  Retorno: 
+>  Response: 
 
 ```json
 {
-    {
     "message": "Student registered.",
     "data": {
         "id": 3,
-        "name": "Aluno 1",
+        "name": "John",
         "cpf": "12345678910",
         "birth_date": "2000-12-07",
         "phone": 998804342,
@@ -224,13 +222,13 @@
 }
 ```
 
-  ***8.2.4 Atualizando estudante: PUT api/v1/students/3***
+  ***8.2.4 Updating student: PUT api/v1/students/3***
 
->   Parâmetros: id do estudante
+>   Parameters: Student ID
 
->   Na requisição colocar apenas o campo que quer atualizar.
+>   In the request, put only the field you want to update.
 
->   Requisição:
+>   Request:
 
 ```json
 {
@@ -239,15 +237,14 @@
 }
 ```
 
->   Resposta:
+>   Response:
 
 ```json
 {
-    {
     "message": "Student 3 updated.",
     "data": {
         "id": 3,
-        "name": "Aluno 1",
+        "name": "John",
         "cpf": "12345678910",
         "birth_date": "2000-12-07",
         "phone": 822398342,
@@ -259,20 +256,19 @@
 }
 ```
 
-  ***8.2.5 Deletando um estudante: DELETE api/v1/students/10***
+  ***8.2.5 Deleting a student: DELETE api/v1/students/10***
 
->   Parâmetros: id do estudante
->   Obs: A exclusão de um estudante exclui também todas as matrículas e faturas vinculadas a ele.
+>   Parameters: Student ID
+>   Note: Deleting a student also deletes all enrollments and bills linked to the student.
 
->   Retorno:
+>   Response:
 
 ```json
 {
-    {
     "message": "Student 10 deleted",
     "data": {
         "id": 10,
-        "name": "Estudante 10",
+        "name": "Student 10",
         "cpf": "55446907512",
         "birth_date": "1998-01-19",
         "phone": 599955516,
@@ -284,15 +280,14 @@
 }
 ```
 
-#### 8.3 Matrículas
+#### 8.3 Enrollments
 
-  ***8.3.1 Visualizando todas as matrículas: GET api/v1/enrollments***
+  ***8.3.1 Viewing all enrollments: GET api/v1/enrollments***
 
->   Resposta: 
+>   Response: 
 
 ```json
 {
-    {
     "message": "All enrollments loaded.",
     "data": [
         {
@@ -300,7 +295,7 @@
             "total_value": "759.45",
             "ammount_bills": 30,
             "due_day": 7,
-            "course": "course 0",
+            "course": "Course 0",
             "institution_id": 1,
             "student_id": 2,
             "created_at": "2020-09-23T17:36:46.033Z",
@@ -311,7 +306,7 @@
             "total_value": "433.57",
             "ammount_bills": 60,
             "due_day": 29,
-            "course": "course 1",
+            "course": "Course 1",
             "institution_id": 2,
             "student_id": 1,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -319,22 +314,21 @@
         },
 ```
 
-  ***8.3.2 Visualizando matrícula específica: GET api/v1/enrollments/2***
+  ***8.3.2 Viewing specific enrollment: GET api/v1/enrollments/2***
 
->   Parâmetros: id da matrícula
+>   Parameters: Enrollment ID
 
->   Resposta:
+>   Response:
 
 ```json
 {
-    {
     "message": "Enrollment 2 loaded.",
     "data": {
         "id": 2,
         "total_value": "433.57",
         "ammount_bills": 60,
         "due_day": 29,
-        "course": "course 1",
+        "course": "Course 1",
         "institution_id": 2,
         "student_id": 1,
         "created_at": "2020-09-23T17:36:46.064Z",
@@ -343,17 +337,16 @@
 }
 ```
 
-  ***8.3.3 Visualizando todas as matrículas de uma instituição específica: GET api/v1/institutions/3/enrollments***
+  ***8.3.3 Viewing all enrollments for a specific institution: GET api/v1/institutions/3/enrollments***
 
->   Parâmetros: id da instituição
+>   Parameters: Institution ID
 
->   Observação: É possível ainda visualizar todas as matrículas de um estudante GET api/v1/students/3/enrollments
+>   Observação: You can also view all enrollments for a student GET api/v1/students/3/enrollments
 
->   Resposta:
+>   Response:
 
 ```json
 {
-    {
     "message": "Enrollments of institution 3 loaded.",
     "data": [
         {
@@ -361,7 +354,7 @@
             "total_value": "874.99",
             "ammount_bills": 24,
             "due_day": 30,
-            "course": "course 42",
+            "course": "Course 42",
             "institution_id": 3,
             "student_id": 79,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -372,7 +365,7 @@
             "total_value": "1230.0",
             "ammount_bills": 32,
             "due_day": 5,
-            "course": "course 68",
+            "course": "Course 68",
             "institution_id": 3,
             "student_id": 156,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -382,12 +375,12 @@
 }
 ```
 
-  ***8.3.4 Criando matrícula: POST api/v1/enrollments***
+  ***8.3.4 Creating Enrollment: POST api/v1/enrollments***
 
->   Parâmetros: id da instituição, id do estudante, valor total do course, quantidade de faturas,
->   dia do vencimento da fatura e name do course.
+>   Parameters: Institution ID, Student ID, total course value, number of bills,
+>   bill due day and course name.
 
->   Requisição:
+>   Request:
 
 ```json
 {
@@ -396,22 +389,21 @@
         "total_value": 256000,
         "ammount_bills": 60,
         "due_day": 15,
-        "course": "Ciência da Computação"
+        "course": "Computer Science"
 }
 ```
 
->   Resposta
+>   Response
 
 ```json
 {
-    {
     "message": "Enrollment registered.",
     "data": {
         "id": 615,
         "total_value": "256000.0",
         "ammount_bills": 60,
         "due_day": 15,
-        "course": "Ciência da Computação",
+        "course": "Computer Science",
         "institution_id": 325,
         "student_id": 200,
         "created_at": "2020-09-24T12:23:01.428Z",
@@ -420,27 +412,26 @@
 }
 ```
 
- ***8.3.5 Atualizando matrícula: POST api/v1/enrollments/3***
+ ***8.3.5 Updating Enrollment: POST api/v1/enrollments/3***
 
->   Parâmetros: name do course ou id da instituição.
+>   Allowed parameters: Course name or institution id.
 
->   Requisição:
+>   Request:
 
 ```json
 {
-        "course": "Arquitetura"
+        "course": "Architecture"
 }
 ```
 
-> Retorno:
+> Request:
 
 ```json
 {
-    {
     "message": "Enrollment 3 updated.",
     "data": {
         "id": 3,
-        "course": "Arquitetura",
+        "course": "Architecture",
         "institution_id": 3,
         "student_id": 3,
         "total_value": "1247.95",
@@ -452,23 +443,22 @@
 }
 ```
 
- ***8.3.6 Deletando uma matrícula: DELETE api/v1/enrollments/10***
+ ***8.3.6 Deleting a enrollment: DELETE api/v1/enrollments/10***
 
->   Parâmetros: id da matrícula </br>
->   Obs: A exclusão de uma matrícula exclui também todas as faturas vinculadas àquela matrícula.
+>   Parameters: Enrollment ID </br>
+>   Note: Deleting a enrollment also excludes all bills linked to that enrollment.
 
->   Retorno:
+>   Request:
 
 ```json
 {
-    {
     "message": "Enrollment 10 deleted.",
     "data": {
         "id": 10,
         "total_value": "714.85",
         "ammount_bills": 4,
         "due_day": 22,
-        "course": "course 10",
+        "course": "Course 10",
         "institution_id": 10,
         "student_id": 10,
         "created_at": "2020-09-24T18:25:58.308Z",
@@ -477,16 +467,14 @@
 }
 ```
 
+#### 8.4 Bills
 
-#### 8.4 Faturas
+  ***8.4.1 Viewing all bills: GET api/v1/bills***
 
-  ***8.4.1 Visualizando todas as faturas: GET api/v1/bills***
-
->   Resposta: 
+>   Response: 
 
 ```json
 {
-    {
     "message": "All bills loaded.",
     "data": [
         {
@@ -511,13 +499,12 @@
         },
 ```
 
-  ***8.4.2 Visualizando fatura específica: GET api/v1/bills/407***
+  ***8.4.2 Viewing specific bill: GET api/v1/bills/407***
 
->   Resposta: 
+>   Response: 
 
 ```json
 {
-    {
     "message": "Bill 407 loaded.",
     "data": {
         "id": 407,
@@ -532,17 +519,16 @@
 }
 ```
 
-  ***8.4.3 Visualizando todas as faturas de uma matrícula específica: GET api/v1/enrollments/3/bills***
+  ***8.4.3 Viewing all bills for a specific enrollment: GET api/v1/enrollments/3/bills***
 
->   Parâmetros: id da fatura
+>   Parameters: Bill Id
 
->   Observação: É possível ainda visualizar tofas as faturas de um estudante: GET api/v1/students/4/bills
+>   Note: You can also view all student bills: GET api/v1/students/4/bills
 
->   Resposta: 
+>   Response: 
 
 ```json
 {
-    {
     "message": "Bills of enrollment 115 loaded.",
     "data": [
         {
@@ -569,37 +555,37 @@
 }
 ```
 
-  ***8.4.4 Criando faturas***
+  ***8.4.4 Creating bills***
 
->   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do course em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. 
+>   The creation of bills is a little different from the rest, they are created together with the enrollment. The system creates the correct number of bills according to the value of the Number of bills field in the created enrollment. To define the value of each bill, just divide the total amount of the course in reais by the Quantity of bills, both values belonging to the enrollment.
 
-> Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual. Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
+>   In defining the due date, if the due date received is less than or equal to the day of the current month, invoices must start in the next month, otherwise, they must start in the current month. For example, today being 10/1/2020 and the due day equal to 30, the due date of the first invoice must be 10/30/2020, the due dates of the other invoices must always be in the month following the previous one:      
 
->   Hoje sendo 01/10/2020
+>   Today being 10/01/2020
 
->   Com os seguintes dados da matrícula:
+>   With the following enrollment data:
 
-  Valor total do course | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
-  ---------------------|------------|-------------------|------------------|-------------
-  2000.00              |     5      |        30         |        1         |      1
+  Total course value   |   Amount   | Due day  | Institution ID  | Student ID 
+  ---------------------|------------|----------|-----------------|------------
+  2000.00              |     5      |    30    |        1        |     1
 
->   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente)
+>   We assume that both the educational institution and the student have been created previously.
 
->   Obs: Quando o mês não possui o número de dias da data de vencimento da fatura, ela passa a vencer no dia 01 do próximo mês.
+>   Note: When the month does not have the number of days from the bills due day, it starts to expire on the 1st of the next month.
 
->   Neste contexto deverão ser criadas 5 faturas, cada uma com o valor de R$ 400,00, com as seguintes datas de vencimento:
+>   In this context, 5 bills should be created, each with a value of R $ 400.00, with the following due dates:
 
->   - 30/10/2020
->   - 30/11/2020
->   - 30/12/2020
->   - 30/01/2020
->   - 01/03/2020
+>   - 10/30/2020
+>   - 11/30/2020
+>   - 12/30/2020
+>   - 01/30/2020
+>   - 03/01/2020
 
-  ***8.4.5 Atualizando status da fatura: PUT api/v1/bills/420***
+  ***8.4.5 Updating bill status: PUT api/v1/bills/420***
 
->   Parâmetros: id da fatura e novo status da fatura
+>   Parameters: Bill ID and new bill status
 
->   Requisição:
+>   Request:
 
 ```json
 {       
@@ -607,11 +593,10 @@
 }
 ```
 
->   Resposta:
+>   Response:
 
 ```json
 {
-    {
     "message": "Bill 410 updated.",
     "data": {
         "id": 410,
@@ -625,15 +610,14 @@
     }
 }
 ```
-  ***8.4.6 Deletando uma faturas: DELETE api/v1/bills/10***
+  ***8.4.6 Deleting an bill: DELETE api/v1/bills/10***
 
->   Parâmetros: id da fatura
+>   Parameters: Bill Id
 
->   Retorno:
+>   Response:
 
 ```json
 {
-    {
     "message": "Bill 10 deleted.",
     "data": {
         "id": 10,

@@ -1,8 +1,8 @@
-#### 8.4 Faturas
+#### 8.4 Bills
 
-  ***8.4.1 Visualizando todas as faturas: GET api/v1/bills***
+  ***8.4.1 Viewing all bills: GET api/v1/bills***
 
->   Resposta: 
+>   Response: 
 
 ```json
 {
@@ -30,9 +30,9 @@
         },
 ```
 
-  ***8.4.2 Visualizando fatura específica: GET api/v1/bills/407***
+  ***8.4.2 Viewing specific bill: GET api/v1/bills/407***
 
->   Resposta: 
+>   Response: 
 
 ```json
 {
@@ -50,13 +50,13 @@
 }
 ```
 
-  ***8.4.3 Visualizando todas as faturas de uma matrícula específica: GET api/v1/enrollments/3/bills***
+  ***8.4.3 Viewing all bills for a specific enrollment: GET api/v1/enrollments/3/bills***
 
->   Parâmetros: id da fatura
+>   Parameters: Bill Id
 
->   Observação: É possível ainda visualizar tofas as faturas de um estudante: GET api/v1/students/4/bills
+>   Note: You can also view all student bills: GET api/v1/students/4/bills
 
->   Resposta: 
+>   Response: 
 
 ```json
 {
@@ -86,37 +86,37 @@
 }
 ```
 
-  ***8.4.4 Criando faturas***
+  ***8.4.4 Creating bills***
 
->   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do course em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. 
+>   The creation of bills is a little different from the rest, they are created together with the enrollment. The system creates the correct number of bills according to the value of the Number of bills field in the created enrollment. To define the value of each bill, just divide the total amount of the course in reais by the Quantity of bills, both values belonging to the enrollment.
 
-> Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual. Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
+>   In defining the due date, if the due date received is less than or equal to the day of the current month, invoices must start in the next month, otherwise, they must start in the current month. For example, today being 10/1/2020 and the due day equal to 30, the due date of the first invoice must be 10/30/2020, the due dates of the other invoices must always be in the month following the previous one:      
 
->   Hoje sendo 01/10/2020
+>   Today being 10/01/2020
 
->   Com os seguintes dados da matrícula:
+>   With the following enrollment data:
 
-  Valor total do course | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
-  ---------------------|------------|-------------------|------------------|-------------
-  2000.00              |     5      |        30         |        1         |      1
+  Total course value   |   Amount   | Due day  | Institution ID  | Student ID 
+  ---------------------|------------|----------|-----------------|------------
+  2000.00              |     5      |    30    |        1        |     1
 
->   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente)
+>   We assume that both the educational institution and the student have been created previously.
 
->   Obs: Quando o mês não possui o número de dias da data de vencimento da fatura, ela passa a vencer no dia 01 do próximo mês.
+>   Note: When the month does not have the number of days from the bills due day, it starts to expire on the 1st of the next month.
 
->   Neste contexto deverão ser criadas 5 faturas, cada uma com o valor de R$ 400,00, com as seguintes datas de vencimento:
+>   In this context, 5 bills should be created, each with a value of R $ 400.00, with the following due dates:
 
->   - 30/10/2020
->   - 30/11/2020
->   - 30/12/2020
->   - 30/01/2020
->   - 01/03/2020
+>   - 10/30/2020
+>   - 11/30/2020
+>   - 12/30/2020
+>   - 01/30/2020
+>   - 03/01/2020
 
-  ***8.4.5 Atualizando status da fatura: PUT api/v1/bills/420***
+  ***8.4.5 Updating bill status: PUT api/v1/bills/420***
 
->   Parâmetros: id da fatura e novo status da fatura
+>   Parameters: Bill ID and new bill status
 
->   Requisição:
+>   Request:
 
 ```json
 {       
@@ -124,7 +124,7 @@
 }
 ```
 
->   Resposta:
+>   Response:
 
 ```json
 {
@@ -141,11 +141,11 @@
     }
 }
 ```
-  ***8.4.6 Deletando uma faturas: DELETE api/v1/bills/10***
+  ***8.4.6 Deleting an bill: DELETE api/v1/bills/10***
 
->   Parâmetros: id da fatura
+>   Parameters: Bill Id
 
->   Retorno:
+>   Response:
 
 ```json
 {

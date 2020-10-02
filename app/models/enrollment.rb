@@ -58,7 +58,7 @@ class Enrollment < ApplicationRecord
         if @day > @max_days_mounth
           @day = 1
           @mounth += 1
-          @signal = 1 # This variable signals that the month has already been increased, so it will not be increased later
+          @signal = 1 # This variable signal that the month has already been increased, so it will not be increased later
         end
       end
 

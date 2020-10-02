@@ -18,6 +18,8 @@
 
 </br>
 
+ - [Translate to English](/README-en.md)
+
 ### 1. Descrição
   O Billinho é um projeto da Quero Educação, empresa líder no ramo de marketing educacional. 
   Ele tem por objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos 
@@ -44,7 +46,7 @@
   Campo  |   kind   |           Restrições
   -------|----------|----------------------------------
   Nome   |   Texto  | Não vazio e único
-  CNPJ   |   Texto  | 14 caracteres numéricos e único
+  CNPJ   |   Texto  | Válido, único e não vazio
   kind   |   Texto  | Universidade, Escola ou Creche
 
   ***3.2 Aluno***
@@ -53,7 +55,7 @@
   Campo               |   kind   |                Restrições
   --------------------|----------|---------------------------------------------
   Nome                |   Texto  | Não vazio e único
-  CPF                 |   Texto  | 11 caracteres numéricos, único e não vazio 
+  CPF                 |   Texto  | Válido, único e não vazio 
   Data de Nascimento  |   Data   | Formato yyyy-mm-dd (Facultativo)
   Telefone            |  Inteiro | 
   Gênero              |   Texto  | M ou F
@@ -63,10 +65,10 @@
 
   Campo                        |   kind              |                 Restrições
   -----------------------------|---------------------|-----------------------------------------------
-  Valor total do course         |  Decimal            | Não vazio, > 0
+  Valor total do course        |  Decimal            | Não vazio, > 0
   Quantidade de faturas        |  Inteiro            | Não vazio, >= 1
   Dia de vencimento das faturas|  Inteiro            | Não vazio, >= 1 e <= 31
-  Nome do course                |  Texto              | Não vazio
+  Nome do course               |  Texto              | Não vazio
   Id da instituição            |  Chave estrangeira  | Não vazio
   Id do aluno                  |  Chave estrangeira  | Não vazio
 
@@ -163,23 +165,24 @@
 
 ### 6. Como rodar a aplicação :fire:
 >>  ***6.1 Clone este repositório*** 
->>>      - $ git clone git@github.com:thiago-henrique-leite/Billinho.git
+>>>    - $ git clone git@github.com:thiago-henrique-leite/Billinho.git
 
 >>  ***6.2 Acesse a pasta do projeto no terminal***
->>>      - $ cd etc/Billinho
+>>>    - $ cd etc/Billinho
 
 >>  ***6.3 Baixe as dependências do projeto***
->>>      - $ bundle install
+>>>    - $ bundle install
 
 >>  ***6.7 Crie o banco de dados***
->>>      - $ rails db:create
->>>      - $ rails db:migrate
+>>>    - $ rails db:create
+>>>    - $ rails db:migrate
 
 >>  ***6.8 Preencha o banco com os valores padrões***
->>>      - $ rails db:seed
+>>>    - $ rails db:seed
+>>>    - $ rails db:migrate
 
 >>  ***6.9 Rode a aplicação***
->>>      - $ rails s 
+>>>    - $ rails s 
 
 >>  O servidor inciará na porta:3000 - acesse <http://localhost:3000> </br>
 
@@ -200,8 +203,8 @@
 
 ### 8. Projeto em Execução :rocket:
 
-> + [**API Completa**](readme/Funcionamento.md)
->   - [**8.1 Instituições**](readme/institutions.md)
->   - [**8.2 Estudantes**](readme/students.md)
->   - [**8.3 Matrículas**](readme/enrollments.md)
->   - [**8.4 Faturas**](readme/bills.md)
+> + [**API Completa**](readme/general-pt.md)
+>   - [**8.1 Instituições**](readme/institutions-pt.md)
+>   - [**8.2 Estudantes**](readme/students-pt.md)
+>   - [**8.3 Matrículas**](readme/enrollments-pt.md)
+>   - [**8.4 Faturas**](readme/bills-pt.md)

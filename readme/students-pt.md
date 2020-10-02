@@ -6,8 +6,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Lista de Estudantes Carregada.",
+    "message": "All students loaded.",
     "data": [
         {
             "id": 1,
@@ -41,8 +40,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Estudante 5 carregado.",
+    "message": "Student 5 loaded.",
     "data": {
         "id": 5,
         "name": "Estudante A",
@@ -78,8 +76,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Estudante Cadastrado.",
+    "message": "Student registered.",
     "data": {
         "id": 3,
         "name": "Aluno 1",
@@ -113,8 +110,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Estudante 3 Atualizado.",
+    "message": "Student 3 updated.",
     "data": {
         "id": 3,
         "name": "Aluno 1",
@@ -138,8 +134,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Estudante 10 deletado",
+    "message": "Student 10 deleted",
     "data": {
         "id": 10,
         "name": "Estudante 10",

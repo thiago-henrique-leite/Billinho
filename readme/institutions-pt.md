@@ -5,8 +5,8 @@
 >   Retorno:
 
 ```json
-"status": "SUCESSO",
-    "message": "Instituições de Ensino Carregadas.",
+{
+    "message": "Educational Institutions loaded.",
     "data": [
         {
             "id": 1,
@@ -35,8 +35,8 @@
 >   Retorno: 
 
 ```json
-"status": "SUCESSO",
-    "message": "Instituição de Ensino 1 Carregada.",
+{
+    "message": "Educational Institution 1 loaded.",
     "data": [
         {
             "id": 1,
@@ -65,8 +65,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Universidade 2 Cadastrada.",
+    "message": "Universidade 2 registered.",
     "data": {
         "id": 3,
         "name": "Universidade 2",
@@ -95,8 +94,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Instituição 3 Atualizada.",
+    "message": "Institution 3 updated.",
     "data": {
         "id": 3,
         "name": "Universidade 2",
@@ -117,8 +115,7 @@
 
 ```json
 {
-    "status": "SUCESSO",
-    "message": "Instituição 4 deletada",
+    "message": "Institution 4 deleted",
     "data": {
         "id": 4,
         "name": "Creche 4",
