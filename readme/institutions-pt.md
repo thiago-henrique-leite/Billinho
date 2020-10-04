@@ -65,7 +65,7 @@
 
   ***8.1.3 Criando instituição: POST api/v1/institutions***
 
->   Parâmetros: name, kind, cep, cnpj
+>   Parâmetros: nome, tipo, cep, cnpj
 
 >   Requisição
 
@@ -135,6 +135,7 @@
   ***8.2.5 Deletando uma instituição: DELETE api/v1/institutions/10***
 
 >   Parâmetros: id da instituição
+
 >   Obs: A exclusão de uma instituição exclui também todas as matrículas e faturas vinculadas a ela.
 
 >   Retorno:

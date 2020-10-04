@@ -163,7 +163,8 @@
 
  ***8.3.6 Deleting a enrollment: DELETE api/v1/enrollments/10***
 
->   Parameters: Enrollment ID </br>
+>   Parameters: Enrollment ID 
+
 >   Note: Deleting a enrollment also excludes all bills linked to that enrollment.
 
 >   Request:

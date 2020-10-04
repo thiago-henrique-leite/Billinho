@@ -154,6 +154,7 @@
   ***8.2.5 Deleting a student: DELETE api/v1/students/10***
 
 >   Parameters: Student ID
+
 >   Note: Deleting a student also deletes all enrollments and bills linked to the student.
 
 >   Response:

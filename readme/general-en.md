@@ -137,6 +137,7 @@
   ***8.2.5 Deleting a institution: DELETE api/v1/institutions/10***
 
 >   Parameters: Institution ID
+
 >   Note: The exclusion of an institution also excludes all enrollments and bills linked to it.
 
 >   Response:
@@ -315,6 +316,7 @@
   ***8.2.5 Deleting a student: DELETE api/v1/students/10***
 
 >   Parameters: Student ID
+
 >   Note: Deleting a student also deletes all enrollments and bills linked to the student.
 
 >   Response:
@@ -506,7 +508,8 @@
 
  ***8.3.6 Deleting a enrollment: DELETE api/v1/enrollments/10***
 
->   Parameters: Enrollment ID </br>
+>   Parameters: Enrollment ID 
+
 >   Note: Deleting a enrollment also excludes all bills linked to that enrollment.
 
 >   Request:

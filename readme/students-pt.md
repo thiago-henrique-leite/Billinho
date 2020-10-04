@@ -72,7 +72,7 @@
 
   ***8.2.3 Criando estudante: POST api/v1/students***
 
->   Parâmetros: name, cpf, gênero e meio de pagamento das faturas 
+>   Parâmetros: nome, cpf, gênero e meio de pagamento das faturas 
 
 >   Requisição
 
@@ -154,6 +154,7 @@
   ***8.2.5 Deletando um estudante: DELETE api/v1/students/10***
 
 >   Parâmetros: id do estudante
+
 >   Obs: A exclusão de um estudante exclui também todas as matrículas e faturas vinculadas a ele.
 
 >   Retorno:

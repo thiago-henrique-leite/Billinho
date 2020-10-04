@@ -67,7 +67,7 @@
 
   ***8.1.3 Criando instituição: POST api/v1/institutions***
 
->   Parâmetros: name, kind, cep, cnpj
+>   Parâmetros: nome, tipo, cep, cnpj
 
 >   Requisição
 
@@ -137,6 +137,7 @@
   ***8.2.5 Deletando uma instituição: DELETE api/v1/institutions/10***
 
 >   Parâmetros: id da instituição
+
 >   Obs: A exclusão de uma instituição exclui também todas as matrículas e faturas vinculadas a ela.
 
 >   Retorno:
@@ -233,7 +234,7 @@
 
   ***8.2.3 Criando estudante: POST api/v1/students***
 
->   Parâmetros: name, cpf, gênero e meio de pagamento das faturas 
+>   Parâmetros: nome, cpf, gênero e meio de pagamento das faturas 
 
 >   Requisição
 
@@ -315,6 +316,7 @@
   ***8.2.5 Deletando um estudante: DELETE api/v1/students/10***
 
 >   Parâmetros: id do estudante
+
 >   Obs: A exclusão de um estudante exclui também todas as matrículas e faturas vinculadas a ele.
 
 >   Retorno:
@@ -356,7 +358,7 @@
             "total_value": "759.45",
             "ammount_bills": 30,
             "due_day": 7,
-            "course": "course 0",
+            "course": "Curso 0",
             "institution_id": 1,
             "student_id": 2,
             "created_at": "2020-09-23T17:36:46.033Z",
@@ -367,7 +369,7 @@
             "total_value": "433.57",
             "ammount_bills": 60,
             "due_day": 29,
-            "course": "course 1",
+            "course": "Curso 1",
             "institution_id": 2,
             "student_id": 1,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -389,7 +391,7 @@
         "total_value": "433.57",
         "ammount_bills": 60,
         "due_day": 29,
-        "course": "course 1",
+        "course": "Curso 1",
         "institution_id": 2,
         "student_id": 1,
         "created_at": "2020-09-23T17:36:46.064Z",
@@ -415,7 +417,7 @@
             "total_value": "874.99",
             "ammount_bills": 24,
             "due_day": 30,
-            "course": "course 42",
+            "course": "Curso 42",
             "institution_id": 3,
             "student_id": 79,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -426,7 +428,7 @@
             "total_value": "1230.0",
             "ammount_bills": 32,
             "due_day": 5,
-            "course": "course 68",
+            "course": "Curso 68",
             "institution_id": 3,
             "student_id": 156,
             "created_at": "2020-09-23T17:36:46.064Z",
@@ -438,8 +440,8 @@
 
   ***8.3.4 Criando matrícula: POST api/v1/enrollments***
 
->   Parâmetros: id da instituição, id do estudante, valor total do course, quantidade de faturas,
->   dia do vencimento da fatura e name do course.
+>   Parâmetros: id da instituição, id do estudante, valor total do curso, quantidade de faturas,
+>   dia do vencimento da fatura e nome do curso.
 
 >   Requisição:
 
@@ -475,7 +477,7 @@
 
  ***8.3.5 Atualizando matrícula: POST api/v1/enrollments/3***
 
->   Parâmetros: name do course ou id da instituição.
+>   Parâmetros: nome do curso ou id da instituição.
 
 >   Requisição:
 
@@ -507,7 +509,8 @@
 
  ***8.3.6 Deletando uma matrícula: DELETE api/v1/enrollments/10***
 
->   Parâmetros: id da matrícula </br>
+>   Parâmetros: id da matrícula 
+
 >   Obs: A exclusão de uma matrícula exclui também todas as faturas vinculadas àquela matrícula.
 
 >   Retorno:
@@ -520,7 +523,7 @@
         "total_value": "714.85",
         "ammount_bills": 4,
         "due_day": 22,
-        "course": "course 10",
+        "course": "Curso 10",
         "institution_id": 10,
         "student_id": 10,
         "created_at": "2020-09-24T18:25:58.308Z",
@@ -628,7 +631,7 @@
 
 >   Com os seguintes dados da matrícula:
 
-  Valor total do course | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
+  Valor total do curso | Quantidade | Dia de vencimento | ID da Instiuição | ID do aluno
   ---------------------|------------|-------------------|------------------|-------------
   2000.00              |     5      |        30         |        1         |      1
 

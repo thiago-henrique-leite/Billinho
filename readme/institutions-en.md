@@ -135,6 +135,7 @@
   ***8.2.5 Deleting a institution: DELETE api/v1/institutions/10***
 
 >   Parameters: Institution ID
+
 >   Note: The exclusion of an institution also excludes all enrollments and bills linked to it.
 
 >   Response:
