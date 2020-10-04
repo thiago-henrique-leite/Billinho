@@ -49,20 +49,22 @@ Português | [English](/README-en.md)
   Nome                              |   Texto   | Não vazio e único
   CNPJ                              |   Texto   | Válido, único e não vazio
   Tipo                              |   Texto   | Universidade, Escola ou Creche
-  CEP                               |   Texto   |  Válido
-  Endereço, Estado, Bairro e Cidade |   Texto   |  Preenchido automaticamente a partir do CEP
+  CEP                               |   Texto   | Válido
+  Estado, Cidade, Bairro e Endereço |   Texto   | Preenchido automaticamente a partir do CEP
 
   ***3.2 Aluno***
 
 
-  Campo               |   Tipo   |                Restrições
-  --------------------|----------|---------------------------------------------
-  Nome                |   Texto  | Não vazio e único
-  CPF                 |   Texto  | Válido, único e não vazio 
-  Data de Nascimento  |   Data   | Formato yyyy-mm-dd (Facultativo)
-  Telefone            |  Inteiro | 
-  Gênero              |   Texto  | M ou F
-  Meio de pagamento   |   Texto  | Boleto ou Cartão
+  Campo                             |   Tipo    |                Restrições
+  ----------------------------------|-----------|---------------------------------------------
+  Nome                              |   Texto   | Não vazio e único
+  CPF                               |   Texto   | Válido, único e não vazio 
+  Data de Nascimento                |   Data    | Formato yyyy-mm-dd (Facultativo)
+  Telefone                          |  Inteiro  | 
+  Gênero                            |   Texto   | M ou F
+  Meio de pagamento                 |   Texto   | Boleto ou Cartão
+  CEP                               |   Texto   | Válido
+  Estado, Cidade, Bairro e Endereço |   Texto   | Preenchido automaticamente a partir do CEP
 
   ***3.3 Matrícula***
 

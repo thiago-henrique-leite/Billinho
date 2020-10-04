@@ -49,7 +49,7 @@
   CNPJ                                  |   Text   | Valid, unique and not empty
   Kind                                  |   Text   | Universidade, Escola ou Creche
   Zip code                              |   Text   | Valid
-  Address, State, Neighborhood and City |   Text   |  Automatically filled in from zip code
+  State, City, Neighborhood and Address |   Text   |  Automatically filled in from zip code
 
   ***3.2 Student***
 
@@ -63,7 +63,7 @@
   Gender                                 |   Text   | M or F
   Payment method                         |   Text   | Boleto or Cartão
   Zip code                               |   Text   | Valid
-  Address, State, Neighborhood and City  |   Text   |  Automatically filled in from zip code
+  State, City, Neighborhood and Address  |   Text   | Automatically filled in from zip code
 
   ***3.3 Enrollment***
 
