@@ -491,7 +491,6 @@
 
 ```json
 {
-    {
     "message": "Enrollment 3 updated.",
     "data": {
         "id": 3,
