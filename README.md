@@ -44,16 +44,18 @@ Português | [English](/README-en.md)
  
   ***3.1 Instituição de Ensino***
 
-  Campo  |   kind   |           Restrições
-  -------|----------|----------------------------------
-  Nome   |   Texto  | Não vazio e único
-  CNPJ   |   Texto  | Válido, único e não vazio
-  kind   |   Texto  | Universidade, Escola ou Creche
+  Campo                             |   Tipo    |           Restrições
+  ----------------------------------|-----------|----------------------------------
+  Nome                              |   Texto   | Não vazio e único
+  CNPJ                              |   Texto   | Válido, único e não vazio
+  Tipo                              |   Texto   | Universidade, Escola ou Creche
+  CEP                               |   Texto   |  Válido
+  Endereço, Estado, Bairro e Cidade |   Texto   |  Preenchido automaticamente a partir do CEP
 
   ***3.2 Aluno***
 
 
-  Campo               |   kind   |                Restrições
+  Campo               |   Tipo   |                Restrições
   --------------------|----------|---------------------------------------------
   Nome                |   Texto  | Não vazio e único
   CPF                 |   Texto  | Válido, único e não vazio 
@@ -64,7 +66,7 @@ Português | [English](/README-en.md)
 
   ***3.3 Matrícula***
 
-  Campo                        |   kind              |                 Restrições
+  Campo                        |   Tipo              |                 Restrições
   -----------------------------|---------------------|-----------------------------------------------
   Valor total do course        |  Decimal            | Não vazio, > 0
   Quantidade de faturas        |  Inteiro            | Não vazio, >= 1
@@ -75,7 +77,7 @@ Português | [English](/README-en.md)
 
    ***3.4 Faturas***
 
-  Campo                        |   kind              |                 Restrições
+  Campo                        |   Tipo              |                 Restrições
   -----------------------------|---------------------|-----------------------------------------------
   Valor da fatura em reais     |  Decimal            | Não vazio
   Data de vencimento           |  Data               | Não vazio

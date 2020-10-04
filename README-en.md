@@ -43,25 +43,27 @@
  
   ***3.1 Educational institution***
 
-  Field  |   Kind   |           Restrictions
-  -------|----------|----------------------------------
-  Name   |   Text   | Not empty and unique
-  CNPJ   |   Text   | Valid, unique and not empty
-  Kind   |   Text   | Universidade, Escola ou Creche
+  Field                                 |   Kind   |           Restrictions
+  --------------------------------------|----------|----------------------------------
+  Name                                  |   Text   | Not empty and unique
+  CNPJ                                  |   Text   | Valid, unique and not empty
+  Kind                                  |   Text   | Universidade, Escola ou Creche
+  Zip code                              |   Text   | Valid
+  Address, State, Neighborhood and City |   Text   |  Automatically filled in from zip code
 
   ***3.2 Student***
 
 
-  Field               |   Kind   |                Restrictions
-  --------------------|----------|---------------------------------------------
-  Name                |   Text   | Not empty and unique
-  CPF                 |   Text   | Valid, unique and not empty 
-  Date of birth       |   Date   | Format yyyy-mm-dd (Optional)
-  Phone               |  Integer | 
-  Gender              |   Text   | M or F
-  Payment method      |   Text   | Boleto or Cartão
-  Zip code            |   Text   | Valid
-  Address, state, neighborhood, city  |   Text   |  Automatically filled in from zip code
+  Field                                  |   Kind   |                Restrictions
+  ---------------------------------------|----------|---------------------------------------------
+  Name                                   |   Text   | Not empty and unique
+  CPF                                    |   Text   | Valid, unique and not empty 
+  Date of birth                          |   Date   | Format yyyy-mm-dd (Optional)
+  Phone                                  |  Integer | 
+  Gender                                 |   Text   | M or F
+  Payment method                         |   Text   | Boleto or Cartão
+  Zip code                               |   Text   | Valid
+  Address, State, Neighborhood and City  |   Text   |  Automatically filled in from zip code
 
   ***3.3 Enrollment***
 
