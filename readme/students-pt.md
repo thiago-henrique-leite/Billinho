@@ -11,22 +11,32 @@
         {
             "id": 1,
             "name": "Estudante 1",
-            "cpf": "98404479771",
+            "cpf": "984.044.797-71",
             "birth_date": "2001-04-10",
             "phone": 116469569,
             "gender": "F",
             "pay_method": "Cartão",
+            "cep": "29156544",
+            "address": "Travessa Santa Luzia",
+            "state": "ES",
+            "neighborhood": "Santa Luzia",
+            "city": "Cariacica",
             "created_at": "2020-09-23T17:36:43.628Z",
             "updated_at": "2020-09-23T17:36:43.628Z"
         },
         {
             "id": 2,
             "name": "Estudante 2",
-            "cpf": "75211848308",
-           "birth_date": "1995-07-24",
+            "cpf": "752.118.483-08",
+            "birth_date": "1995-07-24",
             "phone": 874784207,
             "gender": "M",
             "pay_method": "Boleto",
+            "cep": "98804700",
+            "address": "Rua Plínio Salgado",
+            "state": "RS",
+            "neighborhood": "Haller",
+            "city": "Santo Ângelo",
             "created_at": "2020-09-23T17:36:43.634Z",
             "updated_at": "2020-09-23T17:36:43.634Z"
          },
@@ -44,11 +54,16 @@
     "data": {
         "id": 5,
         "name": "Estudante A",
-        "cpf": "98404479771",
+        "cpf": "984.044.797-71",
         "birth_date": "2001-04-10",
         "phone": 116469569,
         "gender": "F",
         "pay_method": "Cartão",
+        "cep": "18051730",
+        "address": "Rua Darcy Rocha",
+        "state": "SP",
+        "neighborhood": "Jardim Piazza di Roma",
+        "city": "Sorocaba",
         "created_at": "2020-09-23T17:36:44.081Z",
         "updated_at": "2020-09-23T17:36:44.081Z"
     }
@@ -63,12 +78,13 @@
 
 ```json
 {
-        "name": "Aluno 1",
+        "name": "João",
         "cpf": "12345678910",
         "gender": "M",
         "pay_method": "Cartão",
         "birth_date": "2000-12-07",
-        "phone": 998804342
+        "phone": 998804342,
+        "cep": "69900487"
 }
 ```
 
@@ -79,12 +95,17 @@
     "message": "Student registered.",
     "data": {
         "id": 3,
-        "name": "Aluno 1",
-        "cpf": "12345678910",
+        "name": "João",
+        "cpf": "123.456.789-10",
         "birth_date": "2000-12-07",
         "phone": 998804342,
         "gender": "M",
         "pay_method": "Cartão",
+        "cep": "69900487",
+        "address": "Rua Manoel Barata",
+        "state": "AC",
+        "neighborhood": "Bosque",
+        "city": "Rio Branco",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -114,11 +135,16 @@
     "data": {
         "id": 3,
         "name": "Aluno 1",
-        "cpf": "12345678910",
+        "cpf": "123.456.789-10",
         "birth_date": "2000-12-07",
         "phone": 822398342,
         "gender": "M",
         "pay_method": "Boleto",
+        "cep": "69900487",
+        "address": "Rua Manoel Barata",
+        "state": "AC",
+        "neighborhood": "Bosque",
+        "city": "Rio Branco",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -138,11 +164,16 @@
     "data": {
         "id": 10,
         "name": "Estudante 10",
-        "cpf": "55446907512",
+        "cpf": "554.469.075-12",
         "birth_date": "1998-01-19",
         "phone": 599955516,
         "gender": "F",
         "pay_method": "Cartão",
+        "cep": "76901050",
+        "address": "Rua São Manoel",
+        "state": "RO",
+        "neighborhood": "Jardim Presidencial",
+        "city": "Ji-Paraná",
         "created_at": "2020-09-24T18:25:55.870Z",
         "updated_at": "2020-09-24T18:25:55.870Z"
     }
