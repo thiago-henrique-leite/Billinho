@@ -7,6 +7,11 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.integer :phone
       t.text :gender
       t.text :pay_method
+      t.text :cep
+      t.text :address
+      t.text :state
+      t.text :neighborhood
+      t.text :city
 
       t.timestamps
     end

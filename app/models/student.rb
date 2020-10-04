@@ -9,6 +9,10 @@ class Student < ApplicationRecord
   validate :valid_date?
   validates :cpf, :cpf => true
   validate :format_cpf
+  validates :cep, correios_cep: true
+  validate :fill_address
+
+  private
 
   # Formats the cpf
   def format_cpf
@@ -22,5 +26,14 @@ class Student < ApplicationRecord
     if birth_date
       errors.add(:birth_date, 'Invalid format.') unless birth_date.is_a?(Date)
     end
+  end
+  
+  def fill_address
+    finder = Correios::CEP::AddressFinder.new
+    address = finder.get(self.cep)
+    self.city = address[:city]
+    self.state = address[:state]
+    self.neighborhood = address[:neighborhood]
+    self.address = address[:address]
   end
 end

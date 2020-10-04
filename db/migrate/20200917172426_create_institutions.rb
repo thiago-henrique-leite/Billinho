@@ -4,6 +4,11 @@ class CreateInstitutions < ActiveRecord::Migration[6.0]
       t.text :name
       t.text :cnpj
       t.text :kind
+      t.text :cep
+      t.text :address
+      t.text :state
+      t.text :neighborhood
+      t.text :city
 
       t.timestamps
     end

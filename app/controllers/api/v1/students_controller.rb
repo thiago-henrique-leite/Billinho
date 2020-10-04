@@ -51,7 +51,7 @@ module Api
       private
 
       def student_params
-        params.permit(:name, :cpf, :birth_date, :phone, :gender, :pay_method)
+        params.permit(:name, :cpf, :birth_date, :phone, :gender, :pay_method, :cep)
       end
     end
   end

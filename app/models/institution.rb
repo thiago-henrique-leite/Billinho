@@ -1,6 +1,4 @@
 class Institution < ApplicationRecord  
-  require "cpf_cnpj"
-
   has_many :enrollments, dependent: :destroy
 
   # Performs the necessary validations
@@ -8,10 +6,23 @@ class Institution < ApplicationRecord
   validates :kind, inclusion: { in: %w[Universidade Escola Creche], message: 'Institution kind invalid or not informed.' }
   validates :cnpj, :cnpj => true
   validate :format_cnpj
+  validates :cep, correios_cep: true
+  validate :fill_address
+
+  private
 
   def format_cnpj
     cnpj = CNPJ.new(self.cnpj)
     cnpj = cnpj.formatted
     self.cnpj = cnpj
+  end
+
+  def fill_address
+    finder = Correios::CEP::AddressFinder.new
+    address = finder.get(self.cep)
+    self.city = address[:city]
+    self.state = address[:state]
+    self.neighborhood = address[:neighborhood]
+    self.address = address[:address]
   end
 end

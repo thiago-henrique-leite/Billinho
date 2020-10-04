@@ -1,40 +1,44 @@
 # Povoando o Banco de Dados
 
-# Cria instituições de ensino
+# Create institutions
 
-lista_instituicoes = { 1 => 'Universidade', 2 => 'Escola', 3 => 'Creche' }
+cep = %w(76901050 58037305 76829374 76808340 66920780 69316760 29156544 98804700 18051730 69900487)
 
-50.times do |indice|
-  sorteio = Random.rand(1..3)
+lista_instituicoes = %w(Universidade Escola Creche)
+
+10.times do |indice|
+  sorteio = Random.rand(0..2)
 
   Institution.create({
-                       name: "#{lista_instituicoes[sorteio]} #{indice + 1}",
+                       name: "#{lista_instituicoes[sorteio]} #{indice + 51}",
                        cnpj: CNPJ.generate,
-                       kind: (lista_instituicoes[sorteio]).to_s
+                       kind: (lista_instituicoes[sorteio]).to_s,
+                       cep: cep[indice]
                      })
 end
 
-# Cria estudantes
+# Create students
 
-meios_pagamento = { 1 => 'Boleto', 2 => 'Cartão' }
-genders = { 1 => 'M', 2 => 'F' }
+payment_methods = %w(Boleto Cartão)
+genders = %w(M F)
 
-50.times  do |indice|
-  sorteio = Random.rand(1..2)
+10.times  do |indice|
+  sorteio = Random.rand(0..1)
 
   Student.create({
-                   name: "Estudante #{indice + 1}",
+                   name: "Estudante #{indice + 51}",
                    cpf: CPF.generate,
                    birth_date: Faker::Date.between(from: '1995-01-01', to: '2002-01-01'),
                    phone: Faker::Number.number(digits: 9),
                    gender: (genders[sorteio]).to_s,
-                   pay_method: (meios_pagamento[sorteio]).to_s
+                   pay_method: (payment_methods[sorteio]).to_s,
+                   cep: cep[indice]
                  })
 end
 
-# Cria matrículas
+# Create enrollments
 
-50.times do |indice|
+10.times do |indice|
   Enrollment.create({
                       total_value: Faker::Number.decimal(l_digits: 4, r_digits: 2),
                       ammount_bills: Faker::Number.between(from: 1, to: 10),

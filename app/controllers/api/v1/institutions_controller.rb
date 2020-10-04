@@ -52,7 +52,7 @@ module Api
       private
 
       def institution_params
-        params.permit(:name, :cnpj, :kind)
+        params.permit(:name, :cnpj, :kind, :cep)
       end
     end
   end

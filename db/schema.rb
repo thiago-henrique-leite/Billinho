@@ -44,6 +44,11 @@ ActiveRecord::Schema.define(version: 2020_09_21_192017) do
     t.text "name"
     t.text "cnpj"
     t.text "kind"
+    t.text "cep"
+    t.text "address"
+    t.text "state"
+    t.text "neighborhood"
+    t.text "city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cnpj"], name: "index_institutions_on_cnpj", unique: true
@@ -57,6 +62,11 @@ ActiveRecord::Schema.define(version: 2020_09_21_192017) do
     t.integer "phone"
     t.text "gender"
     t.text "pay_method"
+    t.text "cep"
+    t.text "address"
+    t.text "state"
+    t.text "neighborhood"
+    t.text "city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cpf"], name: "index_students_on_cpf", unique: true
