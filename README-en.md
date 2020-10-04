@@ -177,15 +177,15 @@
 >>  ***6.3 Download project dependencies***
 >>>    - $ bundle install
 
->>  ***6.7 Create the database***
+>>  ***6.4 Create the database***
 >>>    - $ rails db:create
 >>>    - $ rails db:migrate
 
->>  ***6.8 Fill the database with the default values***
+>>  ***6.5 Fill the database with the default values***
 >>>    - $ rails db:seed
 >>>    - $ rails db:migrate
 
->>  ***6.9 Run the application***
+>>  ***6.6 Run the application***
 >>>    - $ rails s 
 
 >>  The server will start on the port:3000 - acesse <http://localhost:3000> </br>

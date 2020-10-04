@@ -178,15 +178,15 @@ Português | [English](/README-en.md)
 >>  ***6.3 Baixe as dependências do projeto***
 >>>    - $ bundle install
 
->>  ***6.7 Crie o banco de dados***
+>>  ***6.4 Crie o banco de dados***
 >>>    - $ rails db:create
 >>>    - $ rails db:migrate
 
->>  ***6.8 Preencha o banco com os valores padrões***
+>>  ***6.5 Preencha o banco com os valores padrões***
 >>>    - $ rails db:seed
 >>>    - $ rails db:migrate
 
->>  ***6.9 Rode a aplicação***
+>>  ***6.6 Rode a aplicação***
 >>>    - $ rails s 
 
 >>  O servidor inciará na porta:3000 - acesse <http://localhost:3000> </br>
