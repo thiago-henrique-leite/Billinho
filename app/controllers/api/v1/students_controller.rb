@@ -5,8 +5,6 @@ module Api
       def index
         students = Student.order('id ASC')
         render json: { message: 'All students loaded.', data: students }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List specific student by student ID
@@ -14,7 +12,7 @@ module Api
         student = Student.find(params[:id])
         render json: { message: "Student #{params[:id]} loaded.", data: student }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       end
 
       # Create a new student
@@ -26,7 +24,7 @@ module Api
           render json: { message: 'Student not registered.', data: student.errors }, status: :unprocessable_entity
         end
       rescue ActiveRecord::RecordNotUnique 
-        render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
+        render json: { message: 'Error: Not Unique. Student or CPF already exists.' }, status: :conflict
       end
 
       # Updates a student
@@ -35,9 +33,9 @@ module Api
         student.update_attributes(student_params)
         render json: { message: "Student #{params[:id]} updated.", data: student }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       rescue ActiveRecord::RecordNotUnique 
-        render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
+        render json: { message: 'Error: Not Unique. Student or CPF already exists.' }, status: :conflict
       end
 
       # Delete an student
@@ -46,7 +44,7 @@ module Api
         student.destroy
         render json: { message: "Student #{params[:id]} deleted.", data: student }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       end
 
       # Checks whether parameters have been accepted

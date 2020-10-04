@@ -5,8 +5,6 @@ module Api
       def index
         institutions = Institution.order('id ASC')
         render json: { message: 'Educational Institutions loaded.', data: institutions }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
       end
 
       # List specific institution by institution ID
@@ -14,7 +12,7 @@ module Api
         institution = Institution.find(params[:id])
         render json: { message: "Educational Institution #{params[:id]} loaded.", data: institution }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Institution Id does not exist.' }, status: :not_found
       end
 
       # Create a new institution
@@ -26,7 +24,7 @@ module Api
           render json: { message: 'Educational institution not registered.', data: institution.errors }, status: :unprocessable_entity
         end
         rescue ActiveRecord::RecordNotUnique 
-          render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
+          render json: { message: 'Error: Not Unique. Institution or CNPJ already exists.' }, status: :conflict
       end
 
       # Updates a institution
@@ -36,9 +34,9 @@ module Api
         render json: { message: "Institution #{params[:id]} updated.", data: institution }, status: :ok
         errors
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Institution Id does not exist.' }, status: :not_found
       rescue ActiveRecord::RecordNotUnique 
-        render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
+        render json: { message: 'Error: Not Unique. Institution or CNPJ already exists.' }, status: :conflict
       end
 
       # Delete an institution
@@ -47,7 +45,7 @@ module Api
         institution.destroy
         render json: { message: "Institution #{params[:id]} deleted.", data: institution }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Institution Id does not exist.' }, status: :not_found
       end
 
       # Checks whether parameters have been accepted

@@ -5,8 +5,6 @@ module Api
       def index
         enrollments = Enrollment.order('id ASC')
         render json: { message: 'All enrollments loaded.', data: enrollments }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found  
       end
 
       # List enrollments of a student
@@ -15,7 +13,7 @@ module Api
         enrollments = Enrollment.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
         render json: { message: "Enrollments of student #{params[:student_id]} loaded.", data: enrollments }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       end
 
       # List enrollments of a institution
@@ -24,7 +22,7 @@ module Api
         enrollments = Enrollment.joins(:institution).where('institution_id = ?', params[:institution_id]).order('id ASC')
         render json: { message: "Enrollments of institution #{params[:institution_id]} loaded.", data: enrollments }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Institution Id does not exist.' }, status: :not_found
       end
 
       # List specific enrollment by enrollment ID
@@ -32,7 +30,7 @@ module Api
         enrollment = Enrollment.find(params[:id])
         render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found 
+        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found 
       end
 
       # Create a new enrollment
@@ -51,7 +49,7 @@ module Api
         enrollment.update_attributes(update_params)
         render json: { message: "Enrollment #{params[:id]} updated.", data: enrollment }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found
       end
 
       # Delete an enrollment
@@ -60,7 +58,7 @@ module Api
         enrollment.destroy
         render json: { message: "Enrollment #{params[:id]} deleted.", data: enrollment }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found
       end
 
       # Checks whether parameters have been accepted
