@@ -12,8 +12,6 @@ module Api
         params[:student_id]
         enrollments = Enrollment.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
         render json: { message: "Enrollments of student #{params[:student_id]} loaded.", data: enrollments }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       end
 
       # List enrollments of a institution
@@ -21,8 +19,6 @@ module Api
         params[:institution_id]
         enrollments = Enrollment.joins(:institution).where('institution_id = ?', params[:institution_id]).order('id ASC')
         render json: { message: "Enrollments of institution #{params[:institution_id]} loaded.", data: enrollments }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Institution Id does not exist.' }, status: :not_found
       end
 
       # List specific enrollment by enrollment ID

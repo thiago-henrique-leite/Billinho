@@ -12,8 +12,6 @@ module Api
         params[:enrollment_id]
         bills = Bill.joins(:enrollment).where('enrollment_id = ?', params[:enrollment_id]).order('id ASC')
         render json: { message: "Bills of enrollment #{params[:enrollment_id]} loaded.", data: bills }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found
       end
 
       # List bills of a student
@@ -21,8 +19,6 @@ module Api
         params[:student_id]
         bills = Bill.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
         render json: { message: "Bills of student #{params[:student_id]} loaded.", data: bills }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       end
 
       # List specific bill by bill ID
