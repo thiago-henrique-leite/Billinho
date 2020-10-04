@@ -61,8 +61,7 @@
   Gender              |   Text   | M or F
   Payment method      |   Text   | Boleto or Cartão
   Zip code            |   Text   | Valid
-  Address, state, 
-  neighborhood, city  |   Text   |  Automatically filled in from zip code
+  Address, state, neighborhood, city  |   Text   |  Automatically filled in from zip code
 
   ***3.3 Enrollment***
 
