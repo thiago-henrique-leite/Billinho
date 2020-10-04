@@ -9,7 +9,7 @@ lista_instituicoes = { 1 => 'Universidade', 2 => 'Escola', 3 => 'Creche' }
 
   Institution.create({
                        name: "#{lista_instituicoes[sorteio]} #{indice + 1}",
-                       cnpj: Faker::Number.number(digits: 14),
+                       cnpj: CNPJ.generate,
                        kind: (lista_instituicoes[sorteio]).to_s
                      })
 end
@@ -24,7 +24,7 @@ genders = { 1 => 'M', 2 => 'F' }
 
   Student.create({
                    name: "Estudante #{indice + 1}",
-                   cpf: Faker::Number.number(digits: 11),
+                   cpf: CPF.generate,
                    birth_date: Faker::Date.between(from: '1995-01-01', to: '2002-01-01'),
                    phone: Faker::Number.number(digits: 9),
                    gender: (genders[sorteio]).to_s,

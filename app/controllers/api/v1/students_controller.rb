@@ -25,6 +25,8 @@ module Api
         else
           render json: { message: 'Student not registered.', data: student.errors }, status: :unprocessable_entity
         end
+      rescue ActiveRecord::RecordNotUnique 
+        render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
       end
 
       # Updates a student
@@ -34,6 +36,8 @@ module Api
         render json: { message: "Student #{params[:id]} updated.", data: student }, status: :ok
       rescue ActiveRecord::RecordNotFound
         render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotUnique 
+        render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
       end
 
       # Delete an student

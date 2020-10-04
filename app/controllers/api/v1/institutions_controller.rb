@@ -25,6 +25,8 @@ module Api
         else
           render json: { message: 'Educational institution not registered.', data: institution.errors }, status: :unprocessable_entity
         end
+        rescue ActiveRecord::RecordNotUnique 
+          render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
       end
 
       # Updates a institution
@@ -32,8 +34,11 @@ module Api
         institution = Institution.find(params[:id])
         institution.update_attributes(institution_params)
         render json: { message: "Institution #{params[:id]} updated.", data: institution }, status: :ok
+        errors
       rescue ActiveRecord::RecordNotFound
         render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+      rescue ActiveRecord::RecordNotUnique 
+        render json: { message: I18n.t('errors.record_not_unique_error') }, status: :conflict
       end
 
       # Delete an institution

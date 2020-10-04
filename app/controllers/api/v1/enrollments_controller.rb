@@ -6,7 +6,7 @@ module Api
         enrollments = Enrollment.order('id ASC')
         render json: { message: 'All enrollments loaded.', data: enrollments }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found  
       end
 
       # List enrollments of a student
@@ -32,7 +32,7 @@ module Api
         enrollment = Enrollment.find(params[:id])
         render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok
       rescue ActiveRecord::RecordNotFound
-        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found
+        render json: { message: I18n.t('errors.record_not_found') }, status: :not_found 
       end
 
       # Create a new enrollment
