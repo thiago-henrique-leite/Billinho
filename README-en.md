@@ -58,7 +58,7 @@
   ---------------------------------------|----------|---------------------------------------------
   Name                                   |   Text   | Not empty and unique
   CPF                                    |   Text   | Valid, unique and not empty 
-  Date of birth                          |   Date   | Format yyyy-mm-dd (Optional)
+  Date of birth                          |   Date   | Format YYYY-MM-DD  
   Phone                                  |  Integer | 
   Gender                                 |   Text   | M or F
   Payment method                         |   Text   | Boleto or Cartão

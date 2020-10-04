@@ -59,7 +59,7 @@ Português | [English](/README-en.md)
   ----------------------------------|-----------|---------------------------------------------
   Nome                              |   Texto   | Não vazio e único
   CPF                               |   Texto   | Válido, único e não vazio 
-  Data de Nascimento                |   Data    | Formato yyyy-mm-dd (Facultativo)
+  Data de Nascimento                |   Data    | Formato YYYY-MM-DD 
   Telefone                          |  Inteiro  | 
   Gênero                            |   Texto   | M ou F
   Meio de pagamento                 |   Texto   | Boleto ou Cartão
