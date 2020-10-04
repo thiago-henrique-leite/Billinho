@@ -29,11 +29,13 @@ class Student < ApplicationRecord
   end
   
   def fill_address
-    finder = Correios::CEP::AddressFinder.new
-    address = finder.get(self.cep)
-    self.city = address[:city]
-    self.state = address[:state]
-    self.neighborhood = address[:neighborhood]
-    self.address = address[:address]
+    if self.cep != nil
+      finder = Correios::CEP::AddressFinder.new
+      address = finder.get(self.cep)
+      self.city = address[:city]
+      self.state = address[:state]
+      self.neighborhood = address[:neighborhood]
+      self.address = address[:address]
+    end
   end
 end
