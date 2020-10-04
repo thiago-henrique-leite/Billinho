@@ -70,10 +70,10 @@ Português | [English](/README-en.md)
 
   Campo                        |   Tipo              |                 Restrições
   -----------------------------|---------------------|-----------------------------------------------
-  Valor total do course        |  Decimal            | Não vazio, > 0
+  Valor total do curso         |  Decimal            | Não vazio, > 0
   Quantidade de faturas        |  Inteiro            | Não vazio, >= 1
   Dia de vencimento das faturas|  Inteiro            | Não vazio, >= 1 e <= 31
-  Nome do course               |  Texto              | Não vazio
+  Nome do curso                |  Texto              | Não vazio
   Id da instituição            |  Chave estrangeira  | Não vazio
   Id do aluno                  |  Chave estrangeira  | Não vazio
 
