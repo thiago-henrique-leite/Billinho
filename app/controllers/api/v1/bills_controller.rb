@@ -10,14 +10,14 @@ module Api
       end
 
       # List bills of a enrollment
-      def index_by_enrollments
+      def get_by_enrollments
         params[:enrollment_id]
         bills = Bill.joins(:enrollment).where('enrollment_id = ?', params[:enrollment_id]).order('id ASC')
         render json: { message: "Bills of enrollment #{params[:enrollment_id]} loaded.", data: bills }, status: :ok
       end
 
       # List bills of a student
-      def index_by_students
+      def get_by_students
         params[:student_id]
         bills = Bill.joins(:student).where('student_id = ?', params[:student_id]).order('id ASC')
         render json: { message: "Bills of student #{params[:student_id]} loaded.", data: bills }, status: :ok

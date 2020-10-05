@@ -4,11 +4,11 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :institutions, :students, :enrollments, :bills
 
-      get 'institutions/:institution_id/enrollments', to: 'enrollments#index_by_institutions'
-      get 'students/:student_id/enrollments', to: 'enrollments#index_by_students'
+      get 'institutions/:institution_id/enrollments', to: 'enrollments#get_by_institutions'
+      get 'students/:student_id/enrollments', to: 'enrollments#get_by_students'
 
-      get 'students/:student_id/bills', to: 'bills#index_by_students'
-      get 'enrollments/:enrollment_id/bills', to: 'bills#index_by_enrollments'
+      get 'students/:student_id/bills', to: 'bills#get_by_students'
+      get 'enrollments/:enrollment_id/bills', to: 'bills#get_by_enrollments'
     end
   end
 end
