@@ -1,6 +1,8 @@
 module Api
   module V1
     class BillsController < ApplicationController
+      rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
       # List bills in general
       def index
         bills = Bill.order('id ASC')
@@ -25,8 +27,6 @@ module Api
       def show
         bill = Bill.find(params[:id])
         render json: { message: "Bill #{params[:id]} loaded.", data: bill }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Bill Id does not exist.' }, status: :not_found
       end
 
       # Updates the status of an bill
@@ -34,8 +34,6 @@ module Api
         bill = Bill.find(params[:id])
         bill.update_attributes(bill_params)
         render json: { message: "Bill #{params[:id]} updated.", data: bill }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Bill Id does not exist.' }, status: :not_found
       end
 
       # Delete an bill
@@ -43,12 +41,14 @@ module Api
         bill = Bill.find(params[:id])
         bill.destroy
         render json: { message: "Bill #{params[:id]} deleted.", data: bill }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Bill Id does not exist.' }, status: :not_found
       end
 
       # Checks whether parameters have been accepted
       private
+
+      def not_found
+        render json: { message: 'Error: Not Found. Bill Id does not exist.' }, status: :not_found
+      end
 
       def bill_params
         params.permit(:status, :bill_amount, :due_date)

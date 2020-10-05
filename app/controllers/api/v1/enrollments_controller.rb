@@ -1,6 +1,8 @@
 module Api
   module V1
     class EnrollmentsController < ApplicationController
+      rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
       # List enrollments in general
       def index
         enrollments = Enrollment.order('id ASC')
@@ -24,9 +26,7 @@ module Api
       # List specific enrollment by enrollment ID
       def show
         enrollment = Enrollment.find(params[:id])
-        render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found 
+        render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok 
       end
 
       # Create a new enrollment
@@ -44,8 +44,6 @@ module Api
         enrollment = Enrollment.find(params[:id])
         enrollment.update_attributes(update_params)
         render json: { message: "Enrollment #{params[:id]} updated.", data: enrollment }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found
       end
 
       # Delete an enrollment
@@ -53,19 +51,21 @@ module Api
         enrollment = Enrollment.find(params[:id])
         enrollment.destroy
         render json: { message: "Enrollment #{params[:id]} deleted.", data: enrollment }, status: :ok
-      rescue ActiveRecord::RecordNotFound
-        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found
       end
 
       # Checks whether parameters have been accepted
       private
+
+      def not_found
+        render json: { message: 'Error: Not Found. Enrollment Id does not exist.' }, status: :not_found
+      end
 
       def enrollment_params
         params.permit(:total_value, :ammount_bills, :due_day, :course, :institution_id, :student_id)
       end
 
       def update_params
-        params.permit(:course, :institution_id)
+        params.permit(:course, :total_value, :due_day)
       end
     end
   end

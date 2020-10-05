@@ -10,7 +10,7 @@ lista_instituicoes = %w(Universidade Escola Creche)
   sorteio = Random.rand(0..2)
 
   Institution.create({
-                       name: "#{lista_instituicoes[sorteio]} #{indice + 51}",
+                       name: "#{lista_instituicoes[sorteio]} #{indice + 1}",
                        cnpj: CNPJ.generate,
                        kind: (lista_instituicoes[sorteio]).to_s,
                        cep: cep[indice]
@@ -26,7 +26,7 @@ genders = %w(M F)
   sorteio = Random.rand(0..1)
 
   Student.create({
-                   name: "Estudante #{indice + 51}",
+                   name: "Estudante #{indice + 1}",
                    cpf: CPF.generate,
                    birth_date: Faker::Date.between(from: '1995-01-01', to: '2002-01-01'),
                    phone: Faker::Number.number(digits: 9),
