@@ -212,7 +212,7 @@ Português | [English](/README-en.md)
 
 > + Soft Delete
 >   - Na exclusão os elementos não são apagados do banco de dados, fazemos apenas um soft delete,
-> onde através de um booleano 'enabled' controlarmos se queremos visualisar o dado ou não, ao desabilitarmos
+> onde através de um booleano 'enabled' controlamos se queremos visualisar o dado ou não, ao desabilitarmos
 > uma informação passando a chave 'enabled' para 'false', é como se estivéssemos excluindo ela.
 >   - O Soft Delete é utilizado por questões de segurança, quando em algum momento podemos precisar de
 > alguma informação, logo ela não pode ser excluída permanentemente.

@@ -5,7 +5,7 @@ class CreateEnrollments < ActiveRecord::Migration[6.0]
       t.integer :amount_bills
       t.integer :due_day
       t.text :course
-      t.boolean :enabled_enr, :default => 'true'
+      t.boolean :enabled_enr, default: 'true'
       t.belongs_to :institution
       t.belongs_to :student
 

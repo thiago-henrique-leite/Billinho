@@ -38,7 +38,7 @@ module Api
       # List specific enrollment by enrollment ID
       def show
         enrollment = Enrollment.where('enabled_enr = ?', true).find(params[:id])
-        render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok 
+        render json: { message: "Enrollment #{params[:id]} loaded.", data: enrollment }, status: :ok
       end
 
       # Create a new enrollment

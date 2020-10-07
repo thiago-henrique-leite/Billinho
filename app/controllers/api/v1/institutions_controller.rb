@@ -3,7 +3,7 @@ module Api
     class InstitutionsController < ApplicationController
       rescue_from ActiveRecord::RecordNotFound, with: :not_found
       rescue_from ActiveRecord::RecordNotUnique, with: :not_unique
-      
+
       # List enabled institutions
       def index
         institutions = Institution.where('enabled_inst = ?', true).order('id ASC')
@@ -54,8 +54,8 @@ module Api
       # Delete an institution
       def destroy
         ActiveRecord::Base.transaction do
-          institution = Institution.where('enabled_inst = ?', true).find(params[:id])  
-          
+          institution = Institution.where('enabled_inst = ?', true).find(params[:id])
+
           bills = Bill.where('institution_id = ?', params[:id]).update_all(enabled_bill: false)
           enrollments = Enrollment.where('institution_id = ?', params[:id]).update_all(enabled_enr: false)
 
@@ -74,7 +74,7 @@ module Api
       def not_found
         render json: { message: 'Error: Not Found. Institution Id does not exist.' }, status: :not_found
       end
-    
+
       def not_unique
         render json: { message: 'Error: Not Unique. Name or CNPJ already exists.' }, status: :conflict
       end

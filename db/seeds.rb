@@ -2,9 +2,9 @@
 
 # Create institutions
 
-cep = %w(76901050 58037305 76829374 76808340 66920780 69316760 29156544 98804700 18051730 69900487)
+cep = %w[76901050 58037305 76829374 76808340 66920780 69316760 29156544 98804700 18051730 69900487]
 
-lista_instituicoes = %w(Universidade Escola Creche)
+lista_instituicoes = %w[Universidade Escola Creche]
 
 10.times do |indice|
   sorteio = Random.rand(0..2)
@@ -19,8 +19,8 @@ end
 
 # Create students
 
-payment_methods = %w(Boleto Cartão)
-genders = %w(M F)
+payment_methods = %w[Boleto Cartão]
+genders = %w[M F]
 
 10.times  do |indice|
   sorteio = Random.rand(0..1)
@@ -44,7 +44,7 @@ end
                       amount_bills: Faker::Number.between(from: 1, to: 10),
                       due_day: Faker::Number.between(from: 1, to: 31),
                       course: "Curso #{indice}",
-                      institution_id: "#{indice+1}",
-                      student_id: "#{indice+1}"
+                      institution_id: (indice + 1).to_s,
+                      student_id: (indice + 1).to_s
                     })
 end

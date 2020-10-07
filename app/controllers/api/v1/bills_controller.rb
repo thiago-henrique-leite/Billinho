@@ -29,7 +29,7 @@ module Api
         bills = Bill.joins(:student).where('student_id = ?', params[:student_id]).where('enabled_bill = ?', true).order('id ASC')
         render json: { message: "Bills of student #{params[:student_id]} loaded.", data: bills }, status: :ok
       end
-      
+
       # List enabled and disabled bills
       def get_all
         bills = Bill.order('id ASC')
@@ -80,7 +80,7 @@ module Api
           enrollment.update(amount_bills: new_amount_bills)
           enrollment.update(total_value: new_total_value)
 
-          render json: { message: "Bill #{params[:id]} deleted.", data: bill}, status: :ok
+          render json: { message: "Bill #{params[:id]} deleted.", data: bill }, status: :ok
         end
       end
 

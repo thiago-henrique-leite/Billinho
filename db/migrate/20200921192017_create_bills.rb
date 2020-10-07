@@ -4,7 +4,7 @@ class CreateBills < ActiveRecord::Migration[6.0]
       t.decimal :bill_value
       t.date :due_date
       t.text :status
-      t.boolean :enabled_bill, :default => 'true'
+      t.boolean :enabled_bill, default: 'true'
       t.belongs_to :student
       t.belongs_to :enrollment
       t.belongs_to :institution

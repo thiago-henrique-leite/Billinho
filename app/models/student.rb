@@ -7,7 +7,7 @@ class Student < ApplicationRecord
   validates :gender, inclusion: { in: %w[M F], message: 'Invalid or not informed gender' }
   validates :pay_method, inclusion: { in: %w[Cartão Boleto], message: 'Invalid or not informed payment method.' }
   validate :valid_date?
-  validates :cpf, :cpf => true
+  validates :cpf, cpf: true
   validate :format_cpf
   validates :cep, correios_cep: true
   validate :fill_address
@@ -27,11 +27,11 @@ class Student < ApplicationRecord
       errors.add(:birth_date, 'Invalid format.') unless birth_date.is_a?(Date)
     end
   end
-  
+
   def fill_address
-    if self.cep != nil
+    unless cep.nil?
       finder = Correios::CEP::AddressFinder.new
-      address = finder.get(self.cep)
+      address = finder.get(cep)
       self.city = address[:city]
       self.state = address[:state]
       self.neighborhood = address[:neighborhood]

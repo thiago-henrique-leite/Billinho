@@ -43,8 +43,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'rubocop', '~> 0.91.1', require: false
-gem 'validates_cpf_cnpj'
-gem "cpf_cnpj"
 gem 'correios-cep'
+gem 'cpf_cnpj'
+gem 'rubocop', '~> 0.91.1', require: false
 gem 'validates-correios-cep'
+gem 'validates_cpf_cnpj'

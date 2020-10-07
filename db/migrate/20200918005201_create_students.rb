@@ -12,7 +12,7 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.text :state
       t.text :neighborhood
       t.text :city
-      t.boolean :enabled_std, :default => 'true'
+      t.boolean :enabled_std, default: 'true'
 
       t.timestamps
     end

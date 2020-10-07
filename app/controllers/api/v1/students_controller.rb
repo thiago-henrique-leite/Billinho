@@ -3,7 +3,7 @@ module Api
     class StudentsController < ApplicationController
       rescue_from ActiveRecord::RecordNotFound, with: :not_found
       rescue_from ActiveRecord::RecordNotUnique, with: :not_unique
-      
+
       # List enabled students
       def index
         students = Student.where('enabled_std = ?', true).order('id ASC')
@@ -15,7 +15,7 @@ module Api
         student = Student.where('enabled_std = ?', true).find(params[:id])
         render json: { message: "Student #{params[:id]} loaded.", data: student }, status: :ok
       end
-      
+
       # List enabled and disabled students
       def get_all
         students = Student.order('id ASC')
@@ -59,8 +59,8 @@ module Api
           bills = Bill.where('student_id = ?', params[:id]).update_all(enabled_bill: false)
           enrollments = Enrollment.where('student_id = ?', params[:id]).update_all(enabled_enr: false)
 
-          student.update(enabled_std: false) 
-          render json: { message: "Student #{params[:id]} deleted.", data: student }, status: :ok     
+          student.update(enabled_std: false)
+          render json: { message: "Student #{params[:id]} deleted.", data: student }, status: :ok
         end
       end
 
@@ -74,7 +74,7 @@ module Api
       def not_found
         render json: { message: 'Error: Not Found. Student Id does not exist.' }, status: :not_found
       end
-    
+
       def not_unique
         render json: { message: 'Error: Not Unique. Name or CPF already exists.' }, status: :conflict
       end
