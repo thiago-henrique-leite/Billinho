@@ -11,26 +11,28 @@
         {
             "id": 1,
             "name": "School 1",
-            "cnpj": "60392739875145",
+            "cnpj": "60.392.739/8751-45",
             "kind": "Escola",
             "cep": "76901050",
             "address": "Rua São Manoel",
             "state": "RO",
             "neighborhood": "Jardim Presidencial",
             "city": "Ji-Paraná",
+            "enabled_inst": "true",
             "created_at": "2020-09-23T17:36:41.328Z",
             "updated_at": "2020-09-23T17:36:41.328Z"
         },
         {
             "id": 2,
             "name": "University 1",
-            "cnpj": "95014120212917",
+            "cnpj": "95.014.120/2129-17",
             "kind": "Universidade",
             "cep": "58037305",
             "address": "Rua Lindolfo José Correia das Neves",
             "state": "PB",
             "neighborhood": "Jardim Oceania",
             "city": "João Pessoa",
+            "enabled_inst": "true",
             "created_at": "2020-09-23T17:36:41.333Z",
             "updated_at": "2020-09-23T17:36:41.333Z"
         },
@@ -51,13 +53,14 @@
         {
             "id": 1,
             "name": "School 1",
-            "cnpj": "60392739875145",
-            "kind": "Escola",
+            "cnpj": "60.392.739/8751-45",
+            "kind": "School",
             "cep": "76901050",
             "address": "Rua São Manoel",
             "state": "RO",
             "neighborhood": "Jardim Presidencial",
             "city": "Ji-Paraná",
+            "enabled_inst": "true",
             "created_at": "2020-09-23T17:36:41.328Z",
             "updated_at": "2020-09-23T17:36:41.328Z"
         }
@@ -92,6 +95,7 @@
         "state": "RO",
         "neighborhood": "Juscelino Kubitschek",
         "city": "Porto Velho",
+        "enabled_inst": "true",
         "created_at": "2020-09-23T22:00:21.337Z",
         "updated_at": "2020-09-23T22:00:21.337Z"
     }
@@ -126,6 +130,7 @@
         "state": "RO",
         "neighborhood": "Juscelino Kubitschek",
         "city": "Porto Velho",
+        "enabled_inst": "true",
         "created_at": "2020-09-23T22:00:21.337Z",
         "updated_at": "2020-09-23T22:00:21.337Z"
     }
@@ -152,6 +157,7 @@
         "state": "PA",
         "neighborhood": "São Francisco (Mosqueiro)",
         "city": "Belém",
+        "enabled_inst": "false",
         "created_at": "2020-09-24T18:25:53.714Z",
         "updated_at": "2020-09-24T18:25:53.714Z"
     }

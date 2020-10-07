@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
-  has_many :enrollments, dependent: :destroy
-  has_many :bills, dependent: :destroy
+  has_many :enrollments
+  has_many :bills
 
   # Performs the necessary validations
   validates :name, presence: { message: 'Student name not informed.' }

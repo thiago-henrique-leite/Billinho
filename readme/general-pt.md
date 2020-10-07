@@ -20,6 +20,7 @@
             "state": "RO",
             "neighborhood": "Jardim Presidencial",
             "city": "Ji-Paraná",
+            "enabled_inst": "true",
             "created_at": "2020-09-23T17:36:41.328Z",
             "updated_at": "2020-09-23T17:36:41.328Z"
         },
@@ -33,6 +34,7 @@
             "state": "PB",
             "neighborhood": "Jardim Oceania",
             "city": "João Pessoa",
+            "enabled_inst": "true",
             "created_at": "2020-09-23T17:36:41.333Z",
             "updated_at": "2020-09-23T17:36:41.333Z"
         },
@@ -60,6 +62,7 @@
             "state": "RO",
             "neighborhood": "Jardim Presidencial",
             "city": "Ji-Paraná",
+            "enabled_inst": "true",
             "created_at": "2020-09-23T17:36:41.328Z",
             "updated_at": "2020-09-23T17:36:41.328Z"
         }
@@ -94,6 +97,7 @@
         "state": "RO",
         "neighborhood": "Juscelino Kubitschek",
         "city": "Porto Velho",
+        "enabled_inst": "true",
         "created_at": "2020-09-23T22:00:21.337Z",
         "updated_at": "2020-09-23T22:00:21.337Z"
     }
@@ -128,6 +132,7 @@
         "state": "RO",
         "neighborhood": "Juscelino Kubitschek",
         "city": "Porto Velho",
+        "enabled_inst": "true",
         "created_at": "2020-09-23T22:00:21.337Z",
         "updated_at": "2020-09-23T22:00:21.337Z"
     }
@@ -154,6 +159,7 @@
         "state": "PA",
         "neighborhood": "São Francisco (Mosqueiro)",
         "city": "Belém",
+        "enabled_inst": "false",
         "created_at": "2020-09-24T18:25:53.714Z",
         "updated_at": "2020-09-24T18:25:53.714Z"
     }
@@ -183,6 +189,7 @@
             "state": "ES",
             "neighborhood": "Santa Luzia",
             "city": "Cariacica",
+            "enabled_std": "true",
             "created_at": "2020-09-23T17:36:43.628Z",
             "updated_at": "2020-09-23T17:36:43.628Z"
         },
@@ -199,6 +206,7 @@
             "state": "RS",
             "neighborhood": "Haller",
             "city": "Santo Ângelo",
+            "enabled_std": "true",
             "created_at": "2020-09-23T17:36:43.634Z",
             "updated_at": "2020-09-23T17:36:43.634Z"
          },
@@ -226,6 +234,7 @@
         "state": "SP",
         "neighborhood": "Jardim Piazza di Roma",
         "city": "Sorocaba",
+        "enabled_std": "true",
         "created_at": "2020-09-23T17:36:44.081Z",
         "updated_at": "2020-09-23T17:36:44.081Z"
     }
@@ -268,6 +277,7 @@
         "state": "AC",
         "neighborhood": "Bosque",
         "city": "Rio Branco",
+        "enabled_std": "true",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -307,6 +317,7 @@
         "state": "AC",
         "neighborhood": "Bosque",
         "city": "Rio Branco",
+        "enabled_std": "true",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -337,6 +348,7 @@
         "state": "RO",
         "neighborhood": "Jardim Presidencial",
         "city": "Ji-Paraná",
+        "enabled_std": "false",
         "created_at": "2020-09-24T18:25:55.870Z",
         "updated_at": "2020-09-24T18:25:55.870Z"
     }
@@ -356,22 +368,24 @@
         {
             "id": 1,
             "total_value": "759.45",
-            "ammount_bills": 30,
+            "amount_bills": 30,
             "due_day": 7,
             "course": "Curso 0",
             "institution_id": 1,
             "student_id": 2,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.033Z",
             "updated_at": "2020-09-23T17:36:46.033Z"
         },
         {
             "id": 2,
             "total_value": "433.57",
-            "ammount_bills": 60,
+            "amount_bills": 60,
             "due_day": 29,
             "course": "Curso 1",
             "institution_id": 2,
             "student_id": 1,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.064Z",
             "updated_at": "2020-09-23T17:36:46.064Z"
         },
@@ -389,11 +403,12 @@
     "data": {
         "id": 2,
         "total_value": "433.57",
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 29,
         "course": "Curso 1",
         "institution_id": 2,
         "student_id": 1,
+        "enabled_enr": "true",
         "created_at": "2020-09-23T17:36:46.064Z",
         "updated_at": "2020-09-23T17:36:46.064Z"
     }
@@ -415,22 +430,24 @@
         {
             "id": 4,
             "total_value": "874.99",
-            "ammount_bills": 24,
+            "amount_bills": 24,
             "due_day": 30,
             "course": "Curso 42",
             "institution_id": 3,
             "student_id": 79,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.064Z",
             "updated_at": "2020-09-23T17:36:46.064Z"
         },
         {
             "id": 15,
             "total_value": "1230.0",
-            "ammount_bills": 32,
+            "amount_bills": 32,
             "due_day": 5,
             "course": "Curso 68",
             "institution_id": 3,
             "student_id": 156,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.064Z",
             "updated_at": "2020-09-23T17:36:46.064Z"
         }
@@ -450,7 +467,7 @@
         "institution_id": 325,
         "student_id": 200,
         "total_value": 256000,
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 15,
         "course": "Ciência da Computação"
 }
@@ -464,11 +481,12 @@
     "data": {
         "id": 615,
         "total_value": "256000.0",
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 15,
         "course": "Ciência da Computação",
         "institution_id": 325,
         "student_id": 200,
+        "enabled_enr": "true",
         "created_at": "2020-09-24T12:23:01.428Z",
         "updated_at": "2020-09-24T12:23:01.428Z"
     }
@@ -477,7 +495,10 @@
 
  ***8.3.5 Atualizando matrícula: POST api/v1/enrollments/3***
 
->   Parâmetros: nome do curso ou id da instituição.
+>   Parâmetros: Colocar o campo que quer atualizar.
+
+>   Obs: Ao atualizar uma matrícula, todas as faturas vinculadas a ela são desabilitadas
+e são criadas novas mensalidades com os valores atualizados.
 
 >   Requisição:
 
@@ -498,8 +519,9 @@
         "institution_id": 3,
         "student_id": 3,
         "total_value": "1247.95",
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 2,
+        "enabled_enr": "true",
         "created_at": "2020-09-25T13:24:01.941Z",
         "updated_at": "2020-09-25T14:38:05.648Z"
     }
@@ -520,11 +542,12 @@
     "data": {
         "id": 10,
         "total_value": "714.85",
-        "ammount_bills": 4,
+        "amount_bills": 4,
         "due_day": 22,
         "course": "Curso 10",
         "institution_id": 10,
         "student_id": 10,
+        "enabled_enr": "false",
         "created_at": "2020-09-24T18:25:58.308Z",
         "updated_at": "2020-09-24T18:25:58.308Z"
     }
@@ -544,21 +567,25 @@
     "data": [
         {
             "id": 1,
-            "bill_amount": "654.54",
+            "bill_value": "654.54",
             "due_date": "2020-10-07",
             "enrollment_id": 21,
             "status": "Aberta",
             "student_id": 63,
+            "institution_id": 63,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
         {
             "id": 2,
-            "bill_amount": "777.69",
+            "bill_value": "777.69",
             "due_date": "2020-11-07",
             "enrollment_id": 21,
             "status": "Paga",
-            "student_id": 63,
+            "student_id": 64,
+            "institution_id": 64,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         },
@@ -573,11 +600,13 @@
     "message": "Bill 407 loaded.",
     "data": {
         "id": 407,
-        "bill_amount": "379.73",
+        "bill_value": "379.73",
         "due_date": "2020-10-07",
         "enrollment_id": 115,
         "status": "Aberta",
         "student_id": 42,
+        "institution_id": 24,
+        "enabled_bill": "true",
         "created_at": "2020-09-23T17:36:46.052Z",
         "updated_at": "2020-09-23T17:36:46.052Z"
     }
@@ -598,21 +627,25 @@
     "data": [
         {
             "id": 407,
-            "bill_amount": "379.73",
+            "bill_value": "379.73",
             "due_date": "2020-10-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 42,
+            "institution_id": 24,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
         {
             "id": 408,
-            "bill_amount": "379.73",
+            "bill_value": "379.73",
             "due_date": "2020-11-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 85,
+            "institution_id": 83,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         }
@@ -667,9 +700,11 @@
         "id": 410,
         "status": "Atrasada",
         "enrollment_id": 116,
-        "bill_amount": "108.39",
+        "bill_value": "108.39",
         "due_date": "2020-10-29",
         "student_id": 91,
+        "institution_id": 67,
+        "enabled_bill": "true",
         "created_at": "2020-09-23T17:36:46.072Z",
         "updated_at": "2020-09-24T12:43:23.244Z"
     }
@@ -679,6 +714,9 @@
 
 >   Parâmetros: id da fatura
 
+>   Obs: Ao deletar uma fatura, os campos quantidade de faturas e valor total do curso 
+da matrícula em questão é descrementado.
+
 >   Retorno:
 
 ```json
@@ -686,11 +724,13 @@
     "message": "Bill 10 deleted.",
     "data": {
         "id": 10,
-        "bill_amount": "242.17",
+        "bill_value": "242.17",
         "due_date": "2020-10-30",
         "enrollment_id": 3,
         "status": "Aberta",
         "student_id": 3,
+        "institution_id": 12,
+        "enabled_bill": "false",
         "created_at": "2020-09-24T18:25:58.195Z",
         "updated_at": "2020-09-24T18:25:58.195Z"
     }

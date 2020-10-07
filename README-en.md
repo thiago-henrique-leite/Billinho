@@ -49,7 +49,8 @@
   CNPJ                                  |   Text   | Valid, unique and not empty
   Kind                                  |   Text   | Universidade, Escola ou Creche
   Zip code                              |   Text   | Valid
-  State, City, Neighborhood and Address |   Text   |  Automatically filled in from zip code
+  State, City, Neighborhood and Address |   Text   | Automatically filled in from zip code
+  Enabled                               |  Boolean | Default: true
 
   ***3.2 Student***
 
@@ -64,6 +65,7 @@
   Payment method                         |   Text   | Boleto or Cartão
   Zip code                               |   Text   | Valid
   State, City, Neighborhood and Address  |   Text   | Automatically filled in from zip code
+  Enabled                                |  Boolean | Default: true
 
   ***3.3 Enrollment***
 
@@ -75,6 +77,7 @@
   Course name                  |  Text               | Not empty
   Institution Id               |  Foreign key        | Not empty
   Student Id                   |  Foreign key        | Not empty
+  Enabled                      |  Boolean            | Default: true
 
    ***3.4 Bill***
 
@@ -85,6 +88,8 @@
   Enrollment Id                |  Foreign key        | Not empty
   Status                       |  Text               | Aberta, Atrasada or Paga, default Aberta
   Student Id                   |  Foreign key        | Not empty
+  Institution Id               |  Foreign key        | Not empty
+  Enabled                      |  Boolean            | Default: true
 
 </br>
 
@@ -200,6 +205,13 @@
 > + All API routes receive and respond with data in JSON format </br>
 >   - JavaScript Object Notation, or JSON, as it is known, it is basically a light format for exchanging information/data between systems. </br>
 >   - JSON is not only a lightweight format for data exchange, it is also very simple to read.
+
+> + Soft Delete
+>   - In the exclusion the elements are not deleted from the database, we only do a soft delete,
+> where through a 'enabled' boolean we control whether we want to view the data or not, by disabling
+> a information passing the key 'enabled' to 'false', it is as if we were excluding it.
+>   - Soft Delete is used for security reasons, when at some point we may need
+> some information, so it cannot be permanently deleted.
 
 </br>
 

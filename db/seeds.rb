@@ -26,7 +26,7 @@ genders = %w(M F)
   sorteio = Random.rand(0..1)
 
   Student.create({
-                   name: "Estudante #{indice + 1}",
+                   name: "Estudante #{indice + 13}",
                    cpf: CPF.generate,
                    birth_date: Faker::Date.between(from: '1995-01-01', to: '2002-01-01'),
                    phone: Faker::Number.number(digits: 9),
@@ -41,10 +41,10 @@ end
 10.times do |indice|
   Enrollment.create({
                       total_value: Faker::Number.decimal(l_digits: 4, r_digits: 2),
-                      ammount_bills: Faker::Number.between(from: 1, to: 10),
+                      amount_bills: Faker::Number.between(from: 1, to: 10),
                       due_day: Faker::Number.between(from: 1, to: 31),
                       course: "Curso #{indice}",
-                      institution_id: indice.to_s,
-                      student_id: indice.to_s
+                      institution_id: "#{indice+1}",
+                      student_id: "#{indice+1}"
                     })
 end

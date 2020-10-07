@@ -10,21 +10,25 @@
     "data": [
         {
             "id": 1,
-            "bill_amount": "654.54",
+            "bill_value": "654.54",
             "due_date": "2020-10-07",
             "enrollment_id": 21,
             "status": "Aberta",
             "student_id": 63,
+            "institution_id": 63,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
         {
             "id": 2,
-            "bill_amount": "777.69",
+            "bill_value": "777.69",
             "due_date": "2020-11-07",
             "enrollment_id": 21,
             "status": "Paga",
-            "student_id": 63,
+            "student_id": 64,
+            "institution_id": 64,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         },
@@ -39,11 +43,13 @@
     "message": "Bill 407 loaded.",
     "data": {
         "id": 407,
-        "bill_amount": "379.73",
+        "bill_value": "379.73",
         "due_date": "2020-10-07",
         "enrollment_id": 115,
         "status": "Aberta",
         "student_id": 42,
+        "institution_id": 24,
+        "enabled_bill": "true",
         "created_at": "2020-09-23T17:36:46.052Z",
         "updated_at": "2020-09-23T17:36:46.052Z"
     }
@@ -64,21 +70,25 @@
     "data": [
         {
             "id": 407,
-            "bill_amount": "379.73",
+            "bill_value": "379.73",
             "due_date": "2020-10-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 42,
+            "institution_id": 24,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
         {
             "id": 408,
-            "bill_amount": "379.73",
+            "bill_value": "379.73",
             "due_date": "2020-11-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 85,
+            "institution_id": 83,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         }
@@ -88,7 +98,7 @@
 
   ***8.4.4 Criando faturas***
 
->   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do curso em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. 
+>   A criação de faturas é um pouco diferente do restante, elas são criadas juntamente com a matrícula. O sistema cria o número correto de faturas de acordo com o valor do campo Quantidade de faturas da matrícula criada. Para definir o valor de cada fatura basta dividir o Valor total do course em reais pela Quantidade de faturas, ambos valores pertencentes à matrícula. 
 
 > Na definição da data de vencimento, caso o dia de vencimento recebido seja menor ou igual ao dia do mês atual, as faturas devem iniciar no próximo mês, caso contrário, devem iniciar no mês atual. Por exemplo, hoje sendo dia 01/10/2020 e o dia de vencimento igual a 30, a data de vencimento da primeira fatura deve ser 30/10/2020, as datas de vencimento das demais faturas devem ser sempre no mês seguinte da anterior:      
 
@@ -100,7 +110,7 @@
   ---------------------|------------|-------------------|------------------|-------------
   2000.00              |     5      |        30         |        1         |      1
 
->   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente.
+>   Assumimos que tanto a instituição de ensino, quanto o aluno já foram criados anteriormente)
 
 >   Obs: Quando o mês não possui o número de dias da data de vencimento da fatura, ela passa a vencer no dia 01 do próximo mês.
 
@@ -133,17 +143,22 @@
         "id": 410,
         "status": "Atrasada",
         "enrollment_id": 116,
-        "bill_amount": "108.39",
+        "bill_value": "108.39",
         "due_date": "2020-10-29",
         "student_id": 91,
+        "institution_id": 67,
+        "enabled_bill": "true",
         "created_at": "2020-09-23T17:36:46.072Z",
         "updated_at": "2020-09-24T12:43:23.244Z"
     }
 }
 ```
-  ***8.4.6 Deletando uma fatura: DELETE api/v1/bills/10***
+  ***8.4.6 Deletando uma faturas: DELETE api/v1/bills/10***
 
 >   Parâmetros: id da fatura
+
+>   Obs: Ao deletar uma fatura, os campos quantidade de faturas e valor total do curso 
+da matrícula em questão é descrementado.
 
 >   Retorno:
 
@@ -152,11 +167,13 @@
     "message": "Bill 10 deleted.",
     "data": {
         "id": 10,
-        "bill_amount": "242.17",
+        "bill_value": "242.17",
         "due_date": "2020-10-30",
         "enrollment_id": 3,
         "status": "Aberta",
         "student_id": 3,
+        "institution_id": 12,
+        "enabled_bill": "false",
         "created_at": "2020-09-24T18:25:58.195Z",
         "updated_at": "2020-09-24T18:25:58.195Z"
     }

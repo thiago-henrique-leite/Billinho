@@ -2,7 +2,7 @@
 
 one:
   total_value: 1.5
-  ammount_bills: 1
+  amount_bills: 1
   due_day: 1
   course: MyText
   institution_id: 
@@ -10,7 +10,7 @@ one:
 
 two:
   total_value: 1.5
-  ammount_bills: 1
+  amount_bills: 1
   due_day: 1
   course: MyText
   institution_id: 

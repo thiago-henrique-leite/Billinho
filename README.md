@@ -51,6 +51,7 @@ Português | [English](/README-en.md)
   Tipo                              |   Texto   | Universidade, Escola ou Creche
   CEP                               |   Texto   | Válido
   Estado, Cidade, Bairro e Endereço |   Texto   | Preenchido automaticamente a partir do CEP
+  Enabled                           |  Booleana | Default: true
 
   ***3.2 Aluno***
 
@@ -65,6 +66,8 @@ Português | [English](/README-en.md)
   Meio de pagamento                 |   Texto   | Boleto ou Cartão
   CEP                               |   Texto   | Válido
   Estado, Cidade, Bairro e Endereço |   Texto   | Preenchido automaticamente a partir do CEP
+  Enabled                           |  Booleana | Default: true
+
 
   ***3.3 Matrícula***
 
@@ -76,6 +79,8 @@ Português | [English](/README-en.md)
   Nome do curso                |  Texto              | Não vazio
   Id da instituição            |  Chave estrangeira  | Não vazio
   Id do aluno                  |  Chave estrangeira  | Não vazio
+  Enabled                      |  Booleana           | Default: true
+
 
    ***3.4 Faturas***
 
@@ -86,6 +91,9 @@ Português | [English](/README-en.md)
   Id da matrícula              |  Chave estrangeira  | Não vazio
   Status                       |  Texto              | Aberta, Atrasada ou Paga sendo default Aberta
   Id do estudante              |  Chave estrangeira  | Não vazio
+  Id da instituição            |  Chave estrangeira  | Não vazio
+  Enabled                      |  Booleana           | Default: true
+
 
 </br>
 
@@ -201,6 +209,13 @@ Português | [English](/README-en.md)
 > + Todos as rotas da API recebem e respondem com dados no formato JSON </br>
 >   - JavaScript Object Notation, ou JSON, como é conhecido, é basicamente um formato leve de troca de informações/dados entre sistemas. </br>
 >   - O JSON além de ser um formato leve para troca de dados é também muito simples de ler. 
+
+> + Soft Delete
+>   - Na exclusão os elementos não são apagados do banco de dados, fazemos apenas um soft delete,
+> onde através de um booleano 'enabled' controlarmos se queremos visualisar o dado ou não, ao desabilitarmos
+> uma informação passando a chave 'enabled' para 'false', é como se estivéssemos excluindo ela.
+>   - O Soft Delete é utilizado por questões de segurança, quando em algum momento podemos precisar de
+> alguma informação, logo ela não pode ser excluída permanentemente.
 
 </br>
 

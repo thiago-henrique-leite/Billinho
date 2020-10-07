@@ -21,6 +21,7 @@
             "state": "ES",
             "neighborhood": "Santa Luzia",
             "city": "Cariacica",
+            "enabled_std": "true",
             "created_at": "2020-09-23T17:36:43.628Z",
             "updated_at": "2020-09-23T17:36:43.628Z"
         },
@@ -37,6 +38,7 @@
             "state": "RS",
             "neighborhood": "Haller",
             "city": "Santo Ângelo",
+            "enabled_std": "true",
             "created_at": "2020-09-23T17:36:43.634Z",
             "updated_at": "2020-09-23T17:36:43.634Z"
          },
@@ -64,6 +66,7 @@
         "state": "SP",
         "neighborhood": "Jardim Piazza di Roma",
         "city": "Sorocaba",
+        "enabled_std": "true",
         "created_at": "2020-09-23T17:36:44.081Z",
         "updated_at": "2020-09-23T17:36:44.081Z"
     }
@@ -106,6 +109,7 @@
         "state": "AC",
         "neighborhood": "Bosque",
         "city": "Rio Branco",
+        "enabled_std": "true",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -145,6 +149,7 @@
         "state": "AC",
         "neighborhood": "Bosque",
         "city": "Rio Branco",
+        "enabled_std": "true",
         "created_at": "2020-09-23T22:39:13.899Z",
         "updated_at": "2020-09-23T22:39:13.899Z"
     }
@@ -175,6 +180,7 @@
         "state": "RO",
         "neighborhood": "Jardim Presidencial",
         "city": "Ji-Paraná",
+        "enabled_std": "false",
         "created_at": "2020-09-24T18:25:55.870Z",
         "updated_at": "2020-09-24T18:25:55.870Z"
     }

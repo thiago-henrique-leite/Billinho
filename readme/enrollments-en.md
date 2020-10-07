@@ -11,22 +11,24 @@
         {
             "id": 1,
             "total_value": "759.45",
-            "ammount_bills": 30,
+            "amount_bills": 30,
             "due_day": 7,
             "course": "Course 0",
             "institution_id": 1,
             "student_id": 2,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.033Z",
             "updated_at": "2020-09-23T17:36:46.033Z"
         },
         {
             "id": 2,
             "total_value": "433.57",
-            "ammount_bills": 60,
+            "amount_bills": 60,
             "due_day": 29,
             "course": "Course 1",
             "institution_id": 2,
             "student_id": 1,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.064Z",
             "updated_at": "2020-09-23T17:36:46.064Z"
         },
@@ -44,11 +46,12 @@
     "data": {
         "id": 2,
         "total_value": "433.57",
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 29,
         "course": "Course 1",
         "institution_id": 2,
         "student_id": 1,
+        "enabled_enr": "true",
         "created_at": "2020-09-23T17:36:46.064Z",
         "updated_at": "2020-09-23T17:36:46.064Z"
     }
@@ -70,22 +73,24 @@
         {
             "id": 4,
             "total_value": "874.99",
-            "ammount_bills": 24,
+            "amount_bills": 24,
             "due_day": 30,
             "course": "Course 42",
             "institution_id": 3,
             "student_id": 79,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.064Z",
             "updated_at": "2020-09-23T17:36:46.064Z"
         },
         {
             "id": 15,
             "total_value": "1230.0",
-            "ammount_bills": 32,
+            "amount_bills": 32,
             "due_day": 5,
             "course": "Course 68",
             "institution_id": 3,
             "student_id": 156,
+            "enabled_enr": "true",
             "created_at": "2020-09-23T17:36:46.064Z",
             "updated_at": "2020-09-23T17:36:46.064Z"
         }
@@ -105,7 +110,7 @@
         "institution_id": 325,
         "student_id": 200,
         "total_value": 256000,
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 15,
         "course": "Computer Science"
 }
@@ -119,11 +124,12 @@
     "data": {
         "id": 615,
         "total_value": "256000.0",
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 15,
         "course": "Computer Science",
         "institution_id": 325,
         "student_id": 200,
+        "enabled_enr": "true",
         "created_at": "2020-09-24T12:23:01.428Z",
         "updated_at": "2020-09-24T12:23:01.428Z"
     }
@@ -132,7 +138,10 @@
 
  ***8.3.5 Updating Enrollment: POST api/v1/enrollments/3***
 
->   Allowed parameters: Course name or institution id.
+>   Allowed parameters: Place the field you want to update.
+
+>   Note: When updating a enrollment, all bills linked to it are disabled
+and new bills are created with updated values.
 
 >   Request:
 
@@ -153,8 +162,9 @@
         "institution_id": 3,
         "student_id": 3,
         "total_value": "1247.95",
-        "ammount_bills": 60,
+        "amount_bills": 60,
         "due_day": 2,
+        "enabled_enr": "true",
         "created_at": "2020-09-25T13:24:01.941Z",
         "updated_at": "2020-09-25T14:38:05.648Z"
     }
@@ -175,11 +185,12 @@
     "data": {
         "id": 10,
         "total_value": "714.85",
-        "ammount_bills": 4,
+        "amount_bills": 4,
         "due_day": 22,
         "course": "Course 10",
         "institution_id": 10,
         "student_id": 10,
+        "enabled_enr": "false",
         "created_at": "2020-09-24T18:25:58.308Z",
         "updated_at": "2020-09-24T18:25:58.308Z"
     }

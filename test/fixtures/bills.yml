@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  bill_amount: 9.99
+  bill_value: 9.99
   due_date: 2020-09-21
   enrollment_id: 
   status: MyText
 
 two:
-  bill_amount: 9.99
+  bill_value: 9.99
   due_date: 2020-09-21
   enrollment_id: 
   status: MyText

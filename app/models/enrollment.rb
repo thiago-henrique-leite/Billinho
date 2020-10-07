@@ -2,17 +2,15 @@ class Enrollment < ApplicationRecord
   belongs_to :institution
   belongs_to :student
 
-  has_many :bills, dependent: :destroy
+  has_many :bills
 
   # Performs the necessary validations
-  validates :total_value, numericality: { greater_than: 0, mounthsage: 'Invalid or not informed total value.' }
-  validates :ammount_bills, numericality: { greater_than: 0, mounthsage: 'Invalid or unreported bills quantity.' }
-  validates :due_day, numericality: { greater_than: 0, less_than: 32, mounthsage: 'Invalid or uninformed day.' }
-  validates :course, presence: { mounthsage: 'Course not informed.' }
+  validates :total_value, numericality: { greater_than: 0, message: 'Invalid or not informed total value.' }
+  validates :amount_bills, numericality: { greater_than: 0, message: 'Invalid or unreported bills quantity.' }
+  validates :due_day, numericality: { greater_than: 0, less_than: 32, message: 'Invalid or uninformed day.' }
+  validates :course, presence: { message: 'Course not informed.' }
 
   after_create :create_bills
-
-  private
 
   def create_bills
     # Get the current date
@@ -39,10 +37,10 @@ class Enrollment < ApplicationRecord
     end
 
     # Calculates the value of each bill
-    @value = total_value / ammount_bills
+    @value = total_value / amount_bills
     @value = @value.round(2)
 
-    ammount_bills.times do |_index|
+    amount_bills.times do |_index|
       @signal = 0
 
       # Checks if the year is over
@@ -68,10 +66,11 @@ class Enrollment < ApplicationRecord
 
       # Create a bill
       Bill.create({
-                    bill_amount: @value.to_s,
+                    bill_value: @value.to_s,
                     due_date: "#{@year}-#{@mounth}-#{@day}",
                     enrollment_id: id,
                     student_id: student_id,
+                    institution_id: institution_id,
                     status: 'Aberta'
                   })
 

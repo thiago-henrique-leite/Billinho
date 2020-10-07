@@ -16,22 +16,26 @@ ActiveRecord::Schema.define(version: 2020_09_21_192017) do
   enable_extension "plpgsql"
 
   create_table "bills", force: :cascade do |t|
-    t.decimal "bill_amount"
+    t.decimal "bill_value"
     t.date "due_date"
-    t.bigint "enrollment_id"
     t.text "status"
+    t.boolean "enabled_bill", default: true
     t.bigint "student_id"
+    t.bigint "enrollment_id"
+    t.bigint "institution_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["enrollment_id"], name: "index_bills_on_enrollment_id"
+    t.index ["institution_id"], name: "index_bills_on_institution_id"
     t.index ["student_id"], name: "index_bills_on_student_id"
   end
 
   create_table "enrollments", force: :cascade do |t|
     t.decimal "total_value"
-    t.integer "ammount_bills"
+    t.integer "amount_bills"
     t.integer "due_day"
     t.text "course"
+    t.boolean "enabled_enr", default: true
     t.bigint "institution_id"
     t.bigint "student_id"
     t.datetime "created_at", precision: 6, null: false
@@ -49,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_192017) do
     t.text "state"
     t.text "neighborhood"
     t.text "city"
+    t.boolean "enabled_inst", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cnpj"], name: "index_institutions_on_cnpj", unique: true
@@ -67,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_192017) do
     t.text "state"
     t.text "neighborhood"
     t.text "city"
+    t.boolean "enabled_std", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cpf"], name: "index_students_on_cpf", unique: true

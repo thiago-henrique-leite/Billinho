@@ -10,21 +10,25 @@
     "data": [
         {
             "id": 1,
-            "bill_amount": "654.54",
+            "bill_value": "654.54",
             "due_date": "2020-10-07",
             "enrollment_id": 21,
             "status": "Aberta",
             "student_id": 63,
+            "institution_id": 24,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
         {
             "id": 2,
-            "bill_amount": "777.69",
+            "bill_value": "777.69",
             "due_date": "2020-11-07",
             "enrollment_id": 21,
             "status": "Paga",
-            "student_id": 63,
+            "student_id": 64,
+            "institution_id": 64,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         },
@@ -39,11 +43,13 @@
     "message": "Bill 407 loaded.",
     "data": {
         "id": 407,
-        "bill_amount": "379.73",
+        "bill_value": "379.73",
         "due_date": "2020-10-07",
         "enrollment_id": 115,
         "status": "Aberta",
         "student_id": 42,
+        "institution_id": 24,
+        "enabled_bill": "true",
         "created_at": "2020-09-23T17:36:46.052Z",
         "updated_at": "2020-09-23T17:36:46.052Z"
     }
@@ -64,21 +70,25 @@
     "data": [
         {
             "id": 407,
-            "bill_amount": "379.73",
+            "bill_value": "379.73",
             "due_date": "2020-10-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 42,
+            "institution_id": 24,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.052Z",
             "updated_at": "2020-09-23T17:36:46.052Z"
         },
         {
             "id": 408,
-            "bill_amount": "379.73",
+            "bill_value": "379.73",
             "due_date": "2020-11-07",
             "enrollment_id": 115,
             "status": "Aberta",
             "student_id": 85,
+            "institution_id": 83,
+            "enabled_bill": "true",
             "created_at": "2020-09-23T17:36:46.056Z",
             "updated_at": "2020-09-23T17:36:46.056Z"
         }
@@ -133,9 +143,11 @@
         "id": 410,
         "status": "Atrasada",
         "enrollment_id": 116,
-        "bill_amount": "108.39",
+        "bill_value": "108.39",
         "due_date": "2020-10-29",
         "student_id": 91,
+        "institution_id": 67,
+        "enabled_bill": "true",
         "created_at": "2020-09-23T17:36:46.072Z",
         "updated_at": "2020-09-24T12:43:23.244Z"
     }
@@ -145,6 +157,9 @@
 
 >   Parameters: Bill Id
 
+>   Note: When deleting an bill, the bill quantity and total course amount fields
+of the enrollment in question is decremented.
+
 >   Response:
 
 ```json
@@ -152,11 +167,13 @@
     "message": "Bill 10 deleted.",
     "data": {
         "id": 10,
-        "bill_amount": "242.17",
+        "bill_value": "242.17",
         "due_date": "2020-10-30",
         "enrollment_id": 3,
         "status": "Aberta",
         "student_id": 3,
+        "institution_id": 12,
+        "enabled_bill": "false",
         "created_at": "2020-09-24T18:25:58.195Z",
         "updated_at": "2020-09-24T18:25:58.195Z"
     }
