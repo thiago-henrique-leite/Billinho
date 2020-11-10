@@ -48,3 +48,5 @@ gem 'cpf_cnpj'
 gem 'rubocop', '~> 0.91.1', require: false
 gem 'validates-correios-cep'
 gem 'validates_cpf_cnpj'
+
+gem 'pry-rails'

@@ -2,7 +2,7 @@
 
 # Create institutions
 
-cep = %w[76901050 58037305 76829374 76808340 66920780 69316760 29156544 98804700 18051730 69900487]
+cep = %w[11070-200 23078-002 23575-460 01310-923 85853-000 28950-000 22420-004 50040-909 65041-889 69008-000]
 
 lista_instituicoes = %w[Universidade Escola Creche]
 
@@ -26,7 +26,7 @@ genders = %w[M F]
   sorteio = Random.rand(0..1)
 
   Student.create({
-                   name: "Estudante #{indice + 13}",
+                   name: "Estudante #{indice + 1}",
                    cpf: CPF.generate,
                    birth_date: Faker::Date.between(from: '1995-01-01', to: '2002-01-01'),
                    phone: Faker::Number.number(digits: 9),
@@ -43,7 +43,7 @@ end
                       total_value: Faker::Number.decimal(l_digits: 4, r_digits: 2),
                       amount_bills: Faker::Number.between(from: 1, to: 10),
                       due_day: Faker::Number.between(from: 1, to: 31),
-                      course: "Curso #{indice}",
+                      course: "Curso #{indice+1}",
                       institution_id: (indice + 1).to_s,
                       student_id: (indice + 1).to_s
                     })
