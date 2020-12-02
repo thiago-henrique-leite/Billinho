@@ -243,7 +243,7 @@
 
   ***8.2.3 Criando estudante: POST api/v1/students***
 
->   Parâmetros: nome, cpf, gênero e meio de pagamento das faturas 
+>   Parâmetros: nome, cpf, gênero e meio de paidmento das faturas 
 
 >   Requisição
 
@@ -570,7 +570,7 @@ e são criadas novas mensalidades com os valores atualizados.
             "bill_value": "654.54",
             "due_date": "2020-10-07",
             "enrollment_id": 21,
-            "status": "Aberta",
+            "status": "open",
             "student_id": 63,
             "institution_id": 63,
             "enabled_bill": "true",
@@ -582,7 +582,7 @@ e são criadas novas mensalidades com os valores atualizados.
             "bill_value": "777.69",
             "due_date": "2020-11-07",
             "enrollment_id": 21,
-            "status": "Paga",
+            "status": "paid",
             "student_id": 64,
             "institution_id": 64,
             "enabled_bill": "true",
@@ -603,7 +603,7 @@ e são criadas novas mensalidades com os valores atualizados.
         "bill_value": "379.73",
         "due_date": "2020-10-07",
         "enrollment_id": 115,
-        "status": "Aberta",
+        "status": "open",
         "student_id": 42,
         "institution_id": 24,
         "enabled_bill": "true",
@@ -630,7 +630,7 @@ e são criadas novas mensalidades com os valores atualizados.
             "bill_value": "379.73",
             "due_date": "2020-10-07",
             "enrollment_id": 115,
-            "status": "Aberta",
+            "status": "open",
             "student_id": 42,
             "institution_id": 24,
             "enabled_bill": "true",
@@ -642,7 +642,7 @@ e são criadas novas mensalidades com os valores atualizados.
             "bill_value": "379.73",
             "due_date": "2020-11-07",
             "enrollment_id": 115,
-            "status": "Aberta",
+            "status": "open",
             "student_id": 85,
             "institution_id": 83,
             "enabled_bill": "true",
@@ -687,7 +687,7 @@ e são criadas novas mensalidades com os valores atualizados.
 
 ```json
 {       
-        "status": "Atrasada"
+        "status": "pending"
 }
 ```
 
@@ -698,7 +698,7 @@ e são criadas novas mensalidades com os valores atualizados.
     "message": "Bill 410 updated.",
     "data": {
         "id": 410,
-        "status": "Atrasada",
+        "status": "pending",
         "enrollment_id": 116,
         "bill_value": "108.39",
         "due_date": "2020-10-29",
@@ -727,7 +727,7 @@ da matrícula em questão é descrementado.
         "bill_value": "242.17",
         "due_date": "2020-10-30",
         "enrollment_id": 3,
-        "status": "Aberta",
+        "status": "open",
         "student_id": 3,
         "institution_id": 12,
         "enabled_bill": "false",

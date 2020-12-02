@@ -71,7 +71,7 @@ class Enrollment < ApplicationRecord
                     enrollment_id: id,
                     student_id: student_id,
                     institution_id: institution_id,
-                    status: 'Aberta'
+                    status: 'open'
                   })
 
       @day = @day.to_i

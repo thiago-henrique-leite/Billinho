@@ -7,5 +7,5 @@ class Bill < ApplicationRecord
   # Performs the necessary validations
   validates :bill_value, presence: true
   validates :due_date, presence: true
-  validates :status, inclusion: { in: %w[Aberta Atrasada Paga], default: 'Aberta', message: 'Invalid status.' }
+  validates :status, inclusion: { in: %w[open pending paid], default: 'open', message: 'Invalid status.' }
 end

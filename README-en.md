@@ -86,7 +86,7 @@
   Valor da fatura em reais     |  Decimal            | Not empty
   Date de vencimento           |  Date               | Not empty
   Enrollment Id                |  Foreign key        | Not empty
-  Status                       |  Text               | Aberta, Atrasada or Paga, default Aberta
+  Status                       |  Text               | open, pending or paid, default open
   Student Id                   |  Foreign key        | Not empty
   Institution Id               |  Foreign key        | Not empty
   Enabled                      |  Boolean            | Default: true
