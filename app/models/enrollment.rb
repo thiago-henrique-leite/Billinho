@@ -71,6 +71,7 @@ class Enrollment < ApplicationRecord
                     enrollment_id: id,
                     student_id: student_id,
                     institution_id: institution_id,
+                    paid_value: nil,
                     status: 'open'
                   })
 

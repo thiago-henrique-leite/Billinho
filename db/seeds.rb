@@ -2,8 +2,6 @@
 
 # Create institutions
 
-cep = %w[11070-200 23078-002 23575-460 01310-923 85853-000 28950-000 22420-004 50040-909 65041-889 69008-000]
-
 10.times do |indice|
   ies = %w[Universidade Escola Creche].sample
 
@@ -11,7 +9,7 @@ cep = %w[11070-200 23078-002 23575-460 01310-923 85853-000 28950-000 22420-004 5
                       name: "#{ies} #{indice + 1}",
                       cnpj: CNPJ.generate,
                       kind: ies,
-                      cep: cep[indice]
+                      cep: "11070-200"
                     })
 end
 # Create students
@@ -24,7 +22,7 @@ end
                   phone: Faker::Number.number(digits: 9),
                   gender: %w[M F].sample,
                   pay_method: %w[Boleto Cartão].sample,
-                  cep: cep[indice]
+                  cep: "23078-002"
                 })
 end
 

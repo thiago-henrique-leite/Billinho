@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_192017) do
     t.date "due_date"
     t.text "status"
     t.boolean "enabled_bill", default: true
+    t.decimal "paid_value"
     t.bigint "student_id"
     t.bigint "enrollment_id"
     t.bigint "institution_id"
