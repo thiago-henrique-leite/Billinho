@@ -23,7 +23,7 @@ Português | [English](/README-en.md)
 
 ### 1. Descrição
   O Billinho é um projeto da Quero Educação, empresa líder no ramo de marketing educacional. 
-  Ele tem por objetivo simular uma API de gerenciamento das mensalidades paids pelos alunos 
+  Ele tem por objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos 
   á instituição de ensino que ele estuda.
 
 <a name="ancora"></a>
@@ -63,7 +63,7 @@ Português | [English](/README-en.md)
   Data de Nascimento                |   Data    | Formato YYYY-MM-DD 
   Telefone                          |  Inteiro  | 
   Gênero                            |   Texto   | M ou F
-  Meio de paidmento                 |   Texto   | Boleto ou Cartão
+  Meio de pagamento                 |   Texto   | Boleto ou Cartão
   CEP                               |   Texto   | Válido
   Estado, Cidade, Bairro e Endereço |   Texto   | Preenchido automaticamente a partir do CEP
   Enabled                           |  Booleana | Default: true
@@ -211,7 +211,7 @@ Português | [English](/README-en.md)
 >   - O JSON além de ser um formato leve para troca de dados é também muito simples de ler. 
 
 > + Soft Delete
->   - Na exclusão os elementos não são apaiddos do banco de dados, fazemos apenas um soft delete,
+>   - Na exclusão os elementos não são apagados do banco de dados, fazemos apenas um soft delete,
 > onde através de um booleano 'enabled' controlamos se queremos visualisar o dado ou não, ao desabilitarmos
 > uma informação passando a chave 'enabled' para 'false', é como se estivéssemos excluindo ela.
 >   - O Soft Delete é utilizado por questões de segurança, quando em algum momento podemos precisar de
