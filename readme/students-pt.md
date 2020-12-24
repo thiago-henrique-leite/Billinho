@@ -75,7 +75,7 @@
 
   ***8.2.3 Criando estudante: POST api/v1/students***
 
->   Parâmetros: nome, cpf, gênero e meio de paidmento das faturas 
+>   Parâmetros: nome, cpf, gênero e meio de pagamento das faturas 
 
 >   Requisição
 
