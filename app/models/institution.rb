@@ -13,19 +13,18 @@ class Institution < ApplicationRecord
   private
 
   def format_cnpj
-    cnpj = CNPJ.new(self.cnpj)
-    cnpj = cnpj.formatted
-    self.cnpj = cnpj
+    self.cnpj = CNPJ.new(self.cnpj).formatted
   end
 
   def fill_address
     unless cep.nil?
-      finder = Correios::CEP::AddressFinder.new
-      address = finder.get(cep)
+      address = Correios::CEP::AddressFinder.new.get(cep)
       self.city = address[:city]
       self.state = address[:state]
       self.neighborhood = address[:neighborhood]
       self.address = address[:address]
+    else 
+      raise 'Zip code not informed.'
     end
   end
 end

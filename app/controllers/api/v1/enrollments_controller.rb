@@ -51,7 +51,8 @@ module Api
       def create
         enrollment = Enrollment.new(enrollment_params)
         if enrollment.save
-          render json: { message: 'Registered enrollment.', data: enrollment }, status: :ok
+          bills = EnrollmentBillsCreate.perform(enrollment, enrollment_params)
+          render json: { message: 'Registered enrollment and bills created.', data: enrollment }, status: :ok
         else
           render json: { status: 'ERRO', message: 'Not registered enrollment.', data: enrollment.errors }, status: :unprocessable_entity
         end

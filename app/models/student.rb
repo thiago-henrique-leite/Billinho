@@ -16,9 +16,7 @@ class Student < ApplicationRecord
 
   # Formats the cpf
   def format_cpf
-    cpf = CPF.new(self.cpf)
-    cpf = cpf.formatted
-    self.cpf = cpf
+    self.cpf = CPF.new(self.cpf).formatted
   end
 
   # Validates the student's birth date
@@ -30,12 +28,13 @@ class Student < ApplicationRecord
 
   def fill_address
     unless cep.nil?
-      finder = Correios::CEP::AddressFinder.new
-      address = finder.get(cep)
+      address = Correios::CEP::AddressFinder.new.get(cep)
       self.city = address[:city]
       self.state = address[:state]
       self.neighborhood = address[:neighborhood]
       self.address = address[:address]
+    else 
+      raise 'Zip code not informed.'
     end
   end
 end

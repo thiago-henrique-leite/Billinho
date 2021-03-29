@@ -1,22 +1,20 @@
-# PostgreSQL 12
+# PostgreSQL
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: thiago
+  password: thiago
+  timeout: 5000
 
 development:
-  adapter: postgresql
-  database: billinho_dev
-  username: postgres
-  password: postgres
-  min_messages: warning
-
+  <<: *default
+  database: db_billinho
 test:
-  adapter: postgresql
-  database: billinho_test
-  username: postgres
-  password: postgres
-  min_messages: warning
+  <<: *default
+  database: db_billinho
 
 production:
-  adapter: postgresql
-  database: billinho_prod
-  username: postgres
-  password: postgres
-  min_messages: warning
+  <<: *default
+  database: db_billinho
