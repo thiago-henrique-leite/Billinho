@@ -1,7 +1,6 @@
 # Povoando o Banco de Dados
 
 # Create institutions
-
 10.times do |indice|
   ies = %w[Universidade Escola Creche].sample
 
@@ -12,6 +11,7 @@
                       cep: "11070-200"
                     })
 end
+
 # Create students
 10.times  do |indice|
 
@@ -27,14 +27,15 @@ end
 end
 
 # Create enrollments
-
 10.times do |indice|
-  Enrollment.create({
-                      total_value: Faker::Number.decimal(l_digits: 4, r_digits: 2),
-                      amount_bills: Faker::Number.between(from: 1, to: 10),
-                      due_day: Faker::Number.between(from: 1, to: 31),
-                      course: "Curso #{indice+1}",
-                      institution_id: (indice + 1).to_s,
-                      student_id: (indice + 1).to_s
-                    })
+  enrollment_params = {
+    total_value: Faker::Number.decimal(l_digits: 4, r_digits: 2),
+    amount_bills: Faker::Number.between(from: 1, to: 10),
+    due_day: Faker::Number.between(from: 1, to: 31),
+    course: "Curso #{indice+1}",
+    institution_id: (indice + 1).to_s,
+    student_id: (indice + 1).to_s
+  }
+  enrollment = Enrollment.create(enrollment_params)
+  EnrollmentBillsCreate.perform(enrollment, enrollment_params) if enrollment.save
 end
